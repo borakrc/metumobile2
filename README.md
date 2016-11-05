@@ -1,5 +1,8 @@
 # metumobile2A
 
+This is the files of backend of METU NCC mobile application. Some files are missed! 
+
+
 # How to deploy
 
 Note: This version has missed files. 
