@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # metumobile2A
 
 This is the files of backend of METU NCC mobile application. Some files are missed! 
@@ -17,10 +17,3 @@ Note: This version has missed files.
 3-Use the following-up comment: pip install -r requirements.txt
 
 **TODO:ADD THE NEXT SETTINGS**
-
-
-=======
-# metumobile2
-
-back end code of metu ncc mobile application
->>>>>>> b8e3a4091360245758878c23cd79201d56c97de4
