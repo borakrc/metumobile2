@@ -1,12 +1,12 @@
 from Cafeteria.MealContainer import MealContainer
 from Config import Config
-
+from CredentialsConfig import CredentialsConfig
 
 class MongoDatabase:
     lastImportedCafeteriaMenu = []
 
     def __init__(self):
-        self.credentials = Config.mongoDbCredentials
+        self.credentials = CredentialsConfig.mongoDbCredentials
         try:
             from pymongo import MongoClient
             if Config.os == 'Windows':

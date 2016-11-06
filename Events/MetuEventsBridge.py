@@ -1,9 +1,10 @@
 import pymysql.cursors
-from Config import Config
+from CredentialsConfig import CredentialsConfig
+
 
 class MetuEventsDb:
     def __init__(self):
-        self.credentials = Config.metuEventsDbCredentials
+        self.credentials = CredentialsConfig.metuEventsDbCredentials
 
     def _connect(self):
         self.connection = pymysql.connect(

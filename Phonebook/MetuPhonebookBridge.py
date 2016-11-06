@@ -1,9 +1,11 @@
 import pymysql.cursors
 
+from CredentialsConfig import CredentialsConfig
+
 
 class PhonebookBridge:
     def __init__(self):
-        self.credentials = Config.phonebookDbCredentials
+        self.credentials = CredentialsConfig.phonebookDbCredentials
 
     def _connect(self):
         self.connection = pymysql.connect(

@@ -1,4 +1,3 @@
-from Helpers.DbCredentials import DbCredentials
 
 
 class Config:
@@ -23,4 +22,3 @@ class Config:
 
     serverPort = 1072
     serverRootLink = "http://" + serverIp + ":" + str(serverPort)
-    
