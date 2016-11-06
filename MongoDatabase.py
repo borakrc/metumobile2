@@ -54,10 +54,10 @@ class MongoDatabase:
     def getMealRating(self, mealId):
         results = self.db['cafeteriaRating'].find({"mealId": mealId})
         jsonableArray = []
-        _sum = 0
+        _sum, index = 0, 0  # if results empty
         for index, each in enumerate(results):
             _sum += each['rating']
-        return float(sum) / (index+1)
+        return float(_sum) / (index+1)
 
     def getMeal(self, mealId):
         raise NotImplementedError
