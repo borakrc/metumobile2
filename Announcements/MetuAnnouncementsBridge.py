@@ -1,9 +1,11 @@
 import pymysql.cursors
 from Config import Config
+from CredentialsConfig import CredentialsConfig
+
 
 class MetuAcademicAndDormCalendarBridge:
     def __init__(self):
-        self.credentials = Config.sinerjiDbCredentials
+        self.credentials = CredentialsConfig.sinerjiDbCredentials
 
 
     def _connect(self):

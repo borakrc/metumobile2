@@ -1,9 +1,11 @@
 import pymysql.cursors
 
+from CredentialsConfig import CredentialsConfig
+
 
 class ShuttleLocation:
     def __init__(self):
-        self.credentials = Config.mysqlDbCredentials
+        self.credentials = CredentialsConfig.shuttleGpsDbCredentials
 
 
     def _connect(self):
