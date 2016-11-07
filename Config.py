@@ -10,10 +10,10 @@ class Config:
         debug = True
         serverIp = "127.0.0.1"
         staticFolderPath = os.path.join(home, "imageUploads")
-        dynamicFolderPath = os.path.join(home, "metumobile", "dynamicImages")
-        loggerPath = os.path.join(home, 'metumobile', 'log.txt')
+        dynamicFolderPath = os.path.join(home, "dynamicImages")
+        loggerPath = os.path.join(home, 'log.txt')
         cafeteriaMenuExcelPath = os.path.join(
-                home, 'metumobile', 'Cafeteria', 'cafeteriaMenu.xlsx'
+                home, 'Cafeteria', 'cafeteriaMenu.xlsx'
         )
     else:
         os = 'Linux'
