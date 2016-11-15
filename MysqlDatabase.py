@@ -1,10 +1,10 @@
 import pymysql.cursors
 from Cafeteria.MealContainer import MealContainer
-from Config import Config
+from CredentialsConfig import CredentialsConfig
 
 class MysqlDatabase:
     def __init__(self):
-        self.credentials = Config.mysqlDbCredentials
+        self.credentials = CredentialsConfig.mysqlDbCredentials
         try:
             self._connect()
         except:
