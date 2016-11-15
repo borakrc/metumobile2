@@ -39,12 +39,8 @@ class MongoDatabase:
         MongoDatabase.lastImportedCafeteriaMenu = allMealsInFile
         for eachMeal in allMealsInFile:
             assert isinstance(eachMeal, MealContainer)
-            try:
-                self.db['cafeteriaMenu'].update({'date':eachMeal.date}, eachMeal.toJson(), upsert=True)
-            except Exception:
-                print "Encountered error during database write."
-                import traceback
-                print traceback.format_exc()
+            self.db['cafeteriaMenu'].update({'date':eachMeal.date}, eachMeal.toJson(), upsert=True)
+
 
 
     def insertCafeteriaRating(self, day, month, year, dinnerName, rating, remoteIp, datetime):
