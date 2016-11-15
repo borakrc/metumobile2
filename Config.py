@@ -17,7 +17,7 @@ class Config:
         )
     else:
         os = 'Linux'
-        debug = True
+        debug = False
         serverIp = "144.122.156.67"
         staticFolderPath = "/home/ncc-mobileapp/metumobile2/imageUploads/"
         dynamicFolderPath = "/home/ncc-mobileapp/metumobile2/dynamicImages/"
