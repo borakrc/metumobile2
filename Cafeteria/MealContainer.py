@@ -1,6 +1,10 @@
+from MealDetailsContainer import MealDetailsContainer
+
+
 class MealContainer:
     def __init__(self, date, mealDetailsContainer):
         self.date = date
+        assert isinstance(mealDetailsContainer, MealDetailsContainer)
         self.details = mealDetailsContainer
 
     def serialize(self):

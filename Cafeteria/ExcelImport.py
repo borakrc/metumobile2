@@ -93,4 +93,4 @@ class ExcelImport:
             import traceback
             print traceback.format_exc()
 
-        MysqlDatabase().setCafeteriaMenu(self.allMealsInFile)
+        #MysqlDatabase().setCafeteriaMenu(self.allMealsInFile)
