@@ -1,4 +1,5 @@
 class MealMenuContainer(object):
+
     def __init__(self, main, pastaOrRice, soup, extra1=None, extra2=None, extra3=None):
         self.main = main
         self.pastaOrRice = pastaOrRice
@@ -8,13 +9,14 @@ class MealMenuContainer(object):
         self.extra3 = extra3
 
     def serialize(self):
-        return (
-            [self.main,
+        return ([
+            self.main,
             self.pastaOrRice,
             self.soup,
             self.extra1,
             self.extra2,
-            self.extra3]
+            self.extra3
+            ]
         )
 
     def toJson(self):

@@ -2,6 +2,7 @@ import pymysql.cursors
 from Cafeteria.MealContainer import MealContainer
 from CredentialsConfig import CredentialsConfig
 
+
 class MysqlDatabase:
     def __init__(self):
         self.credentials = CredentialsConfig.mysqlDbCredentials
@@ -76,4 +77,3 @@ class MysqlDatabase:
         self.connection.commit()
 
         return
-
