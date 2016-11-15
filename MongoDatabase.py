@@ -8,6 +8,7 @@ class MongoDatabase:
     def __init__(self):
         self.credentials = CredentialsConfig.mongoDbCredentials
         try:
+            from datetime import datetime
             from pymongo import MongoClient
             if Config.os == 'Windows':
                 pass
@@ -16,6 +17,7 @@ class MongoDatabase:
                 self.db = self.client.admin
                 self.db.authenticate(self.credentials.user, self.credentials.password)#
                 self.db = self.client.metumobile
+            print ("db connection successful! " + str(datetime.now()))
         except:
             print ("db connection failed!")
             self.client.close()
@@ -37,12 +39,8 @@ class MongoDatabase:
         MongoDatabase.lastImportedCafeteriaMenu = allMealsInFile
         for eachMeal in allMealsInFile:
             assert isinstance(eachMeal, MealContainer)
-            try:
-                self.db['cafeteriaMenu'].update({'date':eachMeal.date}, eachMeal.toJson(), upsert=True)
-            except Exception:
-                print "Encountered error during database write."
-                import traceback
-                print traceback.format_exc()
+            self.db['cafeteriaMenu'].update({'date':eachMeal.date}, eachMeal.toJson(), upsert=True)
+
 
 
     def insertCafeteriaRating(self, day, month, year, dinnerName, rating, remoteIp, datetime):
@@ -54,16 +52,10 @@ class MongoDatabase:
     def getMealRating(self, mealId):
         results = self.db['cafeteriaRating'].find({"mealId": mealId})
         jsonableArray = []
-        sum = 0
-        count = 0
-        for each in results:
-            sum += each['rating']
-            count += 1
-        try:
-            average = float(sum) / count
-        except:
-            return 0
-        return average
+        _sum, index = 0, 0  # if results empty
+        for index, each in enumerate(results):
+            _sum += each['rating']
+        return float(_sum) / (index+1)
 
     def getMeal(self, mealId):
         raise NotImplementedError

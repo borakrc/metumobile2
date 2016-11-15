@@ -87,10 +87,6 @@ class ExcelImport:
     def _importAllMealsToDb(self):
         from MysqlDatabase import MysqlDatabase
 
-        try:
-            MongoDatabase().setCafeteriaMenu(self.allMealsInFile)
-        except:
-            import traceback
-            print traceback.format_exc()
+        MongoDatabase().setCafeteriaMenu(self.allMealsInFile)
 
         #MysqlDatabase().setCafeteriaMenu(self.allMealsInFile)
