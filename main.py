@@ -27,7 +27,9 @@ app = Flask(__name__)
 
 def cacheVersion():
     import hashlib
-    md5Hash = hashlib.md5(str(lastModificationTime)).hexdigest()
+    # return new cache every time clients ask.
+    # md5Hash = hashlib.md5(str(lastModificationTime)).hexdigest()
+    md5Hash = hashlib.md5(str(datetime.now())).hexdigest()
     return jsonify(cacheVersion=md5Hash)
 
 
