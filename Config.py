@@ -1,16 +1,20 @@
+from Helpers.DbCredentials import DbCredentials
+import os
 
 
 class Config:
     serverType = "Deployment"
-
+    home = os.path.dirname(__file__)
     if serverType == 'Test':
         os = 'Windows'
         debug = True
         serverIp = "127.0.0.1"
-        staticFolderPath = "C:\Users\john\PycharmProjects\metumobile\imageUploads\\"
-        dynamicFolderPath = "C:\Users\john\PycharmProjects\metumobile\dynamicImages\\"
-        loggerPath = 'C:\Users\john\PycharmProjects\metumobile\log.txt'
-        cafeteriaMenuExcelPath = 'C:\Users\john\PycharmProjects\metumobile\Cafeteria\cafeteriaMenu.xlsx'
+        staticFolderPath = os.path.join(home, "imageUploads")
+        dynamicFolderPath = os.path.join(home, "dynamicImages")
+        loggerPath = os.path.join(home, 'log.txt')
+        cafeteriaMenuExcelPath = os.path.join(
+                home, 'Cafeteria', 'cafeteriaMenu.xlsx'
+        )
     else:
         os = 'Linux'
         debug = False
