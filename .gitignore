@@ -2,3 +2,4 @@ CredentialsConfig.py
 *.pyc
 *.xml
 .idea/metumobile2.iml
+cafeteriaMenu_*
