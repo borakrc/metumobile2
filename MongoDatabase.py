@@ -8,6 +8,7 @@ class MongoDatabase:
     def __init__(self):
         self.credentials = CredentialsConfig.mongoDbCredentials
         try:
+            from datetime import datetime
             from pymongo import MongoClient
             if Config.os == 'Windows':
                 pass
@@ -16,6 +17,7 @@ class MongoDatabase:
                 self.db = self.client.admin
                 self.db.authenticate(self.credentials.user, self.credentials.password)#
                 self.db = self.client.metumobile
+            print ("db connection successful! " + str(datetime.now()))
         except:
             print ("db connection failed!")
             self.client.close()
