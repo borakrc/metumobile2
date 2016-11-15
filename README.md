@@ -15,5 +15,3 @@ Note: This version has missed files.
 2-Clone the file using git clone etc...
 
 3-Use the following-up comment: pip install -r requirements.txt
-
-**TODO:ADD THE NEXT SETTINGS**

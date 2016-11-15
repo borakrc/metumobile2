@@ -4,7 +4,7 @@ class AcademicCalendar:
     def __init__(self):
         pass
 
-    def getAcademicCalendar(self): # TODO will be deleted when not used by any client.
+    def getAcademicCalendar(self): # will be deleted when not used by any client.
         calendarRecords = []
         for record in self._getCalendarData():
             try:
