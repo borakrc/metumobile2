@@ -178,6 +178,41 @@ def cacheBooklets():
     return cacheVersion()
 
 
+@app.route('/featuredApps/ios/')
+def iosFeaturedApps():
+    links = [
+        {
+        "en_appName": "Radio ODTU Northern Cyprus Studios",
+        "tr_appName": "Radyo ODTU Kuzey Kıbrıs Stüdyoları",
+        "storeLink": "https://itunes.apple.com/tr/app/radyo-odtu-kks/id1126479317"
+        }
+    ]
+    return jsonify(FeaturedApps=links)
+
+@app.route('/featuredApps/android/')
+def androidFeaturedApps():
+    links = [
+        {
+        "en_appName": "Radio ODTU Northern Cyprus Studios",
+        "tr_appName": "Radyo ODTU Kuzey Kıbrıs Stüdyoları",
+        "storeLink": "https://play.google.com/store/apps/details?id=com.tanss.radyoodtukks"
+        }
+    ]
+    return jsonify(FeaturedApps=links)
+
+@app.route('/featuredApps/windows/')
+def windowsFeaturedApps():
+    links = [
+        {
+        "en_appName": "Radio ODTU Northern Cyprus Studios",
+        "tr_appName": "Radyo ODTU Kuzey Kıbrıs Stüdyoları",
+        "storeLink": "https://www.microsoft.com/en-us/store/p/radyo-odtu-k%C4%B1br%C4%B1s/9nblggh52pwh"
+        }
+    ]
+    return jsonify(FeaturedApps=links)
+
+
+
 @app.route("/")
 def rootPage():
     return SiteMap.siteMapString
