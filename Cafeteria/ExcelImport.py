@@ -63,8 +63,8 @@ class ExcelImport:
 
             dish = {}
             dish['tr_name'] = self.ws['P' + str(rowNumber)].value
-            dish['en_name'] = self.ws['R' + str(rowNumber)].value
-            dish['proteinGrams'] = self.ws['Q' + str(rowNumber)].value
+            dish['en_name'] = self.ws['Q' + str(rowNumber)].value
+            dish['proteinGrams'] = self.ws['R' + str(rowNumber)].value
             dish['calorie'] = self.ws['S' + str(rowNumber)].value
             dishes['side'] = dish
 
