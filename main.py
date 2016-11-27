@@ -119,9 +119,9 @@ def cacheShuttle():
 @app.route('/cafeteriamenu/')
 def cafeteriaMenu():
     if request.values.get('version') == 1.1:
-        return jsonify(CafeteriaMenu=Cafeteria.getSchedule(version=1.1))
+        return jsonify(CafeteriaMenu=Cafeteria().getSchedule(version=1.1))
     else:
-        return jsonify(CafeteriaMenu=Cafeteria.getSchedule(version=1.0))
+        return jsonify(CafeteriaMenu=Cafeteria().getSchedule(version=1.0))
 
 
 @app.route('/cafeteriamenu/cacheversion/')
