@@ -38,8 +38,8 @@ class MongoDatabase:
             return jsonableArray
         else:
             from datetime import datetime
-            results = self.db['cafeteriaMenu'].find({})
-            #results = self.db['cafeteriaMenu'].find({"endTime": {"$gt": datetime.now()}})
+            #results = self.db['cafeteriaMenu'].find({})
+            results = self.db['cafeteriaMenu'].find({"endTime": {"$gt": datetime.now()}})
             jsonableArray = []
             for each in results:
                 each['endTime'] = each['endTime'].isoformat()
