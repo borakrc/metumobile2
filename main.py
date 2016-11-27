@@ -122,6 +122,11 @@ def cafeteriaMenu():
     return jsonify(CafeteriaMenu=Cafeteria().getSchedule(version=version))
 
 
+@app.route('/services/cafeteria/upcomingmeals/')
+def cafeteriaUpcomingMeals():
+    version = request.values.get('version')
+    return jsonify(CafeteriaMenu=Cafeteria().getSchedule(version=version))
+
 @app.route('/cafeteriamenu/cacheversion/')
 def cacheCafeteria():
     return cacheVersion()
