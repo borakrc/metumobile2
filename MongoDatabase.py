@@ -36,9 +36,10 @@ class MongoDatabase:
 
                 jsonableArray.append(mealInOldFormat)
             return jsonableArray
-        elif version >= 1.1:
+        else:
             from datetime import datetime
-            results = self.db['cafeteriaMenu'].find({"endTime": {"$gt": datetime.now()}})
+            results = self.db['cafeteriaMenu'].find({})
+            #results = self.db['cafeteriaMenu'].find({"endTime": {"$gt": datetime.now()}})
             jsonableArray = []
             for each in results:
                 each['endTime'] = each['endTime'].isoformat()
@@ -97,4 +98,6 @@ class MongoDatabase:
         oldMeal['details']['tr_name'] = newMeal['tr_name']
         oldMeal['details']['end'] = newMeal['endTime']
         oldMeal['details']['start'] = newMeal['startTime']
+
+        return oldMeal
 
