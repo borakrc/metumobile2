@@ -36,7 +36,7 @@ class MongoDatabase:
 
                 jsonableArray.append(mealInOldFormat)
             return jsonableArray
-        else:
+        elif version >= 1.1:
             from datetime import datetime
             results = self.db['cafeteriaMenu'].find({"endTime": {"$gt": datetime.now()}})
             jsonableArray = []
