@@ -3,7 +3,7 @@ class Cafeteria:
         pass
 
     @staticmethod
-    def getSchedule():
+    def getSchedule(version=1.0):
         from MongoDatabase import MongoDatabase
-        return MongoDatabase().getCafeteriaMenu()
+        return MongoDatabase().getCafeteriaMenu(version)
 
