@@ -4,5 +4,5 @@ class Cafeteria:
 
     def getSchedule(self, version):
         from MongoDatabase import MongoDatabase
-        return MongoDatabase().getCafeteriaMenu(version)
+        return MongoDatabase().getCafeteriaMenu(version if version > 1.0 else 1.0 )
 
