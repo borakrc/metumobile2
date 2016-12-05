@@ -106,9 +106,22 @@ class ShuttleLocation:
                 location['updatetime'] = location['devicetime'].isoformat()
                 del location['devicetime']
                 location['isActive'] = True
-                locationArray.append(location)
+                isUpToDate = self._checkIsLastUpdateTimeBiggerThanMinutes(15, location)
+                if isUpToDate is True:
+                    pass
+                else:
+                    locationArray.append(location)
 
             resultDict = {}
             resultDict['isActive'] = True
             resultDict['locationArray'] = locationArray
             return resultDict
+
+    def _checkIsLastUpdateTimeBiggerThanMinutes(self, minutes, location):
+        lastUpdateTime = location['updatetime']
+        import datetime
+        timeDifference = lastUpdateTime - datetime.datetime.now()
+        if timeDifference.min > minutes:
+            return True
+        else:
+            return False
