@@ -117,7 +117,7 @@ class ShuttleLocation:
     def _checkIsLastUpdateTimeBiggerThanMinutes(self, minutes, location):
         lastUpdateTime = location['updatetime']
         import datetime
-        timeDifference = lastUpdateTime - datetime.datetime.now()
+        timeDifference = datetime.datetime.now() - lastUpdateTime
         if (timeDifference.seconds / 60) > minutes:
             return True
         else:
