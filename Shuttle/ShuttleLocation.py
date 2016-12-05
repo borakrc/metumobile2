@@ -111,6 +111,10 @@ class ShuttleLocation:
 
             resultDict = {}
             resultDict['isActive'] = self._isAtLeastOneShuttleActive(locationArray)
+
+            for each in locationArray:
+                each['updatetime'] = each['updatetime'].isoformat()
+
             resultDict['locationArray'] = locationArray
             return resultDict
 
