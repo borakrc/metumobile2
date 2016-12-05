@@ -105,13 +105,9 @@ class ShuttleLocation:
             for location in cursor.fetchall():
                 location['updatetime'] = location['servertime']
                 del location['servertime']
-                location['isActive'] = True
                 isUpToDate = self._checkIsLastUpdateTimeBiggerThanMinutes(15, location)
-                if isUpToDate is True:
-                    pass
-                else:
-                    location['updatetime'] = location['updatetime'].isoformat()
-                    locationArray.append(location)
+                location['isActive'] = not isUpToDate
+                locationArray.append(location)
 
             resultDict = {}
             resultDict['isActive'] = True
