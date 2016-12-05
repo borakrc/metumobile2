@@ -103,13 +103,14 @@ class ShuttleLocation:
             locationArray = []
 
             for location in cursor.fetchall():
-                location['updatetime'] = location['devicetime'].isoformat()
+                location['updatetime'] = location['devicetime']
                 del location['devicetime']
                 location['isActive'] = True
                 isUpToDate = self._checkIsLastUpdateTimeBiggerThanMinutes(15, location)
                 if isUpToDate is True:
                     pass
                 else:
+                    location['updatetime'] = location['updatetime'].isoformat()
                     locationArray.append(location)
 
             resultDict = {}
