@@ -110,7 +110,7 @@ class ShuttleLocation:
                 locationArray.append(location)
 
             resultDict = {}
-            resultDict['isActive'] = True
+            resultDict['isActive'] = self._isAtLeastOneShuttleActive(locationArray)
             resultDict['locationArray'] = locationArray
             return resultDict
 
@@ -122,3 +122,9 @@ class ShuttleLocation:
             return True
         else:
             return False
+
+    def _isAtLeastOneShuttleActive(self, locationArray):
+        for each in locationArray:
+            if each['isActive'] is True:
+                return True
+        return False
