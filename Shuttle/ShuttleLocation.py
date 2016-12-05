@@ -93,7 +93,7 @@ class ShuttleLocation:
             refinedList = ','.join(str(a) for a in idArray)
 
             sql = """select
-                id, latitude, longitude, devicetime, deviceid
+                id, latitude, longitude, devicetime, deviceid, servertime
                 from positions
                 where id in (%s)""" % refinedList
 
@@ -103,8 +103,8 @@ class ShuttleLocation:
             locationArray = []
 
             for location in cursor.fetchall():
-                location['updatetime'] = location['devicetime']
-                del location['devicetime']
+                location['updatetime'] = location['servertime']
+                del location['servertime']
                 location['isActive'] = True
                 isUpToDate = self._checkIsLastUpdateTimeBiggerThanMinutes(15, location)
                 if isUpToDate is True:
