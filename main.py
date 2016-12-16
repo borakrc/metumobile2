@@ -123,7 +123,7 @@ def cafeteriaMenu():
         version = float(version)
     except:
         version = 1.0
-    return jsonify(CafeteriaMenu=Cafeteria().getSchedule(version=version))
+    return jsonify(CafeteriaMenu=Cafeteria().getUpcomingSchedule(version=version))
 
 
 @app.route('/services/cafeteria/upcomingmeals/')
@@ -133,7 +133,13 @@ def cafeteriaUpcomingMeals():
         version = float(version)
     except:
         version = 1.0
-    return jsonify(CafeteriaMenu=Cafeteria().getSchedule(version=version))
+    return jsonify(CafeteriaMenu=Cafeteria().getUpcomingSchedule(version=version))
+
+
+@app.route('/services/cafeteria/allmeals/')
+def cafeteriaAllMeals():
+    return jsonify(CafeteriaMenu=Cafeteria().getAllMeals())
+
 
 @app.route('/cafeteriamenu/cacheversion/')
 def cacheCafeteria():

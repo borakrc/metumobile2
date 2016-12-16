@@ -22,7 +22,7 @@ class MongoDatabase:
             print ("db connection failed!")
             self.client.close()
 
-    def getCafeteriaMenu(self, version):
+    def getUpcomingCafeteriaMenu(self, version):
         if version == 1.0:
             from datetime import datetime
             results = self.db['cafeteriaMenu'].find({"endTime": {"$gt": datetime.now()}})
@@ -100,4 +100,17 @@ class MongoDatabase:
         oldMeal['details']['start'] = newMeal['startTime']
 
         return oldMeal
+
+    def getAllCafeteriaMenu(self):
+        results = self.db['cafeteriaMenu'].find({})
+        jsonableArray = []
+        for each in results:
+            try:
+                each['endTime'] = each['endTime'].isoformat()
+                each['startTime'] = each['startTime'].isoformat()
+                each['_id'] = str(each['_id'])
+                jsonableArray.append(each)
+            except:
+                pass
+        return jsonableArray
 
