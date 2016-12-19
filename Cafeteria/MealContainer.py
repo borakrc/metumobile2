@@ -1,4 +1,4 @@
-from MealDetailsContainer import MealDetailsContainer
+from Cafeteria.MealDetailsContainer import MealDetailsContainer
 
 
 class MealContainer:

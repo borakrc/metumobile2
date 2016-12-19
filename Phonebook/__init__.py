@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from MetuPhonebookBridge import PhonebookBridge
+from Phonebook.MetuPhonebookBridge import PhonebookBridge
 
 
 class Phonebook:
