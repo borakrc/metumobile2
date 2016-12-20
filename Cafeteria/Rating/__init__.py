@@ -28,9 +28,40 @@ class CafeteriaRating:
 
         return "200"
 
-    def getMealRating(self, mealId):
-        try:
-            return MongoDatabase().getMealRating(ObjectId(mealId))
-        except:
-            return 0
+    def getMealRating(self, mealId=None):
+        if mealId:
+            try:
+                return MongoDatabase().getMealRating(ObjectId(mealId))
+            except:
+                return 0
+        else:
+            mealIdAndDates = self._findAllMealIds()
+            self._appendMealRatings(mealIdAndDates)
+            return mealIdAndDates
 
+    def _findAllMealIds(self):
+        import urllib, json
+        from Config import Config
+        url = Config.serverRootLink + "/services/cafeteria/upcomingmeals/?version=1.1"
+        response = urllib.urlopen(url).read()
+        jsonEndpointData = json.loads(response)
+        cafeteriaMenuArray = jsonEndpointData['CafeteriaMenu']
+        mealsArray = []
+        for eachMeal in cafeteriaMenuArray:
+            meal = {}
+            meal['_id'] = eachMeal['_id']
+            meal['startTime'] = eachMeal['startTime']
+            mealsArray.append(meal)
+
+        return mealsArray
+
+    def _appendMealRatings(self, mealIdAndDates):
+        import urllib, json
+        from Config import Config
+
+        for eachMeal in mealIdAndDates:
+            url = Config.serverRootLink + "/cafeteria/rating/"+eachMeal['_id']
+            response = urllib.urlopen(url)
+            jsonEndpointData = json.loads(response.read())
+            rating = jsonEndpointData['mealRating']
+            eachMeal['rating'] = rating
