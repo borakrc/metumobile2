@@ -47,6 +47,25 @@ def getImageProcessorDynamicFile(fileName):
 
     return response
 
+
+@app.route('/services/excelexport/<path:path>')
+def excelImportService(path):
+    from flask import send_from_directory
+    from Admin.ExcelExport import ExcelExport
+    from Config import Config
+    from Helpers.JsonApi import JsonApi
+
+    export = ExcelExport(jsonUrl= "http://localhost:1072/" + path, nameOfArrayVariableToListInExcelExportFile=JsonApi().findNameOfTheArrayAtTheTopLevel())
+    exportFileName = export.do()
+
+    response = send_from_directory(Config.dynamicFilesFolderPath, exportFileName,
+                                   as_attachment=True,
+                                   attachment_filename=exportFileName
+                                   )
+
+    return response
+
+
 @app.route('/announcements/category', defaults={'categoryId': -1})
 @app.route('/announcements/category/<categoryId>/')
 def fetchAnnouncementCategory(categoryId):
