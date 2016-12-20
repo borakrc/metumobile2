@@ -22,7 +22,7 @@ class DayBusses(object):
                                  {"hour": hour + 1, "minute": 00, "tr_name": "Muze", "en_name": "Museum"}
                                  ]}
                 dailyBuses.append(bus)
-                
+
         if weekDay <= 7:
             for hour in [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]:
                 bus = {'index': 0, 'price': 0.90, 'tr_destination': 'ODTU KKK', 'en_destination': 'METU NCC',
