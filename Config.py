@@ -5,6 +5,7 @@ from os import path
 class Config:
     serverType = "Deployment"
     home = path.dirname(__file__)
+    dynamicFilesFolderPath = path.join(home, 'dynamicFiles')
     if serverType == 'Test':
         os = 'Windows'
         debug = True
@@ -26,3 +27,4 @@ class Config:
 
     serverPort = 1072
     serverRootLink = "http://" + serverIp + ":" + str(serverPort)
+    cafeteriaServiceUrl = "http://144.122.156.67:1072/services/cafeteria"
