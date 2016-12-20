@@ -11,8 +11,9 @@ class ExcelExport:
         from datetime import datetime
         self._getDataFromUrl()
         dest_filename = "Excel_Export_" + str(datetime.now().isoformat()) + ".xlsx"
+        dest_filename = dest_filename.replace(":", ".")
         xlsxExportDestination = self._putDataIntoExcel(data=self.arrayToBePutInExcelExportFile, dest_filename=dest_filename)
-        return xlsxExportDestination
+        return dest_filename
 
     def _getDataFromUrl(self):
         import urllib, json
@@ -24,7 +25,6 @@ class ExcelExport:
         self.arrayToBePutInExcelExportFile = jsonEndpointData[self.nameOfArrayVariableToListInExcelExportFile]
 
     def _putDataIntoExcel(self, data, dest_filename):
-        dest_filename = dest_filename.replace(":", ".")
         from openpyxl import Workbook
         wb = Workbook()
 
