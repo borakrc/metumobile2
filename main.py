@@ -146,6 +146,13 @@ def cacheCafeteria():
     return cacheVersion()
 
 
+@app.route('/services/cafeteriarate/meals/')
+def cafeteriaRateMeals():
+    mealRatings = CafeteriaRating().getMealRating()
+    result = jsonify(mealRatings = mealRatings)
+    return result
+
+
 @app.route('/upcomingevents/')
 def upcomingEvents():
     return jsonify(UpcomingEvents=Events().getUpcomingEvents())
