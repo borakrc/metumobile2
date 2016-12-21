@@ -42,7 +42,7 @@ class CafeteriaRating:
     def _findAllMealIds(self):
         import urllib, json
         from Config import Config
-        url = Config.cafeteriaServiceUrl + "/upcomingmeals/?version=1.1"
+        url = Config.cafeteriaServiceUrl + "/allmeals/"
         response = urllib.urlopen(url).read()
         jsonEndpointData = json.loads(response)
         cafeteriaMenuArray = jsonEndpointData['CafeteriaMenu']
