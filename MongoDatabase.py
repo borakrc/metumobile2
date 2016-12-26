@@ -59,15 +59,9 @@ class MongoDatabase:
     def insertCafeteriaRating(self, day, month, year, dinnerName, rating, remoteIp, datetime):
         self.db['cafeteriaRating'].insert({'day':day, 'month':month, 'year':year, 'dinnerName':dinnerName, 'rating':rating, 'remoteIp':remoteIp, 'lastUpdateTime': datetime})
 
-    def insertCafeteriaRatingByMealId(self, mealId, rating, remoteIp, datetime):
-        self.db['cafeteriaRating'].insert({'mealId':mealId, 'rating':rating, 'remoteIp':remoteIp, 'lastUpdateTime': datetime})
-
-    def insertCafeteriaRatingCommentByMealId(self, mealId, rating,
-                                             remoteIp, datetime, comment):
-        self.db['cafeteriaRating'].insert({
-            'mealId': mealId, 'rating': rating, 'remoteIp': remoteIp,
-            'lastUpdateTime': datetime, "comment": comment
-            })
+    def insertCafeteriaRatingByMealId(self, mealId, rating, remoteIp, datetime, comment):
+        self.db['cafeteriaRating'].insert({'mealId': mealId, 'rating': rating, 'remoteIp': remoteIp,
+                                           'lastUpdateTime': datetime, 'comment': comment})
 
     def getMealRating(self, mealId):
         results = self.db['cafeteriaRating'].find({"mealId": mealId})

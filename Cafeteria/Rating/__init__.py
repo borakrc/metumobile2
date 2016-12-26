@@ -20,17 +20,13 @@ class CafeteriaRating:
 
         # if MongoDatabase.getMeal(mealId = mealId) == None:
         #     return "Error: Meal Doesn't Exist."
-        comment = request.values.get("comment") or None
+        comment = ""
+        try:
+            comment = request.values.get("comment")
+        except:
+            pass
         remoteIp = md5(request.remote_addr).hexdigest()
-        # refactor by creating object and inserting id like php
-        if comment:
-            MongoDatabase().insertCafeteriaRatingByMealId(
-                    ObjectId(mealId), rating, remoteIp, datetime.now()
-            )
-        else:
-            MongoDatabase().insertCafeteriaRatingCommentByMealId(
-                    ObjectId(mealId), rating, remoteIp, datetime.now(), comment
-            )
+        MongoDatabase().insertCafeteriaRatingByMealId(ObjectId(mealId), rating, remoteIp, datetime.now(), comment)
 
         return "200"
 
