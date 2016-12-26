@@ -15,7 +15,7 @@ class Config:
         dynamicFolderPath = path.join(home, "dynamicImages")
         loggerPath = path.join(home, 'log.txt')
         cafeteriaMenuExcelPath = path.join(home, 'Cafeteria', 'cafeteriaMenu.xlsx')
-        
+
     else:
         os = 'Linux'
         debug = False
