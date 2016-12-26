@@ -65,3 +65,8 @@ class CafeteriaRating:
             jsonEndpointData = json.loads(response.read())
             rating = jsonEndpointData['mealRating']
             eachMeal['rating'] = rating
+
+    def getMealRateCount(self, mealId):
+        mealRateCount = MongoDatabase().getMealRateCount(mealId=mealId)
+        return mealRateCount
+
