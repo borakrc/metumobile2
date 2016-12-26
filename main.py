@@ -55,7 +55,7 @@ def excelImportService(path):
     from Config import Config
     from Helpers.JsonApi import JsonApi
 
-    export = ExcelExport(jsonUrl= "http://localhost:1072/" + path, nameOfArrayVariableToListInExcelExportFile=JsonApi().findNameOfTheArrayAtTheTopLevel())
+    export = ExcelExport(jsonUrl= "http://localhost:1072/" + path + "?expandforexcelexport=1", nameOfArrayVariableToListInExcelExportFile=JsonApi().findNameOfTheArrayAtTheTopLevel())
     exportFileName = export.do()
 
     response = send_from_directory(Config.dynamicFilesFolderPath, exportFileName,
@@ -167,7 +167,13 @@ def cacheCafeteria():
 
 @app.route('/services/cafeteriarate/meals/')
 def cafeteriaRateMeals():
+    try:
+        expandforexcelexport = request.values.get('expandforexcelexport') in ['true', '1']
+    except:
+        expandforexcelexport = False
     mealRatings = CafeteriaRating().getMealRating()
+    if expandforexcelexport:
+        mealRatings = Cafeteria().expandRatingsWithMeal(mealRatings)
     result = jsonify(mealRatings = mealRatings)
     return result
 
