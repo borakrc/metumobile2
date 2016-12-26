@@ -72,7 +72,9 @@ class MongoDatabase:
         return float(_sum) / (index+1)
 
     def getMeal(self, mealId):
-        raise NotImplementedError
+        results = self.db['cafeteriaMenu'].find({"_id": mealId})
+        for each in results:
+            return each
 
     def _convertNewMealToOldMeal(self, newMeal):
         oldMeal = {}
