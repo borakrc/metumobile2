@@ -71,6 +71,13 @@ class MongoDatabase:
             _sum += each['rating']
         return float(_sum) / (index+1)
 
+    def getMealRateCount(self, mealId):
+        results = self.db['cafeteriaRating'].find({"mealId": mealId})
+        rateCount = 0
+        for mealRate in results:
+            rateCount += 1
+        return rateCount
+
     def getMeal(self, mealId):
         results = self.db['cafeteriaMenu'].find({"_id": mealId})
         for each in results:
