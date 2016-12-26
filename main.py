@@ -180,6 +180,8 @@ def cafeteriaRateMeals():
     mealRatings = CafeteriaRating().getMealRating()
     if expandforexcelexport:
         mealRatings = Cafeteria().expandRatingsWithMeal(mealRatings)
+        for mealRating in mealRatings:
+            mealRating['numberOfRates'] = CafeteriaRating().getMealRateCount(mealId = mealRating['_id'])
     result = jsonify(mealRatings = mealRatings)
     return result
 
