@@ -272,7 +272,6 @@ def windowsFeaturedApps():
     return jsonify(FeaturedApps=links)
 
 
-
 @app.route("/")
 def rootPage():
     return SiteMap.siteMapString
