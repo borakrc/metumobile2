@@ -159,6 +159,12 @@ def cafeteriaUpcomingMeals():
 def cafeteriaAllMeals():
     return jsonify(CafeteriaMenu=Cafeteria().getAllMeals())
 
+@app.route('/services/cafeteria/meals/<mealId>')
+def cafeteriaMeals(mealId=None):
+    if not mealId:
+        return cafeteriaAllMeals
+    else:
+        return Cafeteria().getMeal(mealId=mealId)
 
 @app.route('/cafeteriamenu/cacheversion/')
 def cacheCafeteria():

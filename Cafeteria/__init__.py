@@ -22,7 +22,6 @@ class Cafeteria:
 
         return mealRatings
 
-
-
-
-
+    def getMeal(self, mealId):
+        meal = MongoDatabase().getMeal(mealId=mealId)
+        return meal
