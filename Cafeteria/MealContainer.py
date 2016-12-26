@@ -17,4 +17,3 @@ class MealContainer:
         jsonified = self.__dict__
         jsonified['details'] = jsonified['details'].toJson()
         return jsonified
-
