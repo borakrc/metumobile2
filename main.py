@@ -272,23 +272,9 @@ def windowsFeaturedApps():
     return jsonify(FeaturedApps=links)
 
 
-
 @app.route("/")
 def rootPage():
     return SiteMap.siteMapString
-
-@app.route("/radio/app_links")
-def radyoApps():
-    """ The endpoint to show radio app download links
-    """
-    links = [
-        { 
-        "ios": "https://itunes.apple.com/tr/app/radyo-odtu-kks/id1126479317?mt=8",
-        "windows": "https://www.microsoft.com/en-us/store/p/radyo-odtu-k%C4%B1br%C4%B1s/9nblggh52pwh",
-        "android": "https://play.google.com/store/apps/details?id=com.tanss.radyoodtukks",
-        }
-    ]
-    return jsonify(Apps=links)
 
 
 if __name__ == "__main__":
