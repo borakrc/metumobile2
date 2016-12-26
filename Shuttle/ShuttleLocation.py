@@ -93,7 +93,7 @@ class ShuttleLocation:
             refinedList = ','.join(str(a) for a in idArray)
 
             sql = """select
-                id, latitude, longitude, devicetime, deviceid
+                id, latitude, longitude, devicetime, deviceid, servertime
                 from positions
                 where id in (%s)""" % refinedList
 
@@ -103,12 +103,33 @@ class ShuttleLocation:
             locationArray = []
 
             for location in cursor.fetchall():
-                location['updatetime'] = location['devicetime'].isoformat()
+                location['updatetime'] = location['servertime']
+                del location['servertime']
                 del location['devicetime']
-                location['isActive'] = True
+                isUpToDate = self._checkIsLastUpdateTimeBiggerThanMinutes(15, location)
+                location['isActive'] = not isUpToDate
                 locationArray.append(location)
 
             resultDict = {}
-            resultDict['isActive'] = True
+            resultDict['isActive'] = self._isAtLeastOneShuttleActive(locationArray)
+
+            for each in locationArray:
+                each['updatetime'] = each['updatetime'].isoformat()
+
             resultDict['locationArray'] = locationArray
             return resultDict
+
+    def _checkIsLastUpdateTimeBiggerThanMinutes(self, minutes, location):
+        lastUpdateTime = location['updatetime']
+        import datetime
+        timeDifference = datetime.datetime.now() - lastUpdateTime
+        if (timeDifference.seconds / 60) > minutes:
+            return True
+        else:
+            return False
+
+    def _isAtLeastOneShuttleActive(self, locationArray):
+        for each in locationArray:
+            if each['isActive'] is True:
+                return True
+        return False

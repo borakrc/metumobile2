@@ -29,7 +29,7 @@ def cacheVersion():
     import hashlib
     # return new cache every time clients ask.
     # md5Hash = hashlib.md5(str(lastModificationTime)).hexdigest()
-    md5Hash = hashlib.md5(str(datetime.now())).hexdigest()
+    md5Hash = hashlib.md5(str(datetime.now().date())).hexdigest()
     return jsonify(cacheVersion=md5Hash)
 
 
@@ -46,6 +46,25 @@ def getImageProcessorDynamicFile(fileName):
         response = send_from_directory(Config.staticFolderPath, fileName)
 
     return response
+
+
+@app.route('/services/excelexport/<path:path>')
+def excelImportService(path):
+    from flask import send_from_directory
+    from Admin.ExcelExport import ExcelExport
+    from Config import Config
+    from Helpers.JsonApi import JsonApi
+
+    export = ExcelExport(jsonUrl= "http://localhost:1072/" + path + "?expandforexcelexport=1", nameOfArrayVariableToListInExcelExportFile=JsonApi().findNameOfTheArrayAtTheTopLevel())
+    exportFileName = export.do()
+
+    response = send_from_directory(Config.dynamicFilesFolderPath, exportFileName,
+                                   as_attachment=True,
+                                   attachment_filename=exportFileName
+                                   )
+
+    return response
+
 
 @app.route('/announcements/category', defaults={'categoryId': -1})
 @app.route('/announcements/category/<categoryId>/')
@@ -118,12 +137,53 @@ def cacheShuttle():
 
 @app.route('/cafeteriamenu/')
 def cafeteriaMenu():
-    return jsonify(CafeteriaMenu=Cafeteria.getSchedule())
+    version = request.values.get('version')
+    try:
+        version = float(version)
+    except:
+        version = 1.0
+    return jsonify(CafeteriaMenu=Cafeteria().getUpcomingSchedule(version=version))
 
+
+@app.route('/services/cafeteria/upcomingmeals/')
+def cafeteriaUpcomingMeals():
+    version = request.values.get('version')
+    try:
+        version = float(version)
+    except:
+        version = 1.0
+    return jsonify(CafeteriaMenu=Cafeteria().getUpcomingSchedule(version=version))
+
+
+@app.route('/services/cafeteria/allmeals/')
+def cafeteriaAllMeals():
+    return jsonify(CafeteriaMenu=Cafeteria().getAllMeals())
+
+@app.route('/services/cafeteria/meals/<mealId>')
+def cafeteriaMeals(mealId=None):
+    if not mealId:
+        return cafeteriaAllMeals
+    else:
+        return Cafeteria().getMeal(mealId=mealId)
 
 @app.route('/cafeteriamenu/cacheversion/')
 def cacheCafeteria():
     return cacheVersion()
+
+
+@app.route('/services/cafeteriarate/meals/')
+def cafeteriaRateMeals():
+    try:
+        expandforexcelexport = request.values.get('expandforexcelexport') in ['true', '1']
+    except:
+        expandforexcelexport = False
+    mealRatings = CafeteriaRating().getMealRating()
+    if expandforexcelexport:
+        mealRatings = Cafeteria().expandRatingsWithMeal(mealRatings)
+        for mealRating in mealRatings:
+            mealRating['numberOfRates'] = CafeteriaRating().getMealRateCount(mealId = mealRating['_id'])
+    result = jsonify(mealRatings = mealRatings)
+    return result
 
 
 @app.route('/upcomingevents/')
@@ -176,6 +236,41 @@ def booklets():
 @app.route('/booklets/cacheversion/')
 def cacheBooklets():
     return cacheVersion()
+
+
+@app.route('/featuredApps/ios/')
+def iosFeaturedApps():
+    links = [
+        {
+        "en_appName": "Radio ODTU Northern Cyprus Studios",
+        "tr_appName": "Radyo ODTU Kuzey Kıbrıs Stüdyoları",
+        "storeLink": "https://itunes.apple.com/tr/app/radyo-odtu-kks/id1126479317"
+        }
+    ]
+    return jsonify(FeaturedApps=links)
+
+@app.route('/featuredApps/android/')
+def androidFeaturedApps():
+    links = [
+        {
+        "en_appName": "Radio ODTU Northern Cyprus Studios",
+        "tr_appName": "Radyo ODTU Kuzey Kıbrıs Stüdyoları",
+        "storeLink": "https://play.google.com/store/apps/details?id=com.tanss.radyoodtukks"
+        }
+    ]
+    return jsonify(FeaturedApps=links)
+
+@app.route('/featuredApps/windows/')
+def windowsFeaturedApps():
+    links = [
+        {
+        "en_appName": "Radio ODTU Northern Cyprus Studios",
+        "tr_appName": "Radyo ODTU Kuzey Kıbrıs Stüdyoları",
+        "storeLink": "https://www.microsoft.com/en-us/store/p/radyo-odtu-k%C4%B1br%C4%B1s/9nblggh52pwh"
+        }
+    ]
+    return jsonify(FeaturedApps=links)
+
 
 
 @app.route("/")
