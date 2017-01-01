@@ -10,13 +10,10 @@ class MongoDatabase:
         try:
             from datetime import datetime
             from pymongo import MongoClient
-            if Config.os == 'Windows':
-                pass
-            else:
-                self.client = MongoClient(self.credentials.ip)
-                self.db = self.client.admin
-                self.db.authenticate(self.credentials.user, self.credentials.password)#
-                self.db = self.client.metumobile
+            self.client = MongoClient(self.credentials.ip)
+            self.db = self.client.admin
+            self.db.authenticate(self.credentials.user, self.credentials.password)#
+            self.db = self.client.metumobile
             print ("db connection successful! " + str(datetime.now()))
         except:
             print ("db connection failed!")
@@ -78,9 +75,8 @@ class MongoDatabase:
         return rateCount
 
     def getMeal(self, mealId):
-        results = self.db['cafeteriaMenu'].find({"_id": mealId})
-        for each in results:
-            return each
+        result = self.db['cafeteriaMenu'].find_one({"_id": mealId})
+        return result
 
     def _convertNewMealToOldMeal(self, newMeal):
         oldMeal = {}
