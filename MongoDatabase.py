@@ -68,6 +68,8 @@ class MongoDatabase:
         return float(_sum) / (index+1)
 
     def getMealRateCount(self, mealId):
+        from bson import ObjectId
+        mealId = ObjectId(mealId)
         results = self.db['cafeteriaRating'].find({"mealId": mealId})
         rateCount = 0
         for mealRate in results:
