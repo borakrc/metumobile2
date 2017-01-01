@@ -14,7 +14,13 @@ class Cafeteria:
     def expandRatingsWithMeal(self, mealRatings):
         for meal in mealRatings:
             mealId = meal['_id']
-            mealDetails = MongoDatabase().getMeal(mealId=mealId)
+
+            import urllib, json
+            from Config import Config
+            url = Config.cafeteriaServiceUrl + "/meals/"+mealId
+            response = urllib.urlopen(url).read()
+            jsonEndpointData = json.loads(response)
+            mealDetails = jsonEndpointData
             meal['tr_name'] = mealDetails['tr_name']
             meal['dishes.main.tr_name'] = mealDetails['dishes']['main']['tr_name']
             meal['dishes.side.tr_name'] = mealDetails['dishes']['side']['tr_name']
