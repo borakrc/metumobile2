@@ -162,7 +162,7 @@ def cafeteriaAllMeals():
 @app.route('/services/cafeteria/meals/<mealId>')
 def cafeteriaMeals(mealId):
     from bson import ObjectId
-    return jsonify(Cafeteria().getMeal(mealId=ObjectId("583b55d138148a98717a1cd6")))
+    return jsonify(Cafeteria().getMeal(mealId=ObjectId(mealId)))
 
 @app.route('/cafeteriamenu/cacheversion/')
 def cacheCafeteria():
