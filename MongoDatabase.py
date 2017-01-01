@@ -76,6 +76,7 @@ class MongoDatabase:
 
     def getMeal(self, mealId):
         result = self.db['cafeteriaMenu'].find_one({"_id": mealId})
+        result['_id'] = str(result['_id'])
         return result
 
     def _convertNewMealToOldMeal(self, newMeal):
