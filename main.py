@@ -162,9 +162,10 @@ def cafeteriaAllMeals():
 @app.route('/services/cafeteria/meals/<mealId>')
 def cafeteriaMeals(mealId=None):
     if not mealId:
-        return cafeteriaAllMeals
+        return cafeteriaAllMeals()
     else:
-        return Cafeteria().getMeal(mealId=mealId)
+        from bson import ObjectId
+        return Cafeteria().getMeal(mealId=ObjectId(mealId))
 
 @app.route('/cafeteriamenu/cacheversion/')
 def cacheCafeteria():
