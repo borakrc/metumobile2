@@ -29,7 +29,7 @@ def cacheVersion():
     import hashlib
     # return new cache every time clients ask.
     # md5Hash = hashlib.md5(str(lastModificationTime)).hexdigest()
-    md5Hash = hashlib.md5(str(datetime.now().date())).hexdigest()
+    md5Hash = hashlib.md5(str(lastModificationTime)+str(datetime.now().date())).hexdigest()
     return jsonify(cacheVersion=md5Hash)
 
 
