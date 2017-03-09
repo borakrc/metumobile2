@@ -46,10 +46,10 @@ def upload():
         os.mkdir(target)
 
     selected_files = request.files.getlist("file")
-    time_stamp = datetime.now().strftime('%d-%m-%y')#_%H:%M:%S')
+    time_stamp = datetime.now().isoformat()
     for file in selected_files:
         file_name = time_stamp+'_'+file.filename
-        destination = "/".join([target, file_name])
+        destination = path.join(Config.dynamicFilesFolderPath, file_name)# "/".join([target, file_name])
         file.save(destination)
 
     return render_template("complete.html")
