@@ -49,7 +49,7 @@ def upload():
     time_stamp = datetime.now().isoformat()
     for file in selected_files:
         file_name = time_stamp+'_'+file.filename
-        destination = path.join(Config.dynamicFilesFolderPath, file_name)# "/".join([target, file_name])
+        destination = os.path.join(Config.dynamicFilesFolderPath, file_name)# "/".join([target, file_name])
         file.save(destination)
 
     return render_template("complete.html")
