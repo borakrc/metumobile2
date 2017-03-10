@@ -4,7 +4,7 @@
 from datetime import datetime, timedelta
 from random import randint
 
-from MetuEventsBridge import MetuEventsDb
+from Events.MetuEventsBridge import MetuEventsDb
 from Helpers.RandomStringGenerator import randomString
 
 

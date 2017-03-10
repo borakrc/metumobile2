@@ -1,4 +1,4 @@
-from MetuAnnouncementsBridge import MetuAcademicAndDormCalendarBridge
+from Announcements.MetuAnnouncementsBridge import MetuAcademicAndDormCalendarBridge
 
 class Announcements:
     def fetchCategory(self, categoryId):
