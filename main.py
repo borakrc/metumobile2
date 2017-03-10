@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import sys
+import sys, os
 from datetime import datetime
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from Announcements import Announcements
 from Booklets import Booklets
 from Cafeteria import Cafeteria
@@ -32,6 +32,29 @@ def cacheVersion():
     md5Hash = hashlib.md5(str(lastModificationTime)+str(datetime.now().date())).hexdigest()
     return jsonify(cacheVersion=md5Hash)
 
+# BEG MENU UPLOAD_______
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
+
+@app.route("/services/cafeteria/excelupload")
+def index():
+    return render_template("upload.html")
+
+@app.route("/services/cafeteria/exceluploadrawpost", methods=['POST'])
+def upload():
+    target = os.path.join(APP_DIR, "Cafeteria")
+    if not os.path.isdir(target):
+        os.mkdir(target)
+
+    selected_files = request.files.getlist("file")
+    time_stamp = datetime.now().isoformat()
+    for file in selected_files:
+        file_name = time_stamp+'_'+file.filename
+        destination = os.path.join(Config.dynamicFilesFolderPath, file_name)# "/".join([target, file_name])
+        file.save(destination)
+        ExcelImport(destination).updateCafeteriaMenu()
+
+    return render_template("complete.html")
+# _______END MENU UPLOAD
 
 @app.route('/images/<fileName>')#
 def getImageProcessorDynamicFile(fileName):
@@ -46,7 +69,6 @@ def getImageProcessorDynamicFile(fileName):
         response = send_from_directory(Config.staticFolderPath, fileName)
 
     return response
-
 
 @app.route('/services/excelexport/<path:path>')
 def excelImportService(path):
