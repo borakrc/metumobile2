@@ -9,7 +9,7 @@
 
 	<h3>Upload menu/s in Excel format</h3>
 
-	<form id="upload-form" action="{{ url_for('exceluploadrawpost')}}" method="POST" enctype="multipart/form-data">
+	<form id="upload-form" action="{{ url_for('upload')}}" method="POST" enctype="multipart/form-data">
 		<!--Multiple dosya upload'a izin veriyor-->
 		<input type="file" name="file" multiple>
 		<input type="submit" value="send">
