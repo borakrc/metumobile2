@@ -39,7 +39,7 @@ APP_DIR = os.path.dirname(os.path.abspath(__file__))
 def index():
     return render_template("upload.html")
 
-@app.route("/upload", methods=['POST'])
+@app.route("/services/cafeteria/excelupload", methods=['POST'])
 def upload():
     target = os.path.join(APP_DIR, "Cafeteria")
     if not os.path.isdir(target):
@@ -51,6 +51,7 @@ def upload():
         file_name = time_stamp+'_'+file.filename
         destination = os.path.join(Config.dynamicFilesFolderPath, file_name)# "/".join([target, file_name])
         file.save(destination)
+        ExcelImport(destination).updateCafeteriaMenu()
 
     return render_template("complete.html")
 # _______END MENU UPLOAD
