@@ -35,11 +35,11 @@ def cacheVersion():
 # BEG MENU UPLOAD_______
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 
-@app.route("/uploader")
+@app.route("/services/cafeteria/excelupload")
 def index():
     return render_template("upload.html")
 
-@app.route("/services/cafeteria/excelupload", methods=['POST'])
+@app.route("/services/cafeteria/exceluploadrawpost", methods=['POST'])
 def upload():
     target = os.path.join(APP_DIR, "Cafeteria")
     if not os.path.isdir(target):
