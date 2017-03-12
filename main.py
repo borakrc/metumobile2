@@ -35,22 +35,23 @@ def cacheVersion():
 # BEG MENU UPLOAD_______
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 
-@app.route("/uploader")
+@app.route("/services/cafeteria/excelupload")
 def index():
     return render_template("upload.html")
 
-@app.route("/upload", methods=['POST'])
+@app.route("/services/cafeteria/exceluploadrawpost", methods=['POST'])
 def upload():
     target = os.path.join(APP_DIR, "Cafeteria")
     if not os.path.isdir(target):
         os.mkdir(target)
 
     selected_files = request.files.getlist("file")
-    time_stamp = datetime.now().strftime('%d-%m-%y')#_%H:%M:%S')
+    time_stamp = datetime.now().isoformat()
     for file in selected_files:
         file_name = time_stamp+'_'+file.filename
-        destination = "/".join([target, file_name])
+        destination = os.path.join(Config.dynamicFilesFolderPath, file_name)# "/".join([target, file_name])
         file.save(destination)
+        ExcelImport(destination).updateCafeteriaMenu()
 
     return render_template("complete.html")
 # _______END MENU UPLOAD

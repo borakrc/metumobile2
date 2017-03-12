@@ -96,8 +96,8 @@ class MetuAcademicAndDormCalendarBridge:
             eachAnnouncement['tr_name'] = eachAnnouncement['name']
             return
         announcementNameArray = eachAnnouncement['name'].split('/')
-        tr_annNameArray = announcementNameArray[0:nOfSplitters/2+1]
-        en_annNameArray = announcementNameArray[(nOfSplitters/2)+1:]
+        tr_annNameArray = announcementNameArray[(nOfSplitters/2)+1:]
+        en_annNameArray = announcementNameArray[0:nOfSplitters/2+1]
 
         tr_annName = ""
         for each in tr_annNameArray:

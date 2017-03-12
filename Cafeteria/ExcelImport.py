@@ -10,6 +10,9 @@ from MongoDatabase import MongoDatabase
 
 
 class ExcelImport:
+    def __init__(self, excelPath = Config.cafeteriaMenuExcelPath):
+         self.excelPath = excelPath
+
     def updateCafeteriaMenu(self):
         self.allMealsInFile = []
         self._openExcelFile()
@@ -18,7 +21,7 @@ class ExcelImport:
 
 
     def _openExcelFile(self):
-        self.wb = load_workbook(Config.cafeteriaMenuExcelPath)
+        self.wb = load_workbook(self.excelPath)
         self.ws = self.wb.active
 
     def _parseOpenedExcelFile(self):
