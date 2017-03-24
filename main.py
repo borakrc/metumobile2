@@ -236,6 +236,8 @@ def phonebookRaw():
 def cachePhonebook():
     data = phonebook()
     md5 = hashlib.md5(data).hexdigest()
+    print ("data = ", data)
+    print ("md5 = ", md5)
     return jsonify(cacheVersion=data)
 
 
