@@ -14,9 +14,9 @@ class MongoDatabase:
             self.db = self.client.admin
             self.db.authenticate(self.credentials.user, self.credentials.password)#
             self.db = self.client.metumobile
-            print ("db connection successful! " + str(datetime.now()))
+            print ("mongodb connection successful! " + str(datetime.now()))
         except:
-            print ("db connection failed!")
+            print ("mongodb connection failed!")
             self.client.close()
 
     def getUpcomingCafeteriaMenu(self, version):
