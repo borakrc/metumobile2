@@ -38,7 +38,7 @@ def cacheVersionOf(data):
 
 def readFromWeb(url):
     import urllib
-    return urllib.urlopen(url).read()
+    return str(urllib.urlopen(url).read())
 
 # BEG MENU UPLOAD_______
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
