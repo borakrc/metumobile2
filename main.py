@@ -235,7 +235,7 @@ def phonebookRaw():
 @app.route('/phonebook/cacheversion/')
 def cachePhonebook():
     data = phonebook()
-    md5 = hashlib.md5(data).hexdigest()
+    md5 = hashlib.md5(str(data)).hexdigest()
     return jsonify(cacheVersion=md5)
 
 
