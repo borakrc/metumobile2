@@ -237,7 +237,7 @@ def phonebookRaw():
 def cachePhonebook():
     data = phonebook()
     md5Hash = hashlib.md5(str(data)).hexdigest()
-    return jsonify(cacheVersion=md5Hash)
+    return jsonify(cacheVersion=data)
 
 
 @app.route('/academiccalendar/')
