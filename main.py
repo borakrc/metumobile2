@@ -32,6 +32,14 @@ def cacheVersion():
     md5Hash = hashlib.md5(str(lastModificationTime)+str(datetime.now().date())).hexdigest()
     return jsonify(cacheVersion=md5Hash)
 
+def cacheVersionOf(data):
+    md5Hash = hashlib.md5(str(data)).hexdigest()
+    return jsonify(cacheVersion=md5Hash)
+
+def readFromWeb(url):
+    import urllib
+    return urllib.urlopen(url).read()
+
 # BEG MENU UPLOAD_______
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -97,7 +105,9 @@ def fetchAnnouncementCategory(categoryId):
 
 @app.route('/announcements/cacheversion/')
 def announcementsCache():
-    return cacheVersion()
+    data1 = readFromWeb(Config.announcementServiceUrl + "/0")
+    data2 = readFromWeb(Config.announcementServiceUrl + "/1")
+    return cacheVersionOf(cacheVersionOf(data1)+cacheVersionOf(data2))
 
 
 @app.route("/admincommands/updatecafeteriamenu")
@@ -128,7 +138,7 @@ def whatsTheServerIp():
 
 @app.route('/ip/cacheversion/')
 def whatsTheServerIpCache():
-    return cacheVersion()
+    return cacheVersionOf(whatsTheServerIp())
 
 
 @app.route('/shuttleschedule/')
@@ -154,7 +164,7 @@ def multipleShuttleLocations():
 
 @app.route('/shuttleschedule/cacheversion/')
 def cacheShuttle():
-    return cacheVersion()
+    return cacheVersionOf(shuttleSchedule())
 
 
 @app.route('/cafeteriamenu/')
@@ -188,7 +198,7 @@ def cafeteriaMeals(mealId):
 
 @app.route('/cafeteriamenu/cacheversion/')
 def cacheCafeteria():
-    return cacheVersion()
+    return cacheVersionOf(Cafeteria().getAllMeals())
 
 
 @app.route('/services/cafeteriarate/meals/')
@@ -218,7 +228,7 @@ def upcomingEventsRaw():
 
 @app.route('/upcomingevents/cacheversion/')
 def cacheEvents():
-    return cacheVersion()
+    return cacheVersionOf(upcomingEventsRaw())
 
 
 @app.route('/phonebook/')
@@ -234,9 +244,7 @@ def phonebookRaw():
 
 @app.route('/phonebook/cacheversion/')
 def cachePhonebook():
-    data = phonebook()
-    md5 = hashlib.md5(str(data)).hexdigest()
-    return jsonify(cacheVersion=md5)
+    return cacheVersionOf(phonebook())
 
 
 @app.route('/academiccalendar/')
@@ -248,7 +256,7 @@ def academicCalendar():
 
 @app.route('/academiccalendar/cacheversion/')
 def cacheAcademicCalendar():
-    return cacheVersion()
+    return cacheVersionOf(academicCalendar())
 
 
 @app.route('/booklets/')
@@ -258,7 +266,7 @@ def booklets():
 
 @app.route('/booklets/cacheversion/')
 def cacheBooklets():
-    return cacheVersion()
+    return cacheVersionOf(booklets())
 
 
 @app.route('/featuredApps/ios/')
@@ -298,6 +306,25 @@ def windowsFeaturedApps():
 @app.route("/")
 def rootPage():
     return SiteMap.siteMapString
+
+
+@app.route("/services/cache/mastercache")
+def mastercache():
+    return cacheVersionOf(
+        cacheVersionOf(cacheBooklets()) +
+        cacheVersionOf(cacheAcademicCalendar()) +
+        cacheVersionOf(cachePhonebook()) +
+        cacheVersionOf(cacheEvents()) +
+        cacheVersionOf(cacheCafeteria()) +
+        cacheVersionOf(cacheShuttle()) +
+        cacheVersionOf(whatsTheServerIpCache()) +
+        cacheVersionOf(announcementsCache())
+    )
+
+
+
+
+
 
 
 if __name__ == "__main__":
