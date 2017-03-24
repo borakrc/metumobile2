@@ -232,13 +232,13 @@ def phonebookRaw():
     return jsonify(Phonebook=Phonebook().getRawPhonebookRecords())
 
 
-@app.route('/phonebook/cacheversion/')
-def cachePhonebook():
-    data = phonebook()
-    md5 = hashlib.md5(data).hexdigest()
-    print ("data = ", data)
-    print ("md5 = ", md5)
-    return jsonify(cacheVersion=data)
+# @app.route('/phonebook/cacheversion/')
+# def cachePhonebook():
+#     data = phonebook()
+#     md5 = hashlib.md5(data).hexdigest()
+#     print ("data = ", data)
+#     print ("md5 = ", md5)
+#     return jsonify(cacheVersion=md5)
 
 
 @app.route('/academiccalendar/')
