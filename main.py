@@ -16,6 +16,7 @@ from Shuttle.ShuttleLocation import ShuttleLocation
 from Shuttle import Shuttle
 from Admin import Admin
 from ImageProcessor import ImageProcessor
+import hashlib
 
 lastModificationTime = datetime.now()
 
@@ -26,7 +27,6 @@ app = Flask(__name__)
 
 
 def cacheVersion():
-    import hashlib
     # return new cache every time clients ask.
     # md5Hash = hashlib.md5(str(lastModificationTime)).hexdigest()
     md5Hash = hashlib.md5(str(lastModificationTime)+str(datetime.now().date())).hexdigest()
@@ -223,7 +223,9 @@ def cacheEvents():
 
 @app.route('/phonebook/')
 def phonebook():
-    return jsonify(Phonebook=Phonebook().getPhonebookRecords())
+    data = Phonebook().getPhonebookRecords()
+
+    return jsonify(Phonebook=data)
 
 
 @app.route('/phonebook/raw/')
@@ -233,7 +235,9 @@ def phonebookRaw():
 
 @app.route('/phonebook/cacheversion/')
 def cachePhonebook():
-    return cacheVersion()
+    data = phonebook()
+    md5Hash = hashlib.md5(str(data)).hexdigest()
+    return jsonify(cacheVersion=md5Hash)
 
 
 @app.route('/academiccalendar/')
