@@ -33,7 +33,8 @@ def cacheVersion():
     return jsonify(cacheVersion=md5Hash)
 
 def cacheVersionOf(data):
-    md5Hash = hashlib.md5(str(data)).hexdigest()
+    data = str(data)
+    md5Hash = hashlib.md5(data).hexdigest()
     return jsonify(cacheVersion=md5Hash)
 
 def readFromWeb(url):
@@ -312,14 +313,14 @@ def rootPage():
 @app.route("/services/cache/mastercache")
 def mastercache():
     return cacheVersionOf(
-        cacheVersionOf(cacheBooklets()) +
-        cacheVersionOf(cacheAcademicCalendar()) +
-        cacheVersionOf(cachePhonebook()) +
-        cacheVersionOf(cacheEvents()) +
-        cacheVersionOf(cacheCafeteria()) +
-        cacheVersionOf(cacheShuttle()) +
-        cacheVersionOf(whatsTheServerIpCache()) +
-        cacheVersionOf(announcementsCache())
+        str(cacheBooklets()) +
+        str(cacheAcademicCalendar()) +
+        str(cachePhonebook()) +
+        str(cacheEvents()) +
+        str(cacheCafeteria()) +
+        str(cacheShuttle()) +
+        str(whatsTheServerIpCache()) +
+        str(announcementsCache())
     )
 
 
