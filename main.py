@@ -108,7 +108,7 @@ def fetchAnnouncementCategory(categoryId):
 def announcementsCache():
     data1 = readFromWeb(Config.announcementServiceUrl + "/0")
     data2 = readFromWeb(Config.announcementServiceUrl + "/1")
-    return cacheVersionOf(cacheVersionOf(data1)+cacheVersionOf(data2))
+    return cacheVersionOf((data1)+(data2))
 
 
 @app.route("/admincommands/updatecafeteriamenu")
