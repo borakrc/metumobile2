@@ -308,7 +308,7 @@ def windowsFeaturedApps():
 
 @app.route('/services/weather/overall')
 def getDailyWeather():
-    return Weather().getDaily()
+    return jsonify(DailyForecast=Weather().getDaily())
 
 
 @app.route("/")
