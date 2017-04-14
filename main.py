@@ -17,6 +17,7 @@ from Shuttle import Shuttle
 from Admin import Admin
 from ImageProcessor import ImageProcessor
 import hashlib
+from Weather import Weather
 
 lastModificationTime = datetime.now()
 
@@ -303,6 +304,11 @@ def windowsFeaturedApps():
         }
     ]
     return jsonify(FeaturedApps=links)
+
+
+@app.route('/services/weather/overall')
+def getDailyWeather():
+    return Weather().getDaily()
 
 
 @app.route("/")
