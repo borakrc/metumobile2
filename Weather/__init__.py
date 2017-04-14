@@ -15,7 +15,8 @@ class Weather:
         currentAndForecastWeather = {}
         currentAndForecastWeather['units'] = jsonEndpointData['query']['results']['channel']['units']
         currentAndForecastWeather['current'] = jsonEndpointData['query']['results']['channel']['item']['condition']
-        currentAndForecastWeather['forecast'] = jsonEndpointData['query']['results']['channel']['item']['forecast']
+        currentAndForecastWeather['today'] = jsonEndpointData['query']['results']['channel']['item']['forecast'][0]
+        currentAndForecastWeather['tomorrow'] = jsonEndpointData['query']['results']['channel']['item']['forecast'][1]
 
         for dayForecast in currentAndForecastWeather['forecast']:
             dayForecast['imageUrl'] = 'http://l.yimg.com/a/i/us/we/52/' + dayForecast['code'] + '.gif'
