@@ -24,7 +24,7 @@ class Phonebook:
                 recordDict['position'] = eachRecord['position']
                 recordDict['officeTel'] = eachRecord['oftelno']
                 recordDict['unit'] = eachRecord['unit']
-                recordDict['ofno'] = eachRecord['ofno']
+                recordDict['officeLocation'] = eachRecord['ofno']
                 if eachRecord['email']:
                     try:
                         recordDict['email'] = str(eachRecord['email']) + "@metu.edu.tr"
