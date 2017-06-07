@@ -14,6 +14,7 @@ class Phonebook:
             if eachRecord['durum'] == "aktif":
                 recordDict = {}
                 recordDict['title'] = eachRecord['title']
+                recordDict['id'] = eachRecord['id']
                 recordDict['pinned'] = False
                 name = eachRecord['name']
                 if name[0] == " " or name[0] == "!":
