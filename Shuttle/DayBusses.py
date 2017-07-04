@@ -16,24 +16,13 @@ class DayBusses(object):
                                  {"hour": hour, "minute": 25, "tr_name": "Kalkanli", "en_name": "Kalkanli"}]}
                 dailyBuses.append(bus)
 
-                if hour==19:
-                    bus = {'index': 0, 'price': 1.00, 'tr_destination': 'Terminal', 'en_destination': 'Terminal',
-                           'stops': [{"hour": hour, "minute": 30, "tr_name": "2. Yurt", "en_name": "2nd Dormitory"},
-                                     {"hour": hour, "minute": 35, "tr_name": "Kalkanli", "en_name": "Kalkanli"},
-                                     {"hour": hour, "minute": 40, "tr_name": "ODTU Cemberi", "en_name": "METU "
-                                                                                                       "Roundabout"},
-                                     {"hour": hour, "minute": 45, "tr_name": "Kopru Durak", "en_name": "Bridge "
-                                                                                                          "Stop"},
-                                     {"hour": hour, "minute": 50, "tr_name": "Muze", "en_name": "Museum"}
-                                     ]}
-                else:
-                    bus = {'index': 0, 'price': 1.00, 'tr_destination': 'Terminal', 'en_destination': 'Terminal',
-                       'stops': [{"hour": hour, "minute": 45, "tr_name": "2. Yurt", "en_name": "2nd Dormitory"},
-                                 {"hour": hour, "minute": 50, "tr_name": "Kalkanli", "en_name": "Kalkanli"},
-                                 {"hour": hour, "minute": 55, "tr_name": "ODTU Cemberi", "en_name": "METU Roundabout"},
-                                 {"hour": hour + 1, "minute": 00, "tr_name": "Kopru Durak", "en_name": "Bridge Stop"},
-                                 {"hour": hour + 1, "minute": 05, "tr_name": "Muze", "en_name": "Museum"}
-                                 ]}
+                bus = {'index': 0, 'price': 1.00, 'tr_destination': 'Terminal', 'en_destination': 'Terminal',
+                   'stops': [{"hour": hour, "minute": 45, "tr_name": "2. Yurt", "en_name": "2nd Dormitory"},
+                             {"hour": hour, "minute": 50, "tr_name": "Kalkanli", "en_name": "Kalkanli"},
+                             {"hour": hour, "minute": 55, "tr_name": "ODTU Cemberi", "en_name": "METU Roundabout"},
+                             {"hour": hour + 1, "minute": 00, "tr_name": "Kopru Durak", "en_name": "Bridge Stop"},
+                             {"hour": hour + 1, "minute": 05, "tr_name": "Muze", "en_name": "Museum"}
+                             ]}
                 dailyBuses.append(bus)
 
         if weekDay > 5:
@@ -46,24 +35,13 @@ class DayBusses(object):
                                  {"hour": hour, "minute": 25, "tr_name": "Kalkanli", "en_name": "Kalkanli"}]}
                 dailyBuses.append(bus)
 
-                if hour==19:
-                    bus = {'index': 0, 'price': 1.00, 'tr_destination': 'Terminal', 'en_destination': 'Terminal',
-                           'stops': [{"hour": hour, "minute": 30, "tr_name": "2. Yurt", "en_name": "2nd Dormitory"},
-                                     {"hour": hour, "minute": 35, "tr_name": "Kalkanli", "en_name": "Kalkanli"},
-                                     {"hour": hour, "minute": 40, "tr_name": "ODTU Cemberi", "en_name": "METU "
-                                                                                                       "Roundabout"},
-                                     {"hour": hour, "minute": 45, "tr_name": "Kopru Durak", "en_name": "Bridge "
-                                                                                                          "Stop"},
-                                     {"hour": hour, "minute": 50, "tr_name": "Muze", "en_name": "Museum"}
-                                     ]}
-                else:
-                    bus = {'index': 0, 'price': 1.00, 'tr_destination': 'Terminal', 'en_destination': 'Terminal',
-                       'stops': [{"hour": hour, "minute": 45, "tr_name": "2. Yurt", "en_name": "2nd Dormitory"},
-                                 {"hour": hour, "minute": 50, "tr_name": "Kalkanli", "en_name": "Kalkanli"},
-                                 {"hour": hour, "minute": 55, "tr_name": "ODTU Cemberi", "en_name": "METU Roundabout"},
-                                 {"hour": hour + 1, "minute": 00, "tr_name": "Kopru Durak", "en_name": "Bridge Stop"},
-                                 {"hour": hour + 1, "minute": 05, "tr_name": "Muze", "en_name": "Museum"}
-                                 ]}
+                bus = {'index': 0, 'price': 1.00, 'tr_destination': 'Terminal', 'en_destination': 'Terminal',
+                   'stops': [{"hour": hour, "minute": 45, "tr_name": "2. Yurt", "en_name": "2nd Dormitory"},
+                             {"hour": hour, "minute": 50, "tr_name": "Kalkanli", "en_name": "Kalkanli"},
+                             {"hour": hour, "minute": 55, "tr_name": "ODTU Cemberi", "en_name": "METU Roundabout"},
+                             {"hour": hour + 1, "minute": 00, "tr_name": "Kopru Durak", "en_name": "Bridge Stop"},
+                             {"hour": hour + 1, "minute": 05, "tr_name": "Muze", "en_name": "Museum"}
+                             ]}
                 dailyBuses.append(bus)
 
         return dailyBuses
