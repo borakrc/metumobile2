@@ -329,6 +329,10 @@ def mastercache():
         str(announcementsCache())
     )
 
+@app.route('/metu/ncc/cng/')
+def test():
+    return jsonify(MyTestValue=str(3.14))
+
 
 
 
