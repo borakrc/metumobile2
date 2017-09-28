@@ -34,7 +34,7 @@ def cacheVersion():
     return jsonify(cacheVersion=md5Hash)
 
 def cacheVersionOf(data):
-    data = str(data+1)
+    data = str(data)
     md5Hash = hashlib.md5(data).hexdigest()
     return jsonify(cacheVersion=md5Hash)
 
