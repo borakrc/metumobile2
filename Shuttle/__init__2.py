@@ -1,7 +1,7 @@
 from Shuttle.DayBusses2 import DayBusses2
 
 
-class Shuttle2:
+class Shuttle:
     def __init__2(self):
         pass
 
