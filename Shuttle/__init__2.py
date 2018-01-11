@@ -2,7 +2,7 @@ from Shuttle.DayBusses2 import DayBusses2
 
 
 class Shuttle2:
-    def __init__(self):
+    def __init__2(self):
         pass
 
     @staticmethod
