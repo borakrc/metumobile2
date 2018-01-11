@@ -151,6 +151,10 @@ def whatsTheServerIpCache():
 def shuttleSchedule():
     return jsonify(ShuttleSchedule=Shuttle.getWeeklySchedule())
 
+@app.route('/shuttleschedule2/')
+def shuttleSchedule():
+    return jsonify(ShuttleSchedule=Shuttle.getWeeklySchedule())
+
 
 @app.route('/shuttle/location/')
 def shuttleLocation():
