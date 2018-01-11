@@ -152,7 +152,7 @@ def shuttleSchedule():
     return jsonify(ShuttleSchedule=Shuttle.getWeeklySchedule())
 
 @app.route('/shuttleschedule2/')
-def shuttleSchedule():
+def shuttleSchedule2():
     return jsonify(ShuttleSchedule=Shuttle.getWeeklySchedule())
 
 
