@@ -1,15 +1,15 @@
-from Shuttle.DayBusses import DayBusses
+from Shuttle.DayBusses2 import DayBusses2
 
 
-class Shuttle:
+class Shuttle2:
     def __init__(self):
         pass
 
     @staticmethod
-    def getWeeklySchedule():
-        ShuttleSchedule = []
+    def getWeeklySchedule2():
+        ShuttleSchedule2 = []
         for weekDay in range(1, 8):
-            ShuttleSchedule.append({'day': weekDay})
-            ShuttleSchedule[weekDay-1]['buses'] = DayBusses().getMock(weekDay)
+            ShuttleSchedule2.append({'day': weekDay})
+            ShuttleSchedule2[weekDay-1]['buses'] = DayBusses2().getMock(weekDay)
 
-        return ShuttleSchedule
+        return ShuttleSchedule2
