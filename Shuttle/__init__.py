@@ -19,7 +19,7 @@ class Shuttle:
         ShuttleSchedule2 = []
         for dayType in range(1, 3):
             Schedule2 = []
-            Schedule2['buses'] = DayBusses2().getMock(dayType-1)
+            Schedule2.append({'buses':DayBusses2().getMock(dayType-1)})
             ShuttleSchedule2.append({'holiday': dayType})
             ShuttleSchedule2[dayType-1]['schedule']=(Schedule2)        
         return ShuttleSchedule2
