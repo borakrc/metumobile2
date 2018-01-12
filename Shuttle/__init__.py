@@ -24,5 +24,5 @@ class Shuttle:
                 Schedule2[weekDay-1]['buses'] = DayBusses2().getMock(weekDay)
             
             ShuttleSchedule2.append({'holiday': dayType})
-            ShuttleSchedule[dayType-1]['schedule'] = Schedule2
+          
         return ShuttleSchedule2
