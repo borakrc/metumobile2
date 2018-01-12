@@ -20,7 +20,7 @@ class DayBusses2(object):
                     dailyBuses.append(bus)
 
             return dailyBuses
-        elif
+        elif dayType==2
              if weekDay <= 7:
                 for hour in [8, 10, 12, 14, 16, 18, 20, 22, 00]:
                     bus = {'index': 0, 'price': 0.95, 'tr_depart_from' : 'Terminal', 'en _depart_from' : 'Terminal', 
