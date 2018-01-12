@@ -12,7 +12,7 @@ class DayBusses2(object):
                        'tr_destination': 'ODTU KKK', 'en_destination': 'METU NCC', 'departure_hour': hour,
                        'departure_minute': 5, 'arrive_hour': hour, 'arrive_minute': 45 }
                 dailyBuses.append(bus)
-                bus = {'index': 0, 'price': 0.95, 'tr_depart_from' : 'ODTU KKK', 'en _depart_from' : 'METU NCC', 
+                bus = {'index': 0, 'price': 0.1, 'tr_depart_from' : 'ODTU KKK', 'en _depart_from' : 'METU NCC', 
                        'tr_destination': 'Terminal', 'en_destination': 'Terminal', 'departure_hour': hour,
                        'departure_minute': 45, 'arrive_hour': hour+1 , 'arrive_minute': 5 }
                 dailyBuses.append(bus)
@@ -24,7 +24,7 @@ class DayBusses2(object):
                        'tr_destination': 'ODTU KKK', 'en_destination': 'METU NCC', 'departure_hour': hour,
                        'departure_minute': 5, 'arrive_hour': hour, 'arrive_minute': 45 }
                 dailyBuses.append(bus)
-                bus = {'index': 0, 'price': 0.95, 'tr_depart_from' : 'ODTU KKK', 'en _depart_from' : 'METU NCC', 
+                bus = {'index': 0, 'price': 0.1, 'tr_depart_from' : 'ODTU KKK', 'en _depart_from' : 'METU NCC', 
                        'tr_destination': 'Terminal', 'en_destination': 'Terminal', 'departure_hour': hour,
                        'departure_minute': 45, 'arrive_hour': hour+1 , 'arrive_minute': 5 }
                 dailyBuses.append(bus)
