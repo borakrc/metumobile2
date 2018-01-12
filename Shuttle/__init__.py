@@ -23,8 +23,8 @@ class Shuttle:
                 Schedule2.append({'day': weekDay})
                 Schedule2[weekDay-1]['buses'] = DayBusses2().getMock(weekDay)
             
-            
-            ShuttleSchedule2[dayType-1]=({'schedule': Schedule2})
             ShuttleSchedule2.append({'holiday': dayType})
+            ShuttleSchedule2[dayType-1]=({'schedule': Schedule2})
+           
           
         return ShuttleSchedule2
