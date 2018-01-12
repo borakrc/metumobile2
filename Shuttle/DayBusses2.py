@@ -5,7 +5,7 @@ class DayBusses2(object):
     @staticmethod
     def getMock(dayType):
         dailyBuses = []
-        dayType = (dayType - 1)
+        
         if dayType == 0:
             for hour in [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 00]:
                 bus = {'index': 0, 'price': 0.95, 'tr_depart_from' : 'Terminal', 'en _depart_from' : 'Terminal', 
