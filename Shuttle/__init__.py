@@ -17,13 +17,12 @@ class Shuttle:
     @staticmethod
     def getWeeklySchedule2():
         ShuttleSchedule2 = []
-       
         for dayType in range(1, 3):
             Schedule2 = []
             for weekDay in range(1, 8):
                 Schedule2.append({'day': weekDay})
                 Schedule2[weekDay-1]['buses'] = DayBusses2().getMock(weekDay)
-            ShuttleSchedule2.append({'holiday': dayType})
+            ShuttleSchedule2[dayType-1]=({'holiday': dayType})
             ShuttleSchedule2[dayType-1]=({'schedule': Schedule2})
            
           
