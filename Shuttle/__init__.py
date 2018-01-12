@@ -18,7 +18,7 @@ class Shuttle:
     def getWeeklySchedule2():
         ShuttleSchedule2 = []
         for dayType in range(1, 3):
-            ShuttleSchedule2.append({'holiday': dayType})
+            ShuttleSchedule2.append({'holiday': 123})
             Schedule2 = []
             for weekDay in range(1, 8):
                 Schedule2.append({'day': weekDay})
