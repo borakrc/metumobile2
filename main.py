@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys, os
+
 from datetime import datetime
 from flask import Flask, jsonify, request, render_template
 from Announcements import Announcements
@@ -26,7 +27,19 @@ print ("Server is starting...")
 
 app = Flask(__name__)
 
-
+def encryption(clientSideEncryption):
+    #checks if the encryption values are same
+    if clientSideEncryption == generateServerSideEncryption():
+        return True
+    else:
+        return False
+    
+def generateServerSideEncryption():
+    #generate an encryption with date
+    return hashlib.md5(str(datetime.datetime.now().day)+str(datetime.datetime.now().week)+str(datetime.datetime.now().month))
+    
+    
+    
 def cacheVersion():
     # return new cache every time clients ask.
     # md5Hash = hashlib.md5(str(lastModificationTime)).hexdigest()
