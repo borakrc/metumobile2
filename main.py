@@ -36,10 +36,9 @@ def encryption(clientSideEncryption):
     
 def generateServerSideEncryption():
     #generate an encryption with date
-    return hashlib.md5(str(datetime.datetime.now().day)+str(datetime.datetime.now().week)+str(datetime.datetime.now().month))
-    
-    
-    
+    encryptiondata = hashlib.md5(str(lastModificationTime.day) + str(lastModificationTime.isocalendar()[1]) + str(lastModificationTime.month))
+    return encryptiondata.hexdigest()
+           
 def cacheVersion():
     # return new cache every time clients ask.
     # md5Hash = hashlib.md5(str(lastModificationTime)).hexdigest()
@@ -164,9 +163,12 @@ def whatsTheServerIpCache():
 def shuttleSchedule():
     return jsonify(ShuttleSchedule=Shuttle.getWeeklySchedule())
 
-@app.route('/shuttleschedule2/')
+@app.route('/shuttleschedule2/<clientSideEncryption>', methods=['GET'])
 def shuttleSchedule2():
-    return jsonify(ShuttleSchedule2=Shuttle.getWeeklySchedule2())
+    if(encryption('6ba3af5d7b2790e73f0de32e5c8c1798')):
+        return jsonify(ShuttleSchedule2=Shuttle.getWeeklySchedule2())
+    else:
+        return ' '
 
 
 @app.route('/shuttle/location/')
