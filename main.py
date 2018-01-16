@@ -27,17 +27,18 @@ print ("Server is starting...")
 
 app = Flask(__name__)
 
+    
+def generateServerSideEncryptionData():
+    #generate an encryption with date
+    encryptiondata = hashlib.md5(str(lastModificationTime.day) + str(lastModificationTime.isocalendar()[1]) + str(lastModificationTime.month))
+    return encryptiondata.hexdigest()
+
 def encryption(clientSideEncryptionData):
     #checks if the encryption values are same
     if clientSideEncryptionData == generateServerSideEncryptionData():
         return True
     else:
         return False
-    
-def generateServerSideEncryptionData():
-    #generate an encryption with date
-    encryptiondata = hashlib.md5(str(lastModificationTime.day) + str(lastModificationTime.isocalendar()[1]) + str(lastModificationTime.month))
-    return encryptiondata.hexdigest()
            
 def cacheVersion():
     # return new cache every time clients ask.
