@@ -27,14 +27,14 @@ print ("Server is starting...")
 
 app = Flask(__name__)
 
-def encryption(clientSideEncryption):
+def encryption(clientSideEncryptionData):
     #checks if the encryption values are same
-    if clientSideEncryption == generateServerSideEncryption():
+    if clientSideEncryptionData == generateServerSideEncryptionData():
         return True
     else:
         return False
     
-def generateServerSideEncryption():
+def generateServerSideEncryptionData():
     #generate an encryption with date
     encryptiondata = hashlib.md5(str(lastModificationTime.day) + str(lastModificationTime.isocalendar()[1]) + str(lastModificationTime.month))
     return encryptiondata.hexdigest()
@@ -163,12 +163,12 @@ def whatsTheServerIpCache():
 def shuttleSchedule():
     return jsonify(ShuttleSchedule=Shuttle.getWeeklySchedule())
 
-@app.route('/shuttleschedule2/<clientSideEncryption>', methods=['GET'])
+@app.route('/shuttleschedule2/<clientSideEncryptionData>', methods=['GET'])
 def shuttleSchedule2():
-    if(encryption('6ba3af5d7b2790e73f0de32e5c8c1798')):
+    if(encryption(clientSideEncryptionData)):
         return jsonify(ShuttleSchedule2=Shuttle.getWeeklySchedule2())
     else:
-        return ' '
+        return '2'
 
 
 @app.route('/shuttle/location/')
