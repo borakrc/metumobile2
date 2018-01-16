@@ -35,7 +35,8 @@ def generateServerSideEncryptionData():
 
 def encryption(clientSideEncryptionData):
     #checks if the encryption values are same
-    if clientSideEncryptionData == generateServerSideEncryptionData():
+    serverSideEncryptionData = generateServerSideEncryptionData()
+    if clientSideEncryptionData == serverSideEncryptionData :
         return True
     else:
         return False
@@ -168,10 +169,7 @@ def shuttleSchedule():
 def shuttleSchedule2():
     if(encryption(clientSideEncryptionData)):
         return jsonify(ShuttleSchedule2=Shuttle.getWeeklySchedule2())
-    else:
-        return '2'
-
-
+  
 @app.route('/shuttle/location/')
 def shuttleLocation():
     return jsonify(ShuttleLocation=ShuttleLocation().fetchAll())
