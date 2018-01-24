@@ -167,8 +167,8 @@ def shuttleSchedule():
 
 @app.route('/shuttleschedule2/<clientSideEncryptionData>', methods=['GET'])
 def shuttleSchedule2(clientSideEncryptionData):
-    if(encryption(clientSideEncryptionData)):
-        return jsonify(ShuttleSchedule2=Shuttle.getWeeklySchedule2())
+    #if(encryption(clientSideEncryptionData)):
+    return jsonify(ShuttleSchedule2=Shuttle.getWeeklySchedule2())
   
 @app.route('/shuttle/location/')
 def shuttleLocation():
