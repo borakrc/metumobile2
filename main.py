@@ -49,7 +49,7 @@ def cacheVersion():
 
 def cacheVersionOf(data):
     change=""
-    change=change+str(1)
+    change=change+str(2)
     
     data = str(data)+str(change)
     md5Hash = hashlib.md5(data).hexdigest()
