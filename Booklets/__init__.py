@@ -18,7 +18,7 @@ class Booklets:
 
     def _getBookletData(self):
         return [
-    ["SurvivalTurkish.jpg", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","http://intranet.ncc.metu.edu.tr/wp-content/uploads/2018/03/SurvivalTurkish.pdf", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","http://intranet.ncc.metu.edu.tr/wp-content/uploads/2018/03/SurvivalTurkish.pdf"],
+    ["survivalturkish.jpg", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","http://intranet.ncc.metu.edu.tr/wp-content/uploads/2018/03/SurvivalTurkish.pdf", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","http://intranet.ncc.metu.edu.tr/wp-content/uploads/2018/03/SurvivalTurkish.pdf"],
     ["defaultbookletpicture.jpg", "ÇEVRE TELEFON REHBERİ","http://intranet.ncc.metu.edu.tr/wp-content/uploads/2016/10/CEVRE_TELEFON_REHBERI_TR.pdf", "PHONE GUIDE","http://intranet.ncc.metu.edu.tr/wp-content/uploads/2016/10/CEVRE_TELEFON_REHBERI_ENG.pdf"],
     ["food.jpg", "MERKEZ KAFETERYA VE KANTİNLER","http://intranet.ncc.metu.edu.tr/wp-content/uploads/2016/08/KAFETERYA-TR.pdf", "MAIN CAFETERIA AND CANTEENS", "http://intranet.ncc.metu.edu.tr/wp-content/uploads/2016/08/KAFETERYA-ENG.pdf"],
     ["health.jpg", "MEDİKO","https://ncc.metu.edu.tr/sites/default/files/mediko-elkitabi.pdf", "MEDICO", "https://ncc.metu.edu.tr/sites/default/files/medico-healthcare-guide.pdf"],
