@@ -7,7 +7,7 @@ class DayBusses(object):
         dailyBuses = []
 
         if weekDay <= 7:
-            for hour in [8, 10, 12, 14, 16, 18, 20, 22, 00]:
+            for hour in [8, 10, 12, 14, 16, 18, 20, 22, 23]:
                 bus = {'index': 0, 'price': 0.95, 'tr_destination': 'ODTU KKK', 'en_destination': 'METU NCC',
                        'stops': [{"hour": hour, "minute": 5, "tr_name": "Terminal", "en_name": "Terminal"},
                                  {"hour": hour, "minute": 10, "tr_name": "Muze", "en_name": "Museum"},
