@@ -6,6 +6,7 @@ from CredentialsConfig import CredentialsConfig
 class MetuAcademicAndDormCalendarBridge:
     def __init__(self):
         self.credentials = CredentialsConfig.sinerjiDbCredentials
+        self.credentialsNew = CredentialsConfig.newAcademicDbCredentials
 
 
     def _connect(self):
