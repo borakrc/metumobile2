@@ -19,7 +19,7 @@ class MetuAcademicAndDormCalendarBridge:
             cursorclass=pymysql.cursors.DictCursor
         )
     def _connectNew(self):
-        self.connection = pymysql.connect(
+        self.connectionNew = pymysql.connect(
             user=self.credentialsNew.user,
             password=self.credentialsNew.password,
             host=self.credentialsNew.ip,
@@ -73,7 +73,7 @@ class MetuAcademicAndDormCalendarBridge:
         
     def _fetchAllNew(self):
         self._connectNew()
-        with self.connection.cursor() as cursor:
+        with self.connectionNew.cursor() as cursor:
             # Create a new record
             sql = """select
                     e.id,
