@@ -19,7 +19,7 @@ class MetuAcademicAndDormCalendarBridge:
             cursorclass=pymysql.cursors.DictCursor
         )
     def _connectNew(self):
-        self.connectionNew = pymysql.connect(
+        self.connection = pymysql.connect(
             user=self.credentialsNew.user,
             password=self.credentialsNew.password,
             host=self.credentialsNew.ip,
@@ -73,7 +73,7 @@ class MetuAcademicAndDormCalendarBridge:
         
     def _fetchAllNew(self):
         self._connectNew()
-        with self.connectionNew.cursor() as cursor:
+        with self.connection.cursor() as cursor:
             # Create a new record
             sql = """select
                     e.id,
@@ -102,7 +102,7 @@ class MetuAcademicAndDormCalendarBridge:
 
             # connection is not autocommit by default. So you must commit to save
             # your changes.
-            self.connectionNew.commit()
+            self.connection.commit()
             result = cursor.fetchall()
 
             announcementsShorterThan6Months = []
