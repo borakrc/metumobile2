@@ -274,12 +274,6 @@ def academicCalendar():
     result = MetuAcademicAndDormCalendarBridge().fetchAcademicAnnouncements()
     return jsonify(AcademicCalendar=result)
 
-@app.route('/academiccalendarnew/')
-def academicCalendar():
-    from Announcements.MetuAnnouncementsBridge import MetuAcademicAndDormCalendarBridge
-    result = MetuAcademicAndDormCalendarBridge().fetchAcademicAnnouncements()
-    return jsonify(AcademicCalendar=result)
-
 
 @app.route('/academiccalendar/cacheversion/')
 def cacheAcademicCalendar():
