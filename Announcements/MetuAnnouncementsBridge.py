@@ -60,8 +60,61 @@ class MetuAcademicAndDormCalendarBridge:
                     each['date_from'] = each['date_from'].isoformat()
                     announcementsShorterThan6Months.append(each)
             return announcementsShorterThan6Months
+        
+    def _fetchAllNew(self):
+        self._connect()
+        with self.connection.cursor() as cursor:
+            # Create a new record
+            sql = """select
+                    e.id,
+                    CASE es.sect_id
+                    WHEN '36' THEN 'Akademik'
+                    else 'Yurt'
+                    END as tipi,
+                    e.name,
+                    e.description,
+                    e.date_from,
+                    e.date_to
+                from
+                    b_calendar_event e, b_calendar_event_sect es
+                where
+                    e.active = 'Y' and
+                    e.deleted = 'N' and
+                    e.cal_type = 'company_calendar' and
+                    e.id = es.event_id and
+                    es.sect_id in (36,37) and
+                    e.date_to >= CURDATE()
+                ORDER BY
+                e.date_from
+                ASC
+                    """
+            cursor.execute(sql)
+
+            # connection is not autocommit by default. So you must commit to save
+            # your changes.
+            self.connection.commit()
+            result = cursor.fetchall()
+
+            announcementsShorterThan6Months = []
+            for each in result:
+                if not self._isLongerThan6Months(each):
+                    each['date_to'] = each['date_to'].isoformat()
+                    each['date_from'] = each['date_from'].isoformat()
+                    announcementsShorterThan6Months.append(each)
+            return announcementsShorterThan6Months    
 
     def fetchAcademicAnnouncements(self):
+        result = self._fetchAll()
+        onlyAcademicAnnouncements = []
+        for eachAnnouncement in result:
+            if eachAnnouncement['tipi'] == 'Akademik':
+                del eachAnnouncement['tipi']
+                self._splitTurkishAndEnglish(eachAnnouncement)
+                eachAnnouncement['isAllDay'] = self._isAnnouncementAllDay(eachAnnouncement)
+                onlyAcademicAnnouncements.append(eachAnnouncement)
+        return onlyAcademicAnnouncements
+    
+    def fetchAcademicAnnouncementsNew(self):
         result = self._fetchAll()
         onlyAcademicAnnouncements = []
         for eachAnnouncement in result:
