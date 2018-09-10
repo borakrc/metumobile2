@@ -12,6 +12,7 @@ class SiteMap:
 <li>clickable: <a href=\"/shuttle/location/\">/shuttle/location/</a></li>
 <li>clickable: <a href=\"/shuttle/location/multipleshuttles/\">/shuttle/location/multipleshuttles/</a></li>
 <li>clickable: <a href=\"/ip/cacheversion/\">/ip/cacheversion/</a></li>
+<li>clickable: <a href=\"/academiccalendarnew/\">/academiccalendarnew/</a></li>
 <li>clickable: <a href=\"/academiccalendar/\">/academiccalendar/</a></li>
 <li>clickable: <a href=\"/shuttleschedule/\">/shuttleschedule/</a></li>
 <li>clickable: <a href=\"/shuttleschedule2/\">/shuttleschedule2/</a></li>
