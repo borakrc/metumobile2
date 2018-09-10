@@ -115,7 +115,7 @@ class MetuAcademicAndDormCalendarBridge:
         return onlyAcademicAnnouncements
     
     def fetchAcademicAnnouncementsNew(self):
-        result = self._fetchAll()
+        result = self._fetchAllNew()
         onlyAcademicAnnouncements = []
         for eachAnnouncement in result:
             if eachAnnouncement['tipi'] == 'Akademik':
