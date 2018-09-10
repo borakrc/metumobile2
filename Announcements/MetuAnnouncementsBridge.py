@@ -18,6 +18,15 @@ class MetuAcademicAndDormCalendarBridge:
             charset='utf8',
             cursorclass=pymysql.cursors.DictCursor
         )
+    def _connectNew(self):
+        self.connection = pymysql.connect(
+            user=self.credentialsNew.user,
+            password=self.credentialsNew.password,
+            host=self.credentialsNew.ip,
+            db=self.credentialsNew.dbName,
+            charset='utf8',
+            cursorclass=pymysql.cursors.DictCursor
+        )
 
 
     def _fetchAll(self):
@@ -63,7 +72,7 @@ class MetuAcademicAndDormCalendarBridge:
             return announcementsShorterThan6Months
         
     def _fetchAllNew(self):
-        self._connect()
+        self._connectNew()
         with self.connection.cursor() as cursor:
             # Create a new record
             sql = """select
