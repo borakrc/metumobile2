@@ -73,7 +73,7 @@ class MetuAcademicAndDormCalendarBridge:
         
     def _fetchAllNew(self):
         self._connectNew()
-        #with self.connection.cursor() as cursor:
+        with self.connection.cursor() as cursor:
             # Create a new record
             sql = """
             SELECT 
