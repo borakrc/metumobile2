@@ -278,7 +278,7 @@ def academicCalendar():
 def academicCalendarNew():
     from Announcements.MetuAnnouncementsBridge import MetuAcademicAndDormCalendarBridge
     result = MetuAcademicAndDormCalendarBridge().fetchAcademicAnnouncementsNew()
-    return (AcademicCalendarNew=result)
+    return (result)
 
 
 @app.route('/academiccalendar/cacheversion/')
