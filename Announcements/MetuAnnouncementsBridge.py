@@ -78,9 +78,11 @@ class MetuAcademicAndDormCalendarBridge:
            c = self.connection.cursor()
         except OperationalError:
            connected = False
+            return "false"
         else:
            connected = True
-        return connected
+            return "true"
+        
 
     def fetchAcademicAnnouncements(self):
         result = self._fetchAll()
