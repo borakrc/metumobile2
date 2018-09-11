@@ -93,17 +93,17 @@ class MetuAcademicAndDormCalendarBridge:
 
             # connection is not autocommit by default. So you must commit to save
             # your changes.
-            self.connection.commit()
+           self.connection.commit()
            result = cursor.fetchall()
             
-            return result
-            #announcementsShorterThan6Months = []
-            #for each in result:
-                #if not self._isLongerThan6Months(each):
-                    #each['aktak_ilk_tarih'] = each['aktak_ilk_tarih'].isoformat()
-                    #each['aktak_son_tarih'] = each['aktak_son_tarih'].isoformat()
-                    #announcementsShorterThan6Months.append(each)
-            #return announcementsShorterThan6Months    
+           return result
+           announcementsShorterThan6Months = []
+           for each in result:
+                if not self._isLongerThan6Months(each):
+                    each['aktak_ilk_tarih'] = each['aktak_ilk_tarih'].isoformat()
+                    each['aktak_son_tarih'] = each['aktak_son_tarih'].isoformat()
+                    announcementsShorterThan6Months.append(each)
+           return announcementsShorterThan6Months    
 
     def fetchAcademicAnnouncements(self):
         result = self._fetchAll()
