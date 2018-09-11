@@ -78,10 +78,10 @@ class MetuAcademicAndDormCalendarBridge:
            c = self.connection.cursor()
         except OperationalError:
            connected = False
-            return "false"
+           return "false"
         else:
            connected = True
-            return "true"
+           return "true"
         
         return "nothing"
         
