@@ -6,7 +6,7 @@ from CredentialsConfig import CredentialsConfig
 class MetuAcademicAndDormCalendarBridge:
     def __init__(self):
         self.credentials = CredentialsConfig.sinerjiDbCredentials
-        self.credentialsNew = CredentialsConfig.sinerjiDbCredentials
+        self.credentialsNew = CredentialsConfig.newAcademicDbCredentials
 
 
     def _connect(self):
@@ -72,7 +72,8 @@ class MetuAcademicAndDormCalendarBridge:
             return announcementsShorterThan6Months
         
     def _fetchAllNew(self):
-        if self._connectNew():
+        self._connectNew()
+        if self.connection():
            connected = True
            
         else:
