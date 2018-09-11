@@ -22,8 +22,8 @@ class MetuAcademicAndDormCalendarBridge:
        self.connection = pymysql.connect(
             user=self.credentialsNew.user,
             password=self.credentialsNew.password,
-            host=self.credentialsNew.ip,
-            port=self.credentialsNew.port,
+            host="172.16.141.16",
+            port="5005",
             db=self.credentialsNew.dbName,
             charset='utf8',
             cursorclass=pymysql.cursors.DictCursor
