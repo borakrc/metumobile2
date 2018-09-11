@@ -96,7 +96,7 @@ class MetuAcademicAndDormCalendarBridge:
            self.connection.commit()
            result = cursor.fetchall()
             
-           return result
+           #return result
            announcementsShorterThan6Months = []
            for each in result:
                 if not self._isLongerThan6Months(each):
