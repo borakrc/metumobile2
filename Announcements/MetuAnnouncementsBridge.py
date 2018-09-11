@@ -72,38 +72,7 @@ class MetuAcademicAndDormCalendarBridge:
             return announcementsShorterThan6Months
         
     def _fetchAllNew(self):
-        self._connectNew()
-        with self.connection.cursor() as cursor:
-            # Create a new record
-            sql = """
-            SELECT 
-            aktak_id, 
-            aktak_ilk_tarih, 
-            aktak_son_tarih, 
-            aktak_metin_tr, 
-            aktak_metin_en, 
-            aktak_donem, 
-            aktak_eklenme_tarihi, 
-            aktak_ekleyen_userid, 
-            aktak_ekleyen_ip
-            FROM ss_portal.akademik_takvim  
-            ORDER BY aktak_ilk_tarih
-            ASC
-                """
-            cursor.execute(sql)
-
-            # connection is not autocommit by default. So you must commit to save
-            # your changes.
-           self.connection.commit()
-            result = cursor.fetchall()
-
-            announcementsShorterThan6Months = []
-            for each in result:
-                if not self._isLongerThan6Months(each):
-                    each['date_to'] = each['date_to'].isoformat()
-                    each['date_from'] = each['date_from'].isoformat()
-                    announcementsShorterThan6Months.append(each)
-            return announcementsShorterThan6Months
+        return "test"
 
     def fetchAcademicAnnouncements(self):
         result = self._fetchAll()
