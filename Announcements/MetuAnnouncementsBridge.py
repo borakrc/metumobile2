@@ -83,6 +83,8 @@ class MetuAcademicAndDormCalendarBridge:
            connected = True
             return "true"
         
+        return "nothing"
+        
 
     def fetchAcademicAnnouncements(self):
         result = self._fetchAll()
