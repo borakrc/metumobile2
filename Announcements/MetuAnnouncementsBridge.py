@@ -73,7 +73,7 @@ class MetuAcademicAndDormCalendarBridge:
         
     def _fetchAllNew(self):
         self._connectNew()
-        if self.connection():
+        if self.connection.cursor():
            connected = True
            
         else:
