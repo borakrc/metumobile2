@@ -19,6 +19,7 @@ class MetuAcademicAndDormCalendarBridge:
             cursorclass=pymysql.cursors.DictCursor
         )
     def _connectNew(self):
+       return self.credentialsNew
        self.connection = pymysql.connect(
             user=self.credentialsNew.user,
             password=self.credentialsNew.password,
