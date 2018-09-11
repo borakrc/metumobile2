@@ -75,13 +75,11 @@ class MetuAcademicAndDormCalendarBridge:
         self._connectNew()
         
         if self.connection.cursor():
-
-           connected = False
-           
-        else:
            connected = True
            
-        
+        else:
+           connected = False
+          
         return connected
         
 
