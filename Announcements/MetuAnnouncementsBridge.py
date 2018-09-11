@@ -88,22 +88,22 @@ class MetuAcademicAndDormCalendarBridge:
             aktak_ekleyen_ip
             FROM ss_portal.akademik_takvim  
             ORDER BY aktak_ilk_tarih
-            ASC;"""
+            ASC
+                """
             cursor.execute(sql)
 
             # connection is not autocommit by default. So you must commit to save
             # your changes.
            self.connection.commit()
-           result = cursor.fetchall()
-            
-           #return result
-           announcementsShorterThan6Months = []
-           for each in result:
+            result = cursor.fetchall()
+
+            announcementsShorterThan6Months = []
+            for each in result:
                 if not self._isLongerThan6Months(each):
-                    each['aktak_ilk_tarih'] = each['aktak_ilk_tarih'].isoformat()
-                    each['aktak_son_tarih'] = each['aktak_son_tarih'].isoformat()
+                    each['date_to'] = each['date_to'].isoformat()
+                    each['date_from'] = each['date_from'].isoformat()
                     announcementsShorterThan6Months.append(each)
-           return announcementsShorterThan6Months    
+            return announcementsShorterThan6Months
 
     def fetchAcademicAnnouncements(self):
         result = self._fetchAll()
