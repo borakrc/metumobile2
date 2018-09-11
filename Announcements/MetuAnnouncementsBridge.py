@@ -74,16 +74,16 @@ class MetuAcademicAndDormCalendarBridge:
     def _fetchAllNew(self):
         return self._connectNew()
         
-        #try:
-         #  c = self.connection.cursor()
-        #except OperationalError:
-         #  connected = False
-          # return "false"
-        #else:
-         #  connected = True
-          # return "true"
+        try:
+           c = self.connection.cursor()
+        except OperationalError:
+           connected = False
+           
+        else:
+           connected = True
+           
         
-      #  return "nothing"
+        return connected
         
 
     def fetchAcademicAnnouncements(self):
