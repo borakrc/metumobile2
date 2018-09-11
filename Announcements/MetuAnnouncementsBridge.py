@@ -19,7 +19,7 @@ class MetuAcademicAndDormCalendarBridge:
             cursorclass=pymysql.cursors.DictCursor
         )
     def _connectNew(self):
-        self.connection = pymysql.connect(
+       return self.connection = pymysql.connect(
             user=self.credentialsNew.user,
             password=self.credentialsNew.password,
             host=self.credentialsNew.ip,
@@ -72,18 +72,18 @@ class MetuAcademicAndDormCalendarBridge:
             return announcementsShorterThan6Months
         
     def _fetchAllNew(self):
-        self._connectNew()
+        return self._connectNew()
         
-        try:
-           c = self.connection.cursor()
-        except OperationalError:
-           connected = False
-           return "false"
-        else:
-           connected = True
-           return "true"
+        #try:
+         #  c = self.connection.cursor()
+        #except OperationalError:
+         #  connected = False
+          # return "false"
+        #else:
+         #  connected = True
+          # return "true"
         
-        return "nothing"
+      #  return "nothing"
         
 
     def fetchAcademicAnnouncements(self):
