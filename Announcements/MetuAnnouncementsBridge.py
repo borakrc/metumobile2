@@ -72,7 +72,15 @@ class MetuAcademicAndDormCalendarBridge:
             return announcementsShorterThan6Months
         
     def _fetchAllNew(self):
-        return (self._connectNew())
+        self._connectNew()
+        
+        try:
+           c = self.connection.cursor()
+        except OperationalError:
+           connected = False
+        else:
+           connected = True
+        return connected
 
     def fetchAcademicAnnouncements(self):
         result = self._fetchAll()
