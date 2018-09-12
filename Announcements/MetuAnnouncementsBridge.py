@@ -74,29 +74,21 @@ class MetuAcademicAndDormCalendarBridge:
     def _fetchAllNew(self):
         self._connectNew()
         if self.connection.cursor():
-           sql = """select
-                    e.id,
-                    CASE es.sect_id
-                    WHEN '36' THEN 'Akademik'
-                    else 'Yurt'
-                    END as tipi,
-                    e.name,
-                    e.description,
-                    e.date_from,
-                    e.date_to
-                from
-                    b_calendar_event e, b_calendar_event_sect es
-                where
-                    e.active = 'Y' and
-                    e.deleted = 'N' and
-                    e.cal_type = 'company_calendar' and
-                    e.id = es.event_id and
-                    es.sect_id in (36,37) and
-                    e.date_to >= CURDATE()
-                ORDER BY
-                e.date_from
-                ASC
-                    """
+           sql = """
+            SELECT 
+            aktak_id, 
+            aktak_ilk_tarih, 
+            aktak_son_tarih, 
+            aktak_metin_tr, 
+            aktak_metin_en, 
+            aktak_donem, 
+            aktak_eklenme_tarihi, 
+            aktak_ekleyen_userid, 
+            aktak_ekleyen_ip
+            FROM ss_portal.akademik_takvim  
+            ORDER BY aktak_ilk_tarih
+            ASC
+                """
             if(cursor.execute(sql)):
                 connected= True
             
