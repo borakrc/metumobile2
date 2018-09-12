@@ -76,22 +76,8 @@ class MetuAcademicAndDormCalendarBridge:
         if self.connection.cursor():
             with self.connection.cursor() as cursor:
             # Create a new record
-            sql = """
-            SELECT 
-            aktak_id, 
-            aktak_ilk_tarih, 
-            aktak_son_tarih, 
-            aktak_metin_tr, 
-            aktak_metin_en, 
-            aktak_donem, 
-            aktak_eklenme_tarihi, 
-            aktak_ekleyen_userid, 
-            aktak_ekleyen_ip
-            FROM ss_portal.akademik_takvim  
-            ORDER BY aktak_ilk_tarih
-            ASC
-                """
-            cursor.execute(sql)
+            
+            cursor.execute("select * from ss_portal.akademik_takvim ORDER BY aktak_ilk_tarih ASC")
 
             # connection is not autocommit by default. So you must commit to save
             # your changes.
