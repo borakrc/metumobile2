@@ -81,10 +81,10 @@ class MetuAcademicAndDormCalendarBridge:
             # your changes.
             self.connection.commit()
             result = cursor.fetchall()
-            announcementsShorterThan6Months = []
+            academicCalendarResults = []
             for each in result:
-                announcementsShorterThan6Months.append(each)
-            connected = announcementsShorterThan6Months
+                academicCalendarResults.append(each)
+            connected = academicCalendarResults
             
         else:
            connected = False
