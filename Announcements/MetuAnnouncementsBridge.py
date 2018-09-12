@@ -75,7 +75,15 @@ class MetuAcademicAndDormCalendarBridge:
         self._connectNew()
         if self.connection.cursor():
             cursor = self.connection.cursor()
-            cursor.execute("select * from ss_portal.akademik_takvim ORDER BY aktak_ilk_tarih ASC")
+            cursor.execute("""SELECT 
+            aktak_id as id, 
+            aktak_ilk_tarih as date_from, 
+            aktak_son_tarih as date_to, 
+            aktak_metin_tr as tr_name, 
+            aktak_metin_en as en_name, 
+            FROM ss_portal.akademik_takvim  
+            ORDER BY aktak_ilk_tarih
+            ASC""")
 
             # connection is not autocommit by default. So you must commit to save
             # your changes.
@@ -84,12 +92,12 @@ class MetuAcademicAndDormCalendarBridge:
             academicCalendarResults = []
             for each in result:
                 academicCalendarResults.append(each)
-            connected = academicCalendarResults
+            resultset = academicCalendarResults
             
         else:
-           connected = False
+           resultset = False
           
-        return connected
+        return resultset
         
 
     def fetchAcademicAnnouncements(self):
@@ -105,13 +113,12 @@ class MetuAcademicAndDormCalendarBridge:
     
     def fetchAcademicAnnouncementsNew(self):
         result = self._fetchAllNew()
-        return result
-        #onlyAcademicAnnouncements = []
-        #for eachAnnouncement in result:
-            #self._splitTurkishAndEnglish(eachAnnouncement)
-            #eachAnnouncement['isAllDay'] = self._isAnnouncementAllDay(eachAnnouncement)
-            #onlyAcademicAnnouncements.append(eachAnnouncement)
-        #return onlyAcademicAnnouncements
+        academicAnnouncements = []
+        for eachAnnouncement in result:
+           #self._splitTurkishAndEnglish(eachAnnouncement)
+           #eachAnnouncement['isAllDay'] = self._isAnnouncementAllDay(eachAnnouncement)
+           academicAnnouncements.append(eachAnnouncement)
+        return onlyAcademicAnnouncements
 
     def fetchDormAnnouncements(self):
         result = self._fetchAll()
