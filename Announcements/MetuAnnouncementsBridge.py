@@ -89,9 +89,11 @@ class MetuAcademicAndDormCalendarBridge:
             ASC
                 """
             if(self.connection.cursor.execute(sql)):
-                connected= True
+                connected = True
             
-           
+            else:
+                connected = False
+            
         else:
            connected = False
           
