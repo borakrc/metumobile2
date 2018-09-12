@@ -82,7 +82,7 @@ class MetuAcademicAndDormCalendarBridge:
             aktak_metin_tr as tr_name, 
             aktak_metin_en as en_name, 
             FROM ss_portal.akademik_takvim  
-            ORDER BY aktak_ilk_tarih
+            ORDER BY date_from
             ASC""")
 
             # connection is not autocommit by default. So you must commit to save
