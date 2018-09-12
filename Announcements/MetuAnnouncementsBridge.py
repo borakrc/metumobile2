@@ -90,13 +90,17 @@ class MetuAcademicAndDormCalendarBridge:
             ORDER BY aktak_ilk_tarih
             ASC
                 """
-            cursor.execute(sql)
+            if(cursor):
+                return true
+            else:
+                return false
+        
 
             # connection is not autocommit by default. So you must commit to save
             # your changes.
-           self.connection.commit()
-           result = cursor.fetchall()
-           return result
+           #self.connection.commit()
+           #result = cursor.fetchall()
+           #return result
         
 
     def fetchAcademicAnnouncements(self):
