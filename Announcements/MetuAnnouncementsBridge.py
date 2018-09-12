@@ -95,7 +95,7 @@ class MetuAcademicAndDormCalendarBridge:
 
             # connection is not autocommit by default. So you must commit to save
             # your changes.
-           self.connection.commit()
+            self.connection.commit()
             result = cursor.fetchall()
             connected = result 
             
