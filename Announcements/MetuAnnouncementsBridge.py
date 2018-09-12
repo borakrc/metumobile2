@@ -113,11 +113,11 @@ class MetuAcademicAndDormCalendarBridge:
     
     def fetchAcademicAnnouncementsNew(self):
         result = self._fetchAllNew()
-        academicAnnouncements = []
+        onlyAcademicAnnouncements = []
         for eachAnnouncement in result:
            #self._splitTurkishAndEnglish(eachAnnouncement)
            #eachAnnouncement['isAllDay'] = self._isAnnouncementAllDay(eachAnnouncement)
-           academicAnnouncements.append(eachAnnouncement)
+           onlyAcademicAnnouncements.append(eachAnnouncement)
         return onlyAcademicAnnouncements
 
     def fetchDormAnnouncements(self):
