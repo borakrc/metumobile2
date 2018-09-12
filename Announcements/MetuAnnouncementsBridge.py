@@ -66,8 +66,8 @@ class MetuAcademicAndDormCalendarBridge:
             announcementsShorterThan6Months = []
             for each in result:
                 if not self._isLongerThan6Months(each):
-                    each['date_to'] = each['date_to'].isoformat()
-                    each['date_from'] = each['date_from'].isoformat()
+                    each['aktak_son_tarih'] = each['aktak_son_tarih'].isoformat()
+                    each['aktak_ilk_tarih'] = each['aktak_ilk_tarih'].isoformat()
                     announcementsShorterThan6Months.append(each)
             return announcementsShorterThan6Months
         
