@@ -1,4 +1,5 @@
 import pymysql.cursors
+from datetime import datetime, date
 from Config import Config
 from CredentialsConfig import CredentialsConfig
 
@@ -93,14 +94,17 @@ class MetuAcademicAndDormCalendarBridge:
             for each in result:
                 each['description'] = ""
                 each['isAllDay'] = False
-                each['date_from'] = str(each['date_from'])
-                if each['date_to'] is None:
-                    each['date_to'] = each['date_from']
-                else:
-                    each['date_to'] = str(each['date_to'])
-                each['date_from'] = each['date_from'] + "T08:00:00"
-                each['date_to'] = each['date_to'] + "T17:00:00"
-                academicCalendarResults.append(each)
+                
+                if each['date_from'].date() > datetime.today().date():
+                    each['date_from'] = str(each['date_from'])
+                    if each['date_to'] is None:
+                        each['date_to'] = each['date_from']
+                    else:
+                        each['date_to'] = str(each['date_to'])
+                    each['date_from'] = each['date_from'] + "T08:00:00"
+                    each['date_to'] = each['date_to'] + "T17:00:00"
+                    present=
+                    academicCalendarResults.append(each)
             resultset = academicCalendarResults
             
         else:
