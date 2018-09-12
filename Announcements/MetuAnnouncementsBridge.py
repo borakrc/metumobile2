@@ -74,13 +74,13 @@ class MetuAcademicAndDormCalendarBridge:
     def _fetchAllNew(self):
         self._connectNew()
         if self.connection.cursor():
-            
-            self.connection.cursor().execute("select * from ss_portal.akademik_takvim ORDER BY aktak_ilk_tarih ASC")
+            cursor = self.connection.cursor()
+            cursor.execute("select * from ss_portal.akademik_takvim ORDER BY aktak_ilk_tarih ASC")
 
             # connection is not autocommit by default. So you must commit to save
             # your changes.
             self.connection.commit()
-            result = self.connection.cursor().fetchall()
+            result = cursor.fetchall()
             connected = True 
             
         else:
