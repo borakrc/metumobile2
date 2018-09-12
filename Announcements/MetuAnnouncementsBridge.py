@@ -83,7 +83,7 @@ class MetuAcademicAndDormCalendarBridge:
             result = cursor.fetchall()
             announcementsShorterThan6Months = []
             for each in result:
-                announcementsShorterThan6Months.append(each[aktak_metin_tr])
+                announcementsShorterThan6Months.append(each['aktak_metin_tr'])
             connected = announcementsShorterThan6Months
             
         else:
