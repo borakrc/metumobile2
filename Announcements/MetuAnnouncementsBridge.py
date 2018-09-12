@@ -103,7 +103,7 @@ class MetuAcademicAndDormCalendarBridge:
                 #each['date_to'] = each['date_to'].isoformat()
                 #each['date_from'] = each['date_from'].isoformat()
                 announcementsShorterThan6Months.append(each)
-            return result
+            return announcementsShorterThan6Months
         
 
     def fetchAcademicAnnouncements(self):
