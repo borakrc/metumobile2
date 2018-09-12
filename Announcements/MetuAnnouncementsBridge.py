@@ -81,7 +81,13 @@ class MetuAcademicAndDormCalendarBridge:
             # your changes.
             self.connection.commit()
             result = cursor.fetchall()
-            connected = result 
+            announcementsShorterThan6Months = []
+            for each in result:
+                if not self._isLongerThan6Months(each):
+                    each['date_to'] = each['date_to'].isoformat()
+                    each['date_from'] = each['date_from'].isoformat()
+                    announcementsShorterThan6Months.append(each)
+            connected = announcementsShorterThan6Months
             
         else:
            connected = False
