@@ -74,21 +74,7 @@ class MetuAcademicAndDormCalendarBridge:
     def _fetchAllNew(self):
         self._connectNew()
         if self.connection.cursor():
-            sql = """SELECT 
-                    aktak_id, 
-                    aktak_ilk_tarih, 
-                    aktak_son_tarih, 
-                    aktak_metin_tr, 
-                    aktak_metin_en, 
-                    aktak_donem, 
-                    aktak_eklenme_tarihi, 
-                    aktak_ekleyen_userid, 
-                    aktak_ekleyen_ip
-            FROM ss_portal.akademik_takvim  
-            ORDER BY aktak_ilk_tarih
-            ASC
-                """
-            if(self.connection.cursor.execute(sql)):
+            if self.connection.cursor.execute("select * from ss_portal.akademik_takvim;"):
                 connected = True
             
             else:
