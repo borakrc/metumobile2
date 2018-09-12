@@ -83,7 +83,7 @@ class MetuAcademicAndDormCalendarBridge:
             # your changes.
             self.connection.commit()
             result = cursor.fetchall()
-            connected = result 
+            connected = True 
             
         else:
            connected = False
