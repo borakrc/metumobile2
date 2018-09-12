@@ -92,6 +92,7 @@ class MetuAcademicAndDormCalendarBridge:
             result = cursor.fetchall()
             academicCalendarResults = []
             for each in result:
+                each['name'] = each['en_name'] + " / " + each['tr_name']
                 each['description'] = ""
                 each['isAllDay'] = False
                 
