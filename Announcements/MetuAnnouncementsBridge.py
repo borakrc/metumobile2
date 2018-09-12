@@ -75,8 +75,9 @@ class MetuAcademicAndDormCalendarBridge:
         self._connectNew()
         if self.connection.cursor():
             if self.connection.cursor().execute("select * from ss_portal.akademik_takvim;"):
-                connected = True
-            
+                self.connection.commit()
+                result = cursor.fetchall()
+                connected = result
             else:
                 connected = False
             
