@@ -80,7 +80,7 @@ class MetuAcademicAndDormCalendarBridge:
             aktak_ilk_tarih as date_from, 
             aktak_son_tarih as date_to, 
             aktak_metin_tr as tr_name, 
-            aktak_metin_en as en_name, 
+            aktak_metin_en as en_name
             FROM ss_portal.akademik_takvim  
             ORDER BY date_from
             ASC""")
