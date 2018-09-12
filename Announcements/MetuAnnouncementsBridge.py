@@ -95,7 +95,7 @@ class MetuAcademicAndDormCalendarBridge:
                 each['description'] = ""
                 each['isAllDay'] = False
                 
-                if each['date_from'] > datetime.today():
+                if each['date_from'] > datetime.datetime.now().date():
                     each['date_from'] = str(each['date_from'])
                     if each['date_to'] is None:
                         each['date_to'] = each['date_from']
