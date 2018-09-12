@@ -96,7 +96,7 @@ class MetuAcademicAndDormCalendarBridge:
                 each['date_from'] = str(each['date_from'])
                 if each['date_to'] is None:
                     each['date_to'] = each['date_from']
-                else
+                else:
                     each['date_to'] = str(each['date_to'])
                 each['date_from'] = each['date_from'] + "T08:00:00"
                 each['date_to'] = each['date_to'] + "T17:00:00"
