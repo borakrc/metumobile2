@@ -48,7 +48,7 @@ def cacheVersion():
     return jsonify(cacheVersion=md5Hash)
 
 def cacheVersionOf(data):
-    data = str(data)
+    data = str(data) + "2"
     md5Hash = hashlib.md5(data).hexdigest()
     return jsonify(cacheVersion=md5Hash)
 
@@ -283,7 +283,7 @@ def academicCalendarNew():
 
 @app.route('/academiccalendar/cacheversion/')
 def cacheAcademicCalendar():
-    return cacheVersionOf(academicCalendar()+"1")
+    return cacheVersionOf(academicCalendar())
 
 
 @app.route('/booklets/')
