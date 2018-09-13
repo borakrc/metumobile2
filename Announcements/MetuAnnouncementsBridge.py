@@ -51,8 +51,7 @@ class MetuAcademicAndDormCalendarBridge:
                     e.deleted = 'N' and
                     e.cal_type = 'company_calendar' and
                     e.id = es.event_id and
-                    es.sect_id in (36,37) and
-                    e.date_to >= CURDATE()
+                    es.sect_id in (36,37)
                 ORDER BY
                 e.date_from
                 ASC
