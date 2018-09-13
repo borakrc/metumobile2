@@ -271,7 +271,7 @@ def cachePhonebook():
 @app.route('/academiccalendar/')
 def academicCalendar():
     from Announcements.MetuAnnouncementsBridge import MetuAcademicAndDormCalendarBridge
-    result = MetuAcademicAndDormCalendarBridge().fetchAcademicAnnouncements()
+    result = MetuAcademicAndDormCalendarBridge().fetchAcademicAnnouncementsNew()
     return jsonify(AcademicCalendar=result)
 
 @app.route('/academiccalendarnew/')
