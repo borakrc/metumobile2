@@ -283,7 +283,7 @@ def academicCalendarNew():
 
 @app.route('/academiccalendar/cacheversion/')
 def cacheAcademicCalendar():
-    return cacheVersionOf(academicCalendar())
+    return cacheVersionOf(academicCalendar()+"1")
 
 
 @app.route('/booklets/')
