@@ -7,7 +7,7 @@ class Announcements:
     def _fetchStaticAnnouncementCategory(self, categoryId):
         if categoryId == 0:
             answerDictionary = {}
-            answerDictionary['announcements'] = MetuAcademicAndDormCalendarBridge().fetchAcademicAnnouncements()
+            answerDictionary['announcements'] = MetuAcademicAndDormCalendarBridge().fetchAcademicAnnouncementsNew()
             answerDictionary['isActive'] = True
             answerDictionary['en_name'] = "Academic"
             answerDictionary['tr_name'] = "Akademik"
