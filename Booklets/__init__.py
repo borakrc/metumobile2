@@ -21,7 +21,7 @@ class Booklets:
     ["survival_turkish.jpg", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","https://intranet.ncc.metu.edu.tr/wp-content/uploads/2018/03/SurvivalTurkish.pdf", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","https://intranet.ncc.metu.edu.tr/wp-content/uploads/2018/03/SurvivalTurkish.pdf"],
     ["defaultbookletpicture.jpg", "ÇEVRE TELEFON REHBERİ","https://intranet.ncc.metu.edu.tr/files/CEVRE_TELEFON_REHBERI_TR.pdf", "PHONE GUIDE","https://intranet.ncc.metu.edu.tr/files/CEVRE_TELEFON_REHBERI_ENG.pdf"],
     ["food.jpg", "MERKEZ KAFETERYA VE KANTİNLER","http://intranet.ncc.metu.edu.tr/files/KAFETERYA-TR.pdf", "MAIN CAFETERIA AND CANTEENS", "http://intranet.ncc.metu.edu.tr/files/KAFETERYA-ENG.pdf"],
-    ["health.jpg", "MEDİKO","https://ncc.metu.edu.tr/sites/default/files/mediko-elkitabi.pdf", "MEDICO", "https://ncc.metu.edu.tr/sites/default/files/medico-healthcare-guide.pdf"],
+    ["health.jpg", "MEDİKO","https://intranet.ncc.metu.edu.tr/files/mediko-elkitabi.pdf", "MEDICO", "https://intranet.ncc.metu.edu.tr/files/medico-healthcare-guide.pdf"],
     ["sports.jpg", "SPOR TESİSLERİ","http://intranet.ncc.metu.edu.tr/files/SPOR-MERKEZI-TR.pdf", "SPORTS AND RECREATION", "http://intranet.ncc.metu.edu.tr/files/SPOR-MERKEZI-ENG.pdf"],
     ["kkm.jpg", "KÜLTÜR VE KONGRE MERKEZİ","http://intranet.ncc.metu.edu.tr/files/KULTUR-VE-KONGRE-MERKEZI-TR.pdf", "CULTURE AND CONVENTION CENTER", "http://intranet.ncc.metu.edu.tr/files/KULTUR-VE-KONGRE-MERKEZI-ENG.pdf"],
     ["library.jpg", "KÜTÜPHANE","http://intranet.ncc.metu.edu.tr/files/KUTUPHANE-TR.pdf", "LIBRARY", "http://intranet.ncc.metu.edu.tr/files/KUTUPHANE-ENG.pdf"],
