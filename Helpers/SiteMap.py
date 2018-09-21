@@ -2,7 +2,7 @@ class SiteMap:
     siteMapString = """
 <li>clickable: <a href=\"/academiccalendar/cacheversion/\">/academiccalendar/cacheversion/</a></li>
 <li>clickable: <a href=\"/shuttleschedule/cacheversion/\">/shuttleschedule/cacheversion/</a></li>
-<li>clickable: <a href=\"/shuttleschedule2/cacheversion/\">/shuttleschedule/cacheversion/</a></li>
+<li>clickable: <a href=\"/shuttleschedule2/cacheversion/\">/shuttleschedule2/cacheversion/</a></li>
 <li>clickable: <a href=\"/upcomingevents/cacheversion/\">/upcomingevents/cacheversion/</a></li>
 <li>clickable: <a href=\"/upcomingevents/raw/\">/upcomingevents/raw/</a></li>
 <li>clickable: <a href=\"/announcements/cacheversion/\">/announcements/cacheversion/</a></li>
