@@ -2,11 +2,11 @@
 from Config import Config
  
  
- class Booklets:
-     def __init__(self):
+class Booklets:
+    def __init__(self):
          pass
  
-     def getBooklets(self):
+    def getBooklets(self):
          bookletRecords = []
          for record in self._getBookletData():
              try:
