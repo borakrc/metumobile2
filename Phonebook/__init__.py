@@ -28,7 +28,7 @@ class Phonebook:
                 recordDict['officeLocation'] = eachRecord['ofno']
                 if eachRecord['email']:
                     try:
-                        recordDict['email'] = str(eachRecord['email']) + "@1metu.edu.tr"
+                        recordDict['email'] = str(eachRecord['email']) + "@metu.edu.tr"
                     except:
                         recordDict['email'] = None
                 else:
