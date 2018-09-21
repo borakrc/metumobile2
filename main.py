@@ -225,7 +225,8 @@ def cafeteriaMeals(mealId):
 
 @app.route('/cafeteriamenu/cacheversion/')
 def cacheCafeteria():
-    return cacheVersionOf(Cafeteria().getAllMeals())
+    cafeteriaMenuOutput = readFromWeb(Config.cafeteriaMenuServiceUrl)
+    return cacheVersionOf(cafeteriaMenuOutput)
 
 
 @app.route('/services/cafeteriarate/meals/')
@@ -255,7 +256,8 @@ def upcomingEventsRaw():
 
 @app.route('/upcomingevents/cacheversion/')
 def cacheEvents():
-    return cacheVersionOf(upcomingEvents())
+    eventsOutput = readFromWeb(Config.eventsServiceUrl)
+    return cacheVersionOf(eventsOutput)
 
 
 @app.route('/phonebook/')
@@ -271,7 +273,8 @@ def phonebookRaw():
 
 @app.route('/phonebook/cacheversion/')
 def cachePhonebook():
-    return cacheVersionOf(phonebook())
+    phoneBookOutput = readFromWeb(Config.phoneBookServiceUrl)
+    return cacheVersionOf(phoneBookOutput)
 
 
 @app.route('/academiccalendar/')
@@ -299,8 +302,8 @@ def booklets():
 
 @app.route('/booklets/cacheversion/')
 def cacheBooklets():
-    return cacheVersionOf(booklets())
-
+    bookletOutput = readFromWeb(Config.bookletServiceUrl)
+    return cacheVersionOf(bookletOutput)
 
 @app.route('/featuredApps/ios/')
 def iosFeaturedApps():
