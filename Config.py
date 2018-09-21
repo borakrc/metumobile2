@@ -29,7 +29,7 @@ class Config:
     serverPort = 1072
     serverRootLink = "http://" + serverIp + ":" + str(serverPort)
     cafeteriaMenuServiceUrl = "http://144.122.156.67:1072/cafeteriamenu/"
-    announcementServiceUrl = "http://144.122.156.67:1072/announcements"
+    announcementServiceUrl = "http://144.122.156.67:1072/announcements/category"
     shuttleScheduleServiceUrl = "http://144.122.156.67:1072/shuttleschedule/"
     phoneBookServiceUrl = "http://144.122.156.67:1072/phonebook/"
     bookletServiceUrl = "http://144.122.156.67:1072/booklets/"
