@@ -249,7 +249,7 @@ def upcomingEventsRaw():
 
 @app.route('/upcomingevents/cacheversion/')
 def cacheEvents():
-    return cacheVersionOf(upcomingEventsRaw())
+    return cacheVersionOf(upcomingEvents())
 
 
 @app.route('/phonebook/')
