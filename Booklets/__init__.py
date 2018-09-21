@@ -18,7 +18,7 @@ class Booklets:
 
     def _getBookletData(self):
         return [
-    ["survival_turkish.jpg", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","https://intranet.ncc.metu.edu.tr/wp-content/uploads/2018/03/SurvivalTurkish.pdf", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","https://intranet.ncc.metu.edu.tr/wp-content/uploads/2018/03/SurvivalTurkish.pdf"],
+    ["survival_turkish.jpg", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","https://intranet.ncc.metu.edu.tr/files/SurvivalTurkish.pdf", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","https://intranet.ncc.metu.edu.tr/files/SurvivalTurkish.pdf"],
     ["defaultbookletpicture.jpg", "ÇEVRE TELEFON REHBERİ","https://intranet.ncc.metu.edu.tr/files/CEVRE_TELEFON_REHBERI_TR.pdf", "PHONE GUIDE","https://intranet.ncc.metu.edu.tr/files/CEVRE_TELEFON_REHBERI_ENG.pdf"],
     ["food.jpg", "MERKEZ KAFETERYA VE KANTİNLER","https://intranet.ncc.metu.edu.tr/files/KAFETERYA-TR.pdf", "MAIN CAFETERIA AND CANTEENS", "https://intranet.ncc.metu.edu.tr/files/KAFETERYA-ENG.pdf"],
     ["health.jpg", "MEDİKO","https://intranet.ncc.metu.edu.tr/files/mediko-elkitabi.pdf", "MEDICO", "https://intranet.ncc.metu.edu.tr/files/medico-healthcare-guide.pdf"],
@@ -33,10 +33,10 @@ class Booklets:
     ["administrativeservices.jpg", "İDARİ HİZMET VE KURALLAR","https://intranet.ncc.metu.edu.tr/files/IDARI-HIZMET-VE-KURALLAR-1-TR.pdf", "ADMINISTRATIVE SERVICES AND RULES 1", "https://intranet.ncc.metu.edu.tr/files/IDARI-HIZMET-VE-KURALLAR-1-ENG.pdf"],
     ["administrativeservices.jpg", "İDARİ HİZMET VE KURALLAR-2","https://intranet.ncc.metu.edu.tr/files/IDARI-HIZMET-VE-KURALLAR-2-TR.pdf", "ADMINISTRATIVE SERVICES AND RULES 2", "https://intranet.ncc.metu.edu.tr/files/IDARI-HIZMET-VE-KURALLAR-2-ENG.pdf"],
     ["administrativeservices.jpg", "İDARİ HİZMET VE KURALLAR-3","https://intranet.ncc.metu.edu.tr/files/IDARI-HIZMET-VE-KURALLAR-3-TR.pdf", "ADMINISTRATIVE SERVICES AND RULES 3", "https://intranet.ncc.metu.edu.tr/files/IDARI-HIZMET-VE-KURALLAR-3-ENG.pdf"],
-    ["guest.jpg", "MİSAFİRHANE", "https://intranet.ncc.metu.edu.tr/files/MISAFIRHANE-TR.pdf", "GUEST HOUSE", "httpss://intranet.ncc.metu.edu.tr/files/MISAFIRHANE-ENG.pdf"],
+    ["guest.jpg", "MİSAFİRHANE", "https://intranet.ncc.metu.edu.tr/files/MISAFIRHANE-TR.pdf", "GUEST HOUSE", "https://intranet.ncc.metu.edu.tr/files/MISAFIRHANE-ENG.pdf"],
     ["defaultbookletpicture.jpg", "YEŞİL KAMPUS", "https://intranet.ncc.metu.edu.tr/files/YESIL-KAMPUS-TR.pdf", "GREEN CAMPUS", "https://intranet.ncc.metu.edu.tr/files/YESIL-KAMPUS-ENG.pdf"],
     ["defaultbookletpicture.jpg", "TRAFİK KURALLARI", "https://intranet.ncc.metu.edu.tr/files/trafik_kurallari_TR.pdf", "TRAFFIC REGULATIONS", "https://intranet.ncc.metu.edu.tr/files/trafik_kurallari_ENG.pdf"],
-    ["defaultbookletpicture.jpg", "İS SAGLIĞI VE GÜVENLİĞİ", "https://intranet.ncc.metu.edu.tr/files/IS-SAGLIGI-VE-GUVENLIGI-TR.pdf", "OCCUPATIONAL HEALTH AND SAFETY", "httpss://intranet.ncc.metu.edu.tr/files/IS-SAGLIGI-VE-GUVENLIGI-ENG.pdf"],
+    ["defaultbookletpicture.jpg", "İS SAGLIĞI VE GÜVENLİĞİ", "https://intranet.ncc.metu.edu.tr/files/IS-SAGLIGI-VE-GUVENLIGI-TR.pdf", "OCCUPATIONAL HEALTH AND SAFETY", "https://intranet.ncc.metu.edu.tr/files/IS-SAGLIGI-VE-GUVENLIGI-ENG.pdf"],
     ["technicalservices.jpg", "1. YURT TEKNİK KILAVUZU", "https://intranet.ncc.metu.edu.tr/files/1-YURT-TEKNIK-KILAVUZU-TR.pdf", "TECHNICAL GUIDELINES DORM I", "https://intranet.ncc.metu.edu.tr/files/1-YURT-TEKNIK-KILAVUZU-ENG.pdf"],
     ["technicalservices.jpg", "2. YURT TEKNİK KILAVUZU", "https://intranet.ncc.metu.edu.tr/files/2-YURT-TEKNIK-KILAVUZU-TR.pdf", "TECHNICAL GUIDELINES DORM II", "https://intranet.ncc.metu.edu.tr/files/2-YURT-TEKNIK-KILAVUZU-ENG.pdf"],
     ["technicalservices.jpg", "3. YURT TEKNİK KILAVUZU", "https://intranet.ncc.metu.edu.tr/files/3-YURT-TEKNIK-KILAVUZU-TR.pdf", "TECHNICAL GUIDELINES DORM III", "https://intranet.ncc.metu.edu.tr/files/3-YURT-TEKNIK-KILAVUZU-ENG.pdf"],
