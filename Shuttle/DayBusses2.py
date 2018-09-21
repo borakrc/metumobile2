@@ -9,7 +9,7 @@ class DayBusses2(object):
         if dayType == 0:
             for hour in [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 00]:
                 bus = {'index': 0, 'price': 0.95, 'tr_destination': 'ODTU KKK', 'en_destination': 'METU NCC',
-                       'stops': [{"hour": hour, "minute": 5, "tr_name": "Terminal", "en_name": "Terminal"}]}
+                       'stops': [{"hour": hour, "minute": 3, "tr_name": "Terminal", "en_name": "Terminal"}]}
                 dailyBuses.append(bus)
 
                 bus = {'index': 0, 'price': 0.95, 'tr_destination': 'Terminal', 'en_destination': 'Terminal',
