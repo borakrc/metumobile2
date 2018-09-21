@@ -31,6 +31,7 @@ class Config:
     cafeteriaMenuServiceUrl = "http://144.122.156.67:1072/cafeteriamenu/"
     announcementServiceUrl = "http://144.122.156.67:1072/announcements/category"
     shuttleScheduleServiceUrl = "http://144.122.156.67:1072/shuttleschedule/"
+    shuttleScheduleServiceUrl2 = "http://144.122.156.67:1072/shuttleschedule2/111"
     phoneBookServiceUrl = "http://144.122.156.67:1072/phonebook/"
     bookletServiceUrl = "http://144.122.156.67:1072/booklets/"
     eventsServiceUrl = "http://144.122.156.67:1072/upcomingevents/"
