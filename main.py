@@ -189,7 +189,7 @@ def cacheShuttle():
     return cacheVersionOf(shuttleOutput)
 
 @app.route('/shuttleschedule2/cacheversion/')
-def cacheShuttle():
+def cacheShuttle2():
     shuttleOutput = readFromWeb(Config.shuttleScheduleServiceUrl2)
     return cacheVersionOf(shuttleOutput)
 
