@@ -10,7 +10,7 @@ class DayBusses(object):
             for hour in [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 00]:
                 bus = {'index': 0, 'price': 0.95, 'tr_destination': 'ODTU KKK', 'en_destination': 'METU NCC',
                        'stops': [{"hour": hour, "minute": 05, "tr_name": "Terminal", "en_name": "Terminal"},
-                                 {"hour": hour, "minute": 20, "tr_name": "Muze", "en_name": "Museum"},
+                                 {"hour": hour, "minute": 15, "tr_name": "Muze", "en_name": "Museum"},
                                  {"hour": hour, "minute": 15, "tr_name": "Kopru Durak", "en_name": "Bridge Stop"},
                                  {"hour": hour, "minute": 20, "tr_name": "ODTU Cemberi", "en_name": "METU Roundabout"},
                                  {"hour": hour, "minute": 25, "tr_name": "Kalkanli", "en_name": "Kalkanli"}]}
