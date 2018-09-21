@@ -188,6 +188,11 @@ def cacheShuttle():
     shuttleOutput = readFromWeb(Config.shuttleScheduleServiceUrl)
     return cacheVersionOf(shuttleOutput)
 
+@app.route('/shuttleschedule2/cacheversion/')
+def cacheShuttle():
+    shuttleOutput = readFromWeb(Config.shuttleScheduleServiceUrl2)
+    return cacheVersionOf(shuttleOutput)
+
 
 @app.route('/cafeteriamenu/')
 def cafeteriaMenu():
