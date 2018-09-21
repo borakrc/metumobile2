@@ -18,7 +18,7 @@ class Booklets:
 
     def _getBookletData(self):
         return [
-    ["survival_turkish.jpg", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","https://intranet.ncc.metu.edu.tr/files/SurvivalTurkish.pdf", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","https://intranet.ncc.metu.edu.tr/files/SurvivalTurkish.pdf"],
+   ["survival_turkish.jpg", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","https://intranet.ncc.metu.edu.tr/files/SurvivalTurkish.pdf", "SURVIVAL TURKISH FOR INTERNATIONAL STUDENTS ON CAMPUS","https://intranet.ncc.metu.edu.tr/files/SurvivalTurkish.pdf"],
     ["defaultbookletpicture.jpg", "ÇEVRE TELEFON REHBERİ","https://intranet.ncc.metu.edu.tr/files/CEVRE_TELEFON_REHBERI_TR.pdf", "PHONE GUIDE","https://intranet.ncc.metu.edu.tr/files/CEVRE_TELEFON_REHBERI_ENG.pdf"],
     ["food.jpg", "MERKEZ KAFETERYA VE KANTİNLER","https://intranet.ncc.metu.edu.tr/files/KAFETERYA-TR.pdf", "MAIN CAFETERIA AND CANTEENS", "https://intranet.ncc.metu.edu.tr/files/KAFETERYA-ENG.pdf"],
     ["health.jpg", "MEDİKO","https://intranet.ncc.metu.edu.tr/files/mediko-elkitabi.pdf", "MEDICO", "https://intranet.ncc.metu.edu.tr/files/medico-healthcare-guide.pdf"],
@@ -41,7 +41,7 @@ class Booklets:
     ["technicalservices.jpg", "2. YURT TEKNİK KILAVUZU", "https://intranet.ncc.metu.edu.tr/files/2-YURT-TEKNIK-KILAVUZU-TR.pdf", "TECHNICAL GUIDELINES DORM II", "https://intranet.ncc.metu.edu.tr/files/2-YURT-TEKNIK-KILAVUZU-ENG.pdf"],
     ["technicalservices.jpg", "3. YURT TEKNİK KILAVUZU", "https://intranet.ncc.metu.edu.tr/files/3-YURT-TEKNIK-KILAVUZU-TR.pdf", "TECHNICAL GUIDELINES DORM III", "https://intranet.ncc.metu.edu.tr/files/3-YURT-TEKNIK-KILAVUZU-ENG.pdf"],
     ["defaultbookletpicture.jpg", "ÖĞRENCİ GELİŞİM VE PSİKOLOJİK DANIŞMA MERKEZİ", "https://intranet.ncc.metu.edu.tr/files/OGRENCI-GEL-VE-PSI-DANIS-MRK-TR-1.pdf", "STUDENT DEVELOPMENT AND COUNSELING CENTER", "https://intranet.ncc.metu.edu.tr/files/OGRENCI-GEL-VE-PSI-DANIS-MRK-ENG-.pdf"]
-    ]
+        ]
     
     
 
