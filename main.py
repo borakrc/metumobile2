@@ -185,7 +185,8 @@ def multipleShuttleLocations():
 
 @app.route('/shuttleschedule/cacheversion/')
 def cacheShuttle():
-    return cacheVersionOf(shuttleSchedule())
+    shuttleOutput = readFromWeb(Config.shuttleScheduleServiceUrl)
+    return cacheVersionOf(shuttleOutput)
 
 
 @app.route('/cafeteriamenu/')
