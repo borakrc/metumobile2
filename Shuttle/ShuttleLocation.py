@@ -1,5 +1,4 @@
 import pymysql.cursors
-import logging
 
 from CredentialsConfig import CredentialsConfig
 
@@ -124,11 +123,6 @@ class ShuttleLocation:
         lastUpdateTime = location['updatetime']
         import datetime
         timeDifference = datetime.datetime.now() - lastUpdateTime
-        logging.warning(lastUpdateTime)
-        logging.warning(datetime.datetime.now())
-        logging.warning(timeDifference)
-        logging.warning(timeDifference.seconds)
-        logging.warning(minutes)
         if (timeDifference.seconds / 60) > minutes:
             return True
         else:
