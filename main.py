@@ -376,7 +376,6 @@ if __name__ == "__main__":
     import logging
     handler = logging.FileHandler(Config.loggerPath)  # errors logged to this file
     handler.setLevel(logging.ERROR)  # log errors and above
-    handler.setLevel(logging.WARNING)  # log warning
 
     app.logger.addHandler(handler)  # attach the handler to the app's logger
 
