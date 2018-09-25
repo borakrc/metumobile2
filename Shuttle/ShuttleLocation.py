@@ -123,6 +123,11 @@ class ShuttleLocation:
         lastUpdateTime = location['updatetime']
         import datetime
         timeDifference = datetime.datetime.now() - lastUpdateTime
+        print lastUpdateTime
+        print datetime.datetime.now()
+        print timeDifference
+        print timeDifference.seconds
+        print minutes
         if (timeDifference.seconds / 60) > minutes:
             return True
         else:
