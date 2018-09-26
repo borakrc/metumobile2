@@ -131,7 +131,7 @@ class ShuttleLocation:
         text_file.write("timeDifference: %s\n" % timeDifference)
         text_file.write("timeDifference.days: %s\n" % timeDifference.days)
         text_file.write("timeDifference.seconds: %s\n" % timeDifference.seconds)
-        text_file.write("timeDifference days bigger than 1: %s\n" % (timeDifference.days > 0))
+        text_file.write("timeDifference days bigger than 1: %s\n" % (timeDifference.days < 1))
         text_file.write("timeDifference.seconds/60: %s\n" % (timeDifference.seconds/60))
         text_file.close()
         
