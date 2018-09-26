@@ -135,8 +135,11 @@ class ShuttleLocation:
         text_file.write("timeDifference.seconds/60: %s\n" % (timeDifference.seconds/60))
         text_file.close()
         
-        if (timeDifference.seconds / 60) > minutes:
-            return True
+        if(timeDifference.days < 1):
+            if (timeDifference.seconds / 60) > minutes:
+                return True
+            else:
+                return False
         else:
             return False
 
