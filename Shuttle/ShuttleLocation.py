@@ -129,7 +129,7 @@ class ShuttleLocation:
         text_file.write("datetime.datetime.now(): %s\n" % datetime.datetime.now())
         text_file.write("timeDifference: %s\n" % timeDifference)
         text_file.write("timeDifference.seconds: %s\n" % timeDifference.seconds)
-        text_file.write("timeDifference.seconds/60: %s\n" % timeDifference.seconds/60)
+        text_file.write("timeDifference.seconds/60: %s\n" % (timeDifference.seconds/60))
         text_file.close()
         
         if (timeDifference.seconds / 60) > minutes:
