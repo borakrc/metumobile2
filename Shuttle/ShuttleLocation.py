@@ -141,7 +141,7 @@ class ShuttleLocation:
             else:
                 return False
         else:
-            return False
+            return True
 
     def _isAtLeastOneShuttleActive(self, locationArray):
         for each in locationArray:
