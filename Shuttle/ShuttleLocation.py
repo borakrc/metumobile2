@@ -123,6 +123,13 @@ class ShuttleLocation:
         lastUpdateTime = location['updatetime']
         import datetime
         timeDifference = datetime.datetime.now() - lastUpdateTime
+        
+        text_file = open("console.txt", "w")
+        text_file.write("lastUpdate: %s" % lastUpdateTime)
+        text_file.write("datetime.datetime.now(): %s" % datetime.datetime.now())
+        text_file.write("timeDifference: %s" % timeDifference)
+        text_file.close()
+        
         if (timeDifference.seconds / 60) > minutes:
             return True
         else:
