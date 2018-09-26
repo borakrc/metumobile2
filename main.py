@@ -163,7 +163,7 @@ def shuttleSchedule():
     return jsonify(ShuttleSchedule=Shuttle.getWeeklySchedule())
 
 @app.route('/shuttleschedule2/<clientSideEncryptionData>', methods=['GET'])
-def shuttleSchedule2(clientSideEncryptionData):
+def shuttleSchedule2/(clientSideEncryptionData):
     #if(encryption(clientSideEncryptionData)):
     return jsonify(ShuttleSchedule2=Shuttle.getWeeklySchedule2())
   
@@ -188,7 +188,7 @@ def cacheShuttle():
     shuttleOutput = readFromWeb(Config.shuttleScheduleServiceUrl)
     return cacheVersionOf(shuttleOutput)
 
-@app.route('/shuttleschedule2/cacheversion/')
+@app.route('/shuttleschedule2/111/cacheversion/')
 def cacheShuttle2():
     shuttleOutput = readFromWeb(Config.shuttleScheduleServiceUrl2)
     return cacheVersionOf(shuttleOutput)
