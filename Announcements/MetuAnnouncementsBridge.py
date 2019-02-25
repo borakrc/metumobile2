@@ -75,13 +75,16 @@ class MetuAcademicAndDormCalendarBridge:
         self._connectNew()
         if self.connection.cursor():
             cursor = self.connection.cursor()
-            cursor.execute("""SELECT 
+            cursor.execute("""SELECT
             aktak_id as id, 
             aktak_ilk_tarih as date_from, 
             aktak_son_tarih as date_to, 
             aktak_metin_tr as tr_name, 
-            aktak_metin_en as en_name
-            FROM intranet.akademik_takvim  
+            aktak_metin_en as en_name,
+            aktak_donem,
+            degisken_degeri
+            FROM intranet.akademik_takvim intranet_at, intranet.adm_degiskenler intranet_d
+            WHERE SUBSTRING(aktak_donem, 1,4) =  SUBSTRING(degisken_degeri, 1,4)
             ORDER BY date_from
             ASC""")
 
