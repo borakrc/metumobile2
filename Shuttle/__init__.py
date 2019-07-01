@@ -19,8 +19,7 @@ class Shuttle:
         ShuttleSchedule2 = []
         for dayType in range(1, 3):
              ShuttleSchedule2.append({'day': (dayType-1)}) 
-             ShuttleSchedule2[0].append('warning_message': 1)
-             ShuttleSchedule2[1].append('warning_message': 1)      
+            
              ShuttleSchedule2[dayType-1]['buses']=(DayBusses2().getMock(dayType-1))
             
             
