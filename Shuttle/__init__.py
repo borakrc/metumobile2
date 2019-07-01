@@ -19,7 +19,8 @@ class Shuttle:
         ShuttleSchedule2 = []
         for dayType in range(1, 3):
             ShuttleSchedule2.append({'day': (dayType-1)}) 
-            if(dayType==1):
+            if((dayType-1)==1):
+                ShuttleSchedule2.append({'day': (dayType-1)})
                 ShuttleSchedule2.append({'warning_message': 0})
             else:
                 ShuttleSchedule2.append({'warning_message': 1})
