@@ -19,6 +19,7 @@ class Brochures:
     def _getBrochureData(self):
         return [
     ["test.jpg", "türkçe_title","türkçe_link", "ingilizce_title","ingilizce_link"],
+    ["test2.jpg","tr2_title","tr2_link","ing2_title","ing2_link"]
     ]
     
     
