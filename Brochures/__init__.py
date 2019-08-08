@@ -27,8 +27,8 @@ class Brochures:
 
     def _recordToDict(self, record):
         dict = {}
-        dict['tr_title'] = record[1]
-        dict['tr_url'] = record[2]
-        dict['en_title'] = record[3]
-        dict['en_url'] = record[4]
+        dict['tr_title'] = record[0]
+        dict['tr_url'] = record[1]
+        dict['en_title'] = record[2]
+        dict['en_url'] = record[3]
         return dict
