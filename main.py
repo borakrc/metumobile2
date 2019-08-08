@@ -305,6 +305,16 @@ def cacheBooklets():
     bookletOutput = readFromWeb(Config.bookletServiceUrl)
     return cacheVersionOf(bookletOutput)
 
+@app.route('/brochures/')
+def brochures():
+    return jsonify(Brochures=Brochures().getBrochures())
+
+
+@app.route('/brochures/cacheversion/')
+def cacheBrochures():
+    brochureOutput = readFromWeb(Config.brochureServiceUrl)
+    return cacheVersionOf(brochureOutput)
+
 @app.route('/featuredApps/ios/')
 def iosFeaturedApps():
     links = [
