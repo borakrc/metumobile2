@@ -18,15 +18,15 @@ class Brochures:
 
     def _getBrochureData(self):
         return [
-    ["test.jpg", "türkçe_title", "türkçe_link", "ingilizce_title", "ingilizce_link"],
-    ["test2.jpg", "tr2_title", "tr2_link", "ing2_title", "ing2_link"]
+    ["Oryantasyon Programı", "https://guide.ncc.metu.edu.tr/oryantasyon_programi", "Orientation Program", "https://guide.ncc.metu.edu.tr/orientation_program"],
+    ["Yapılacaklar Listesi", "https://guide.ncc.metu.edu.tr/yapilacaklar_listesi/", "Check List", "https://guide.ncc.metu.edu.tr/check_list/"],
+    ["İlk Yıl Öğrencileri İçin Broşür", "https://guide.ncc.metu.edu.tr/ilk_yil_brosuru", "Brochures For New Comers", "https://guide.ncc.metu.edu.tr/new_comers_brochures"]
     ]
     
     
 
     def _recordToDict(self, record):
         dict = {}
-        dict['img'] = Config.serverRootLink +"/images/" + record[0]
         dict['tr_title'] = record[1]
         dict['tr_url'] = record[2]
         dict['en_title'] = record[3]
