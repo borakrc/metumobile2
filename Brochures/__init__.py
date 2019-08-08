@@ -11,7 +11,7 @@ class Brochures:
         for record in self._getBrochureData():
             try:
                 recordDict = self._recordToDict(record)
-                brochuresRecords.append(recordDict)
+                brochureRecords.append(recordDict)
             except:
                 pass
         return brochureRecords
