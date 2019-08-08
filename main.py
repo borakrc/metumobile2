@@ -6,6 +6,7 @@ from datetime import datetime
 from flask import Flask, jsonify, request, render_template
 from Announcements import Announcements
 from Booklets import Booklets
+from Brochures import Brochures
 from Cafeteria import Cafeteria
 from Cafeteria.ExcelImport import ExcelImport
 from Cafeteria.Rating import CafeteriaRating
