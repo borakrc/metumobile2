@@ -10,6 +10,7 @@ class SiteMap:
 <li>clickable: <a href=\"/phonebook/cacheversion/\">/phonebook/cacheversion/</a></li>
 <li>clickable: <a href=\"/phonebook/raw/\">/phonebook/raw/</a></li>
 <li>clickable: <a href=\"/booklets/cacheversion/\">/booklets/cacheversion/</a></li>
+<li>clickable: <a href=\"/brochures/cacheversion/\">/brochures/cacheversion/</a></li>
 <li>clickable: <a href=\"/shuttle/location/\">/shuttle/location/</a></li>
 <li>clickable: <a href=\"/shuttle/location/multipleshuttles/\">/shuttle/location/multipleshuttles/</a></li>
 <li>clickable: <a href=\"/ip/cacheversion/\">/ip/cacheversion/</a></li>
@@ -21,6 +22,7 @@ class SiteMap:
 <li>clickable: <a href=\"/cafeteriamenu/\">/cafeteriamenu/</a></li>
 <li>clickable: <a href=\"/phonebook/\">/phonebook/</a></li>
 <li>clickable: <a href=\"/booklets/\">/booklets/</a></li>
+<li>clickable: <a href=\"/brochures/\">/brochures/</a></li>
 <li>clickable: <a href=\"/ip/\">/ip/</a></li>
 <li>clickable: <a href=\"/\">/</a></li>
 <li>clickable: <a href=\"/announcements/category/0\">/announcements/category</a></li>
