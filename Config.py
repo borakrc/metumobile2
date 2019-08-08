@@ -34,6 +34,6 @@ class Config:
     shuttleScheduleServiceUrl2 = "http://144.122.156.67:1072/shuttleschedule2/111"
     phoneBookServiceUrl = "http://144.122.156.67:1072/phonebook/"
     bookletServiceUrl = "http://144.122.156.67:1072/booklets/"
-    brochureServiceUrl = "http://144.122.156.67:1072/brochures/
+    brochureServiceUrl = "http://144.122.156.67:1072/brochures/"
     eventsServiceUrl = "http://144.122.156.67:1072/upcomingevents/"
     
