@@ -82,6 +82,27 @@ def upload():
     return render_template("complete.html")
 # _______END MENU UPLOAD
 
+@app.route("/services/alacarte/excelupload")
+def index():
+    return render_template("upload_alacarte.html")
+
+@app.route("/services/alacarte/exceluploadrawpost", methods=['POST'])
+def upload():
+    target = os.path.join(APP_DIR, "Alacarte")
+    if not os.path.isdir(target):
+        os.mkdir(target)
+
+    selected_files = request.files.getlist("file")
+    time_stamp = datetime.now().isoformat()
+    for file in selected_files:
+        file_name = time_stamp+'_'+file.filename
+        destination = os.path.join(Config.dynamicFilesFolderPath, file_name)# "/".join([target, file_name])
+        file.save(destination)
+        ExcelImport(destination).updateAlacarteMenu()
+
+    return render_template("complete_alacarte.html")
+# _______END ALACARTE UPLOAD
+
 @app.route('/images/<fileName>')#
 def getImageProcessorDynamicFile(fileName):
     from flask import send_from_directory
