@@ -83,27 +83,26 @@ def upload():
 # _______END MENU UPLOAD
 
 # BEG MENU ALACARTE UPLOAD_______
-APP_DIR = os.path.dirname(os.path.abspath(__file__))
 
 @app.route("/services/alacarte/excelupload")
 def index():
     return render_template("upload_alacarte.html")
 
-@app.route("/services/alacarte/exceluploadrawpost", methods=['POST'])
-def upload():
-    target = os.path.join(APP_DIR, "Cafeteria")
-    if not os.path.isdir(target):
-        os.mkdir(target)
+#@app.route("/services/alacarte/exceluploadrawpost", methods=['POST'])
+#def upload():
+    #target = os.path.join(APP_DIR, "Cafeteria")
+    #if not os.path.isdir(target):
+        #os.mkdir(target)
 
-    selected_files = request.files.getlist("file")
-    time_stamp = datetime.now().isoformat()
-    for file in selected_files:
-        file_name = time_stamp+'_'+file.filename
-        destination = os.path.join(Config.dynamicFilesFolderPath, file_name)# "/".join([target, file_name])
-        file.save(destination)
-        ExcelImport(destination).updateCafeteriaMenu()
+    #selected_files = request.files.getlist("file")
+    #time_stamp = datetime.now().isoformat()
+    #for file in selected_files:
+        #file_name = time_stamp+'_'+file.filename
+        #destination = os.path.join(Config.dynamicFilesFolderPath, file_name)# "/".join([target, file_name])
+        #file.save(destination)
+        #ExcelImport(destination).updateCafeteriaMenu()
 
-    return render_template("complete_alacarte.html")
+    #return render_template("complete_alacarte.html")
 # _______END MENU UPLOAD
 
 @app.route('/images/<fileName>')#
