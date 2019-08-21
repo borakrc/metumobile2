@@ -84,9 +84,9 @@ def upload():
 
 # BEG MENU ALACARTE UPLOAD_______
 
-@app.route("/services/alacarte/excelupload")
-def index():
-    return render_template("upload_alacarte.html")
+#@app.route("/services/alacarte/excelupload")
+#def index():
+    #return render_template("upload_alacarte.html")
 
 #@app.route("/services/alacarte/exceluploadrawpost", methods=['POST'])
 #def upload():
