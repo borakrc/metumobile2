@@ -1,4 +1,4 @@
-from MealDetailsContainer import MealDetailsContainer
+from AlacarteMealDetailsContainer import AlacarteMealDetailsContainerMealDetailsContainer
 
 
 class AlacarteMealContainer:
