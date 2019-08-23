@@ -16,8 +16,8 @@ class AlacarteMealDetailsContainer(object):
         self.end = end
         self.en_name = en_name
         self.tr_name = tr_name
-        assert isinstance(en_menu, MealMenuContainer)
-        assert isinstance(tr_menu, MealMenuContainer)
+        assert isinstance(en_menu, AlacarteMealMenuContainer)
+        assert isinstance(tr_menu, AlacarteMealMenuContainer)
         self.en_menu = en_menu
         self.tr_menu = tr_menu
 
