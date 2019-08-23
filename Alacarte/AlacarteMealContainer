@@ -1,11 +1,11 @@
-from AlacarteMealDetailsContainer import AlacarteMealDetailsContainerMealDetailsContainer
+from AlacarteMealDetailsContainer import AlacarteMealDetailsContainer
 
 
 class AlacarteMealContainer:
-    def __init__(self, date, mealDetailsContainer):
+    def __init__(self, date, alacarteMealDetailsContainer):
         self.date = date
-        assert isinstance(mealDetailsContainer, MealDetailsContainer)
-        self.details = mealDetailsContainer
+        assert isinstance(alacarteMealDetailsContainer, AlacarteMealDetailsContainer)
+        self.details = alacarteMealDetailsContainer
 
     def serialize(self):
         return (
