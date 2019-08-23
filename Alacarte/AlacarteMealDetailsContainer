@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from Cafeteria.MealMenuContainer import MealMenuContainer
+from Alacarte.AlacarteMealMenuContainer import AlacarteMealMenuContainer
 
 
 class AlacarteMealDetailsContainer(object):
