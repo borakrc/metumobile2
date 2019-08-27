@@ -7,6 +7,7 @@ class SiteMap:
 <li>clickable: <a href=\"/upcomingevents/raw/\">/upcomingevents/raw/</a></li>
 <li>clickable: <a href=\"/announcements/cacheversion/\">/announcements/cacheversion/</a></li>
 <li>clickable: <a href=\"/cafeteriamenu/cacheversion/\">/cafeteriamenu/cacheversion/</a></li>
+<li>clickable: <a href=\"/alacartemenu/cacheversion/\">/alacartemenu/cacheversion/</a></li>
 <li>clickable: <a href=\"/phonebook/cacheversion/\">/phonebook/cacheversion/</a></li>
 <li>clickable: <a href=\"/phonebook/raw/\">/phonebook/raw/</a></li>
 <li>clickable: <a href=\"/booklets/cacheversion/\">/booklets/cacheversion/</a></li>
@@ -20,6 +21,7 @@ class SiteMap:
 <li>clickable: <a href=\"/shuttleschedule2/\">/shuttleschedule2/</a></li>
 <li>clickable: <a href=\"/upcomingevents/\">/upcomingevents/</a></li>
 <li>clickable: <a href=\"/cafeteriamenu/\">/cafeteriamenu/</a></li>
+<li>clickable: <a href=\"/alacartemenu/\">/alacartemenu/</a></li>
 <li>clickable: <a href=\"/phonebook/\">/phonebook/</a></li>
 <li>clickable: <a href=\"/booklets/\">/booklets/</a></li>
 <li>clickable: <a href=\"/brochures/\">/brochures/</a></li>
