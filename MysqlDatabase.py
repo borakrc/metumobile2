@@ -1,5 +1,6 @@
 import pymysql.cursors
 from Cafeteria.MealContainer import MealContainer
+from Alacarte.AlacarteMealContainer import AlacarteMealContainer
 from CredentialsConfig import CredentialsConfig
 
 
