@@ -6,6 +6,7 @@ class Config:
     serverType = "Deployment"
     home = path.dirname(__file__)
     dynamicFilesFolderPath = path.join(home, 'dynamicFiles')
+    dynamicFilesFolderPathAlacarte = path.join(home, 'dynamicFilesAlacarte')
     if serverType == 'Test':
         os = 'Windows'
         debug = True
