@@ -2,18 +2,18 @@ from datetime import datetime
 
 from openpyxl import load_workbook
 
-from Cafeteria.MealContainer import MealContainer
-from Cafeteria.MealDetailsContainer import MealDetailsContainer
-from Cafeteria.MealMenuContainer import MealMenuContainer
+from Alacarte.AlacarteMealContainer import MealContainer
+from Alacarte.AlacarteMealDetailsContainer import MealDetailsContainer
+from Alacarte.AlacarteMealMenuContainer import MealMenuContainer
 from Config import Config
-from MongoDatabase import MongoDatabase
+from MysqlDatabase import MysqlDatabase
 
 
 class ExcelImport:
-    def __init__(self, excelPath = Config.cafeteriaMenuExcelPath):
+    def __init__(self, excelPath = Config.alacarteMenuExcelPath):
          self.excelPath = excelPath
 
-    def updateCafeteriaMenu(self):
+    def updateAlacarteMenu(self):
         self.allMealsInFile = []
         self._openExcelFile()
         self._parseOpenedExcelFile()
@@ -50,11 +50,11 @@ class ExcelImport:
             start_time = self.ws['D' + str(rowNumber)].value
             end_time = self.ws['E' + str(rowNumber)].value
 
-            meal['startTime'] = datetime(year = year, month = month, day = day, hour = start_time.hour, minute = start_time.minute)
-            meal['endTime'] = datetime(year = year, month = month, day = day, hour = end_time.hour, minute = end_time.minute)
-            meal['tr_name'] = self.ws['F'+str(rowNumber)].value
-            meal['en_name'] = self.ws['G'+str(rowNumber)].value
-
+            meal['start_date'] = datetime(year = year, month = month, day = day, hour = start_time.hour, minute = start_time.minute)
+            meal['end_date'] = datetime(year = year, month = month, day = day, hour = end_time.hour, minute = end_time.minute)
+            meal['tr_type'] = self.ws['F'+str(rowNumber)].value
+            meal['en_type'] = self.ws['G'+str(rowNumber)].value
+            
             dishes = {}
 
             dish = {}
