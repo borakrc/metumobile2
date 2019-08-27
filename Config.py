@@ -15,6 +15,7 @@ class Config:
         dynamicFolderPath = path.join(home, "dynamicImages")
         loggerPath = path.join(home, 'log.txt')
         cafeteriaMenuExcelPath = path.join(home, 'Cafeteria', 'cafeteriaMenu.xlsx')
+        alacarteMenuExcelPath = path.join(home, 'Alacarte', 'alacarteMenu.xlsx')
 
     else:
         os = 'Linux'
@@ -25,10 +26,12 @@ class Config:
         dynamicFolderPath = "/home/ncc-mobileapp/metumobile2/dynamicImages/"
         loggerPath = 'log.txt'
         cafeteriaMenuExcelPath = '/home/ncc-mobileapp/metumobile2/Cafeteria/cafeteriaMenu.xlsx'
+        alacarteMenuExcelPath = '/home/ncc-mobileapp/metumobile2/Alacarte/alacarteMenu.xlsx'
 
     serverPort = 1072
     serverRootLink = "http://" + serverIp + ":" + str(serverPort)
     cafeteriaMenuServiceUrl = "http://144.122.156.67:1072/cafeteriamenu/"
+    alacarteMenuServiceUrl = "http://144.122.156.67:1072/alacartemenu/"
     announcementServiceUrl = "http://144.122.156.67:1072/announcements/category"
     shuttleScheduleServiceUrl = "http://144.122.156.67:1072/shuttleschedule/"
     shuttleScheduleServiceUrl2 = "http://144.122.156.67:1072/shuttleschedule2/111"
