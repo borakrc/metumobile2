@@ -10,8 +10,6 @@ from Brochures import Brochures
 from Cafeteria import Cafeteria
 from Cafeteria.ExcelImport import ExcelImport
 from Cafeteria.Rating import CafeteriaRating
-from Alacarte import Alacarte
-from Alacarte.ExcelImport import AlacarteExcelImport
 from Config import Config
 from Events import Events
 from Helpers.SiteMap import SiteMap
@@ -92,7 +90,7 @@ def index_alacarte():
 
 @app.route("/services/alacarte/exceluploadrawpost", methods=['POST'])
 def upload_alacarte():
-    target = os.path.join(APP_DIR, "Alacarte")
+    target = os.path.join(APP_DIR, "Cafeteria")
     if not os.path.isdir(target):
         os.mkdir(target)
 
