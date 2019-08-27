@@ -10,6 +10,8 @@ from Brochures import Brochures
 from Cafeteria import Cafeteria
 from Cafeteria.ExcelImport import ExcelImport
 from Cafeteria.Rating import CafeteriaRating
+from Alacarte import Alacarte
+from Alacarte.ExcelImport import AlacarteExcelImport
 from Config import Config
 from Events import Events
 from Helpers.SiteMap import SiteMap
@@ -90,7 +92,7 @@ def index_alacarte():
 
 @app.route("/services/alacarte/exceluploadrawpost", methods=['POST'])
 def upload_alacarte():
-    target = os.path.join(APP_DIR, "Cafeteria")
+    target = os.path.join(APP_DIR, "Alacarte")
     if not os.path.isdir(target):
         os.mkdir(target)
 
@@ -228,6 +230,8 @@ def cafeteriaMenu():
     return jsonify(CafeteriaMenu=Cafeteria().getUpcomingSchedule(version=version))
 
 
+
+
 @app.route('/services/cafeteria/upcomingmeals/')
 def cafeteriaUpcomingMeals():
     version = request.values.get('version')
@@ -266,6 +270,15 @@ def cafeteriaRateMeals():
             mealRating['numberOfRates'] = CafeteriaRating().getMealRateCount(mealId = mealRating['_id'])
     result = jsonify(mealRatings = mealRatings)
     return result
+
+@app.route('/alacartemenu/')
+def alacarteMenu():
+    version = request.values.get('version')
+    try:
+        version = float(version)
+    except:
+        version = 1.0
+    return jsonify(AlacarteMenu=Alacarte().getUpcomingSchedule(version=version))
 
 
 @app.route('/upcomingevents/')
