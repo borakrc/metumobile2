@@ -2,9 +2,9 @@ from datetime import datetime
 
 from openpyxl import load_workbook
 
-from Alacarte.AlacarteMealContainer import MealContainer
-from Alacarte.AlacarteMealDetailsContainer import MealDetailsContainer
-from Alacarte.AlacarteMealMenuContainer import MealMenuContainer
+from Alacarte.AlacarteMealContainer import AlacarteMealContainer
+from Alacarte.AlacarteMealDetailsContainer import AlacarteMealDetailsContainer
+from Alacarte.AlacarteMealMenuContainer import AlacarteMealMenuContainer
 from Config import Config
 from MysqlDatabase import MysqlDatabase
 
