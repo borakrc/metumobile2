@@ -23,6 +23,9 @@ class MysqlDatabase:
             autocommit=True)
         self.cursor = self.connection.cursor()
         
+    def getUpcomingAlacart(self, version):
+        return version
+        
     def setCafeteriaMenu(self, mealArray):
         for eachMeal in mealArray:
             assert isinstance(eachMeal, MealContainer)
