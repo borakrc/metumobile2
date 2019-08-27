@@ -271,14 +271,14 @@ def cafeteriaRateMeals():
     result = jsonify(mealRatings = mealRatings)
     return result
 
-@app.route('/alacartemenu/')
-def alacarteMenu():
-    version = request.values.get('version')
-    try:
-        version = float(version)
-    except:
-        version = 1.0
-    return jsonify(AlacarteMenu=Alacarte().getUpcomingSchedule(version=version))
+#@app.route('/alacartemenu/')
+#def alacarteMenu():
+    #version = request.values.get('version')
+    #try:
+        #version = float(version)
+    #except:
+        #version = 1.0
+    #return jsonify(AlacarteMenu=Alacarte().getUpcomingSchedule(version=version))
 
 
 @app.route('/upcomingevents/')
