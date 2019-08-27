@@ -22,12 +22,69 @@ class MysqlDatabase:
             cursorclass=pymysql.cursors.DictCursor,
             autocommit=True)
         self.cursor = self.connection.cursor()
-
+        
     def setCafeteriaMenu(self, mealArray):
         for eachMeal in mealArray:
             assert isinstance(eachMeal, MealContainer)
             self._upsertMeal(eachMeal)
 
+    def setAlacarteMenu(self, mealArray):
+        for eachMeal in mealArray:
+            assert isinstance(eachMeal, AlacarteMealContainer)
+            self._uploadAlacarteMeal(eachMeal)
+    
+    def _uploadAlacarteMeal(self, meal):
+        assert isinstance(meal, AlacarteMealContainer)
+        
+        #sqlVariables = meal.serialize() + meal.serialize()
+        #placeholders = ', '.join(['%s'] * len(sqlVariables))  # "%s, %s, %s, ... %s"
+        
+        sql = """INSERT INTO cafeteriaMenu (
+                activeUntilDate,
+                en_name,
+                tr_name,
+                startDate,
+                endDate,
+                en_mainDish,
+                en_sideDish,
+                en_soup,
+                en_extra1,
+                en_extra2,
+                en_extra3,
+                tr_mainDish,
+                tr_sideDish,
+                tr_soup,
+                tr_extra1,
+                tr_extra2,
+                tr_extra3
+            )
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            ON DUPLICATE KEY UPDATE
+                activeUntilDate=?,
+                en_name=?,
+                tr_name=?,
+                startDate=?,
+                endDate=?,
+                en_mainDish=?,
+                en_sideDish=?,
+                en_soup=?,
+                en_extra1=?,
+                en_extra2=?,
+                en_extra3=?,
+                tr_mainDish=?,
+                tr_sideDish=?,
+                tr_soup=?,
+                tr_extra1=?,
+                tr_extra2=?,
+                tr_extra3=?
+        """
+
+        #self.cursor.execute(sql, sqlVariables)
+        #self.connection.commit()
+
+        return
+    
+    
     def _upsertMeal(self, meal):
         assert isinstance(meal, MealContainer)
         
