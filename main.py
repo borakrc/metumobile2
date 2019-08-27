@@ -90,7 +90,7 @@ def index_alacarte():
 
 @app.route("/services/alacarte/exceluploadrawpost", methods=['POST'])
 def upload_alacarte():
-    target = os.path.join(APP_DIR, "Cafeteria")
+    target = os.path.join(APP_DIR, "Alacarte")
     if not os.path.isdir(target):
         os.mkdir(target)
 
@@ -98,9 +98,9 @@ def upload_alacarte():
     time_stamp = datetime.now().isoformat()
     for file in selected_files:
         file_name = time_stamp+'_'+file.filename
-        destination = os.path.join(Config.dynamicFilesFolderPath, file_name)# "/".join([target, file_name])
+        destination = os.path.join(Config.dynamicFilesFolderPathAlacarte, file_name)# "/".join([target, file_name])
         file.save(destination)
-        ExcelImport(destination).updateCafeteriaMenu()
+        ExcelImport(destination).updateAlacarteMenu()
 
     return render_template("complete_alacarte.html")
 # _______END MENU UPLOAD
