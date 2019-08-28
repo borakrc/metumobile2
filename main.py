@@ -10,8 +10,6 @@ from Brochures import Brochures
 from Cafeteria import Cafeteria
 from Cafeteria.ExcelImport import ExcelImport
 from Cafeteria.Rating import CafeteriaRating
-from Alacarte import Alacarte
-from Alacarte.ExcelImport import AlacarteExcelImport
 from Config import Config
 from Events import Events
 from Helpers.SiteMap import SiteMap
