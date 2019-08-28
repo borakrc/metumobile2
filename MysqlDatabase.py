@@ -24,7 +24,30 @@ class MysqlDatabase:
         self.cursor = self.connection.cursor()
         
     def getUpcomingAlacarteMenu(self, version):
-        return version
+        if version == 1.0:
+            from datetime import datetime
+            results = self.db['alacarte_menu'].find({"end_date": {"$gt": datetime.now()}})
+            jsonableArray = []
+            for each in results:
+                each['end_date'] = each['end_date'].isoformat()
+                each['start_date'] = each['start_date'].isoformat()
+                each['id'] = str(each['id'])
+
+                mealInOldFormat = self._convertNewMealToOldMeal(each)
+
+                jsonableArray.append(mealInOldFormat)
+            return jsonableArray
+        else:
+            from datetime import datetime
+            #results = self.db['alacarte_menu'].find({})
+            results = self.db['alacarte_menu'].find({"end_date": {"$gt": datetime.now()}})
+            jsonableArray = []
+            for each in results:
+                each['end_date'] = each['end_date'].isoformat()
+                each['start_date'] = each['start_date'].isoformat()
+                each['id'] = str(each['id'])
+                jsonableArray.append(each)
+            return jsonableArray
         
     def setCafeteriaMenu(self, mealArray):
         for eachMeal in mealArray:
