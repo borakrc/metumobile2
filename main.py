@@ -5,6 +5,8 @@ import sys, os
 from datetime import datetime
 from flask import Flask, jsonify, request, render_template
 from Announcements import Announcements
+from Alacarte import Alacarte
+from Alacarte.ExcelImport import AlacarteExcelImport
 from Booklets import Booklets
 from Brochures import Brochures
 from Cafeteria import Cafeteria
