@@ -1,7 +1,7 @@
 from MongoDatabase import MongoDatabase
 
 
-class Cafeteria:
+class Alacarte:
     def __init__(self):
         pass
 
