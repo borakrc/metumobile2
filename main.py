@@ -20,8 +20,6 @@ from Admin import Admin
 from ImageProcessor import ImageProcessor
 import hashlib
 from Weather import Weather
-from Alacarte import Alacarte
-from Alacarte.ExcelImport import AlacarteExcelImport
 
 lastModificationTime = datetime.now()
 
