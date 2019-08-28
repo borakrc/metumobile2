@@ -7,6 +7,8 @@ from flask import Flask, jsonify, request, render_template
 from Announcements import Announcements
 from Booklets import Booklets
 from Brochures import Brochures
+from Alacarte import Alacarte
+from Alacarte.ExcelImport import AlacarteExcelImport
 from Cafeteria import Cafeteria
 from Cafeteria.ExcelImport import ExcelImport
 from Cafeteria.Rating import CafeteriaRating
