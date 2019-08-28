@@ -7,7 +7,6 @@ from flask import Flask, jsonify, request, render_template
 from Announcements import Announcements
 from Booklets import Booklets
 from Brochures import Brochures
-from Alacarte import Alacarte
 from Cafeteria import Cafeteria
 from Cafeteria.ExcelImport import ExcelImport
 from Cafeteria.Rating import CafeteriaRating
@@ -21,6 +20,8 @@ from Admin import Admin
 from ImageProcessor import ImageProcessor
 import hashlib
 from Weather import Weather
+from Alacarte import Alacarte
+from Alacarte.ExcelImport import AlacarteExcelImport
 
 lastModificationTime = datetime.now()
 
