@@ -3,7 +3,7 @@ import pymysql.cursors
 from CredentialsConfig import CredentialsConfig
 
 
-class AlacarteMenuBridge:
+class AlacarteBridge:
     def __init__(self):
         self.credentials = CredentialsConfig.alacarteRestaurantCredentials
 
