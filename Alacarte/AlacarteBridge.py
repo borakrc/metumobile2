@@ -24,7 +24,7 @@ class AlacarteBridge:
     def getUpcomingAlacarteMenu(self, version):
         from datetime import datetime
         
-        mycursor = self.connection.cursor()
+        mycursor = self.cursor
 
         mycursor.execute("select * from alacarte_menu where end_date > NOW()")
 
