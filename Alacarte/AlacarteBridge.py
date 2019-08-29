@@ -25,7 +25,7 @@ class AlacarteBridge:
             cursor.execute(sql)
             
             self.connection.commit()
-            result = cursor.fetchall()
+            myresult = cursor.fetchall()
         
         #self.cursor.execute("select * from alacarte_menu where end_date > NOW()")
 
