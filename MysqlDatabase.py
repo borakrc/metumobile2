@@ -30,7 +30,7 @@ class MysqlDatabase:
         sql="select * from alacarte_menu where end_date > NOW()"
         
         myresult=self.cursor.execute(sql)
-        myresult = mycursor.fetchall()
+        myresult = self.cursor.fetchall()
        
         jsonableArray = []
         for each in myresult:
