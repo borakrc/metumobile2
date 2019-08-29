@@ -20,7 +20,7 @@ class AlacarteBridge:
             charset='utf8',
             cursorclass=pymysql.cursors.DictCursor,
             autocommit=True)
-        self.cursor = self.connection.cursor(  
+        self.cursor = self.connection.cursor()
 
     def getUpcomingAlacarteMenu(self, version):
         from datetime import datetime
