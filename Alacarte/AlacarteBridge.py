@@ -6,6 +6,10 @@ from CredentialsConfig import CredentialsConfig
 class AlacarteBridge:
     def __init__(self):
         self.credentials = CredentialsConfig.alacarteRestaurantCredentials
+        try:
+            self._connect()
+        except:
+            print ("MySql connection failed.")
 
     def _connect(self):
         self.connection = pymysql.connect(
@@ -16,7 +20,7 @@ class AlacarteBridge:
             charset='utf8',
             cursorclass=pymysql.cursors.DictCursor,
             autocommit=True)
-        self.cursor = self.connection.cursor()        
+        self.cursor = self.connection.cursor(  
 
     def getUpcomingAlacarteMenu(self, version):
         from datetime import datetime
