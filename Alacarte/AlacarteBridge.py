@@ -24,11 +24,9 @@ class AlacarteBridge:
     def getUpcomingAlacarteMenu(self, version):
         from datetime import datetime
         
-        mycursor = self.cursor
+        self.cursor.execute("select * from alacarte_menu where end_date > NOW()")
 
-        mycursor.execute("select * from alacarte_menu where end_date > NOW()")
-
-        myresult = mycursor.fetchall()
+        myresult = self.cursor.fetchall()
 
        
         jsonableArray = []
