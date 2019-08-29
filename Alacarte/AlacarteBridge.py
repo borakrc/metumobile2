@@ -12,7 +12,7 @@ class AlacarteBridge:
             print ("MySql connection failed.")
 
     def _connect(self):
-        mbdb = pymysql.connect(
+        mydb = pymysql.connect(
             user=self.credentials.user,
             password=self.credentials.password,
             host=self.credentials.ip,
