@@ -12,7 +12,7 @@ class AlacarteBridge:
             print ("MySql connection failed.")
 
     def _connect(self):
-        self.connection = pymysql.connect(
+        mbdb = pymysql.connect(
             user=self.credentials.user,
             password=self.credentials.password,
             host=self.credentials.ip,
@@ -20,15 +20,16 @@ class AlacarteBridge:
             charset='utf8',
             cursorclass=pymysql.cursors.DictCursor,
             autocommit=True)
-        self.cursor = self.connection.cursor()
-
+        
     def getUpcomingAlacarteMenu(self, version):
         from datetime import datetime
         
-        sql="select * from alacarte_menu where end_date > NOW()"
-        
-        myresult=self.cursor.execute(sql)
-        myresult = self.cursor.fetchall()
+        mycursor = mydb.cursor()
+
+        mycursor.execute("select * from alacarte_menu where end_date > NOW()")
+
+        myresult = mycursor.fetchall()
+
        
         jsonableArray = []
         for each in myresult:
