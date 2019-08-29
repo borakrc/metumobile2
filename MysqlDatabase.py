@@ -25,8 +25,7 @@ class MysqlDatabase:
         
     def getUpcomingAlacarteMenu(self, version):
         from datetime import datetime
-        mycursor = mydb.cursor()
-
+        
         sql="select * from alacarte_menu where end_date > NOW()"
         
         myresult=self.cursor.execute(sql)
