@@ -276,7 +276,7 @@ def alacarteMenu():
         version = float(version)
     except:
         version = 1.0
-    return jsonify(AlacarteMenu=Alacarte().getUpcomingSchedule(version=version))
+    return jsonify(AlacarteMenu=Alacarte())
 
 
 @app.route('/upcomingevents/')
