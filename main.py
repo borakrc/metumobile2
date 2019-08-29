@@ -279,6 +279,10 @@ def alacarteMenu():
         version = 1.0
     return jsonify(AlacarteMenu=Alacarte().getUpcomingAlacarte(version=version))
 
+@app.route('/alacartemenu/cacheversion/')
+def cacheAlacarte():
+    alacarteMenuOutput = readFromWeb(Config.alacarteMenuServiceUrl)
+    return cacheVersionOf(alacarteMenuOutput)
 
 @app.route('/upcomingevents/')
 def upcomingEvents():
