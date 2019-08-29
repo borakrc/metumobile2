@@ -8,13 +8,15 @@ class AlacarteBridge:
         self.credentials = CredentialsConfig.alacarteRestaurantCredentials
 
     def _connect(self):
-        self.connection = pymysql.connect(
+            self.connection = pymysql.connect(
             user=self.credentials.user,
             password=self.credentials.password,
             host=self.credentials.ip,
             db=self.credentials.dbName,
             charset='utf8',
-            cursorclass=pymysql.cursors.DictCursor)
+            cursorclass=pymysql.cursors.DictCursor,
+            autocommit=True)
+        self.cursor = self.connection.cursor()        
 
     def getUpcomingAlacarteMenu(self, version):
         from datetime import datetime
