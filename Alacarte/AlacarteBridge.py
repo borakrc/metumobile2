@@ -29,8 +29,6 @@ class AlacarteBridge:
         
         #self.cursor.execute("select * from alacarte_menu where end_date > NOW()")
 
-        myresult = self.cursor.fetchall()
-
         jsonableArray = []
         for each in myresult:
 
