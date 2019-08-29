@@ -8,7 +8,7 @@ class AlacarteBridge:
         self.credentials = CredentialsConfig.alacarteRestaurantCredentials
 
     def _connect(self):
-            self.connection = pymysql.connect(
+        self.connection = pymysql.connect(
             user=self.credentials.user,
             password=self.credentials.password,
             host=self.credentials.ip,
