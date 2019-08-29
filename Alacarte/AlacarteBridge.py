@@ -31,7 +31,7 @@ class AlacarteBridge:
 
         jsonableArray = []
         for each in myresult:
-
+            meal = {}
             meal['id'] = str(each['id'])
             meal['tr_type'] = str(each['tr_type'])
             meal['en_type'] = str(each['en_type'])
