@@ -12,7 +12,7 @@ class AlacarteBridge:
             print ("MySql connection failed.")
 
     def _connect(self):
-        mydb = pymysql.connect(
+        self.connection = pymysql.connect(
             user=self.credentials.user,
             password=self.credentials.password,
             host=self.credentials.ip,
@@ -24,7 +24,7 @@ class AlacarteBridge:
     def getUpcomingAlacarteMenu(self, version):
         from datetime import datetime
         
-        mycursor = mydb.cursor()
+        mycursor = self.connection.cursor()
 
         mycursor.execute("select * from alacarte_menu where end_date > NOW()")
 
