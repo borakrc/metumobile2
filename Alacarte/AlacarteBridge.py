@@ -33,15 +33,15 @@ class AlacarteBridge:
         for each in myresult:
             meal = {}
             meal['id'] = str(each['id'])
-            meal['tr_type'] = str(each['tr_type'])
-            meal['en_type'] = str(each['en_type'])
-            meal['start_date'] = each['start_date'].isoformat()
-            meal['end_date'] = each['end_date'].isoformat()
-            meal['tr_name'] = str(each['tr_name'])
-            meal['en_name'] = str(each['en_name'])
-            meal['calorie'] = str(each['calorie'])
-            meal['protein'] = str(each['protein'])
-            meal['food_type'] = str(each['food_type'])
+            meal['tr_type'] = each['tr_type']
+            meal['en_type'] = each['en_type']
+            meal['start_date'] = each['start_date']
+            meal['end_date'] = each['end_date']
+            meal['tr_name'] = each['tr_name']
+            meal['en_name'] = each['en_name']
+            meal['calorie'] = each['calorie']
+            meal['protein'] = each['protein']
+            meal['food_type'] = each['food_type']
             jsonableArray.append(meal)
 
         return jsonableArray
