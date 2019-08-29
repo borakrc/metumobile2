@@ -1,14 +1,11 @@
 import pymysql.cursors
+
 from CredentialsConfig import CredentialsConfig
 
 
-class AlacarteBridge:
+class PhonebookBridge:
     def __init__(self):
-        self.credentials = CredentialsConfig.alacarteRestaurantCredentials
-        try:
-            self._connect()
-        except:
-            print ("MySql connection failed.")
+        self.credentials = CredentialsConfig.phonebookDbCredentials
 
     def _connect(self):
         self.connection = pymysql.connect(
@@ -17,18 +14,37 @@ class AlacarteBridge:
             host=self.credentials.ip,
             db=self.credentials.dbName,
             charset='utf8',
-            cursorclass=pymysql.cursors.DictCursor,
-            autocommit=True)
-        self.cursor = self.connection.cursor()
+            cursorclass=pymysql.cursors.DictCursor)
+
+    def fetchAllFromDb(self):
+        self._connect()
+        with self.connection.cursor() as cursor:
+            sql = """select *
+              from rehber
+              ORDER BY name ASC"""
+            #where durum not like '%pasif%'"""
+            cursor.execute(sql)
+            # connection is not autocommit by default. So you must commit to save
+            # your changes.
+            self.connection.commit()
+            result = cursor.fetchall()
+            return result
+
         
     def getUpcomingAlacarteMenu(self, version):
-        from datetime import datetime
+        self._connect()
+        with self.connection.cursor() as cursor:
+            sql = "select * from alacarte_menu where end_date > NOW()"
+           
+            cursor.execute(sql)
+            
+            self.connection.commit()
+            result = cursor.fetchall()
         
-        self.cursor.execute("select * from alacarte_menu where end_date > NOW()")
+        #self.cursor.execute("select * from alacarte_menu where end_date > NOW()")
 
         myresult = self.cursor.fetchall()
 
-       
         jsonableArray = []
         for each in myresult:
 
