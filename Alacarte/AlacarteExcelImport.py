@@ -114,4 +114,4 @@ class AlacarteExcelImport:
 
         #MongoDatabase().setCafeteriaMenu(self.allMealsInFile)
 
-        MysqlDatabase().setCafeteriaMenu(self.allMealsInFile)
+        MysqlDatabase().setAlacarteMenu(self.allMealsInFile)
