@@ -4,6 +4,7 @@ from CredentialsConfig import CredentialsConfig
 
 
 class AlacarteBridge:
+    lastImportedAlacarteMenu = []
     def __init__(self):
         self.credentials = CredentialsConfig.alacarteRestaurantCredentials
 
@@ -45,5 +46,15 @@ class AlacarteBridge:
             jsonableArray.append(meal)
 
         return jsonableArray
+    
+    def setAlacarteMenu(self, allMealsInFile):
+        AlacarteBridge.lastImportedAlacarteMenu = allMealsInFile
+        for eachMeal in allMealsInFile:
+            #assert isinstance(eachMeal, MealContainer)
+            
+            cursor.execute('INSERT INTO cafeteria.alacarte_menu (tr_type, en_type, start_date, end_date, tr_name, en_name, calorie, protein, food_type) values (?,?,?,?,?,?,?,?,?)', (eachMeal['tr_type'], eachMeal['en_type'], eachMeal['start_date'], eachMeal['end_date'], eachMeal['tr_name'], eachMeal['en_name'], eachMeal['calorie'], eachMeal['protein'], eachMeal['food_type']))
+            
+            self.connection.commit()
+    
 
 
