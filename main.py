@@ -8,6 +8,7 @@ from Announcements import Announcements
 from Booklets import Booklets
 from Brochures import Brochures
 from Alacarte import Alacarte
+from Alacarte.AlacarteExcelImport import AlacarteExcelImport
 from Cafeteria import Cafeteria
 from Cafeteria.ExcelImport import ExcelImport
 from Cafeteria.Rating import CafeteriaRating
@@ -101,7 +102,7 @@ def upload_alacarte():
         file_name = time_stamp+'_'+file.filename
         destination = os.path.join(Config.dynamicFilesFolderPathAlacarte, file_name)# "/".join([target, file_name])
         file.save(destination)
-        #AlacarteExcelImport(destination).updateAlacarteMenu()
+        AlacarteExcelImport(destination).updateAlacarteMenu()
 
     return render_template("complete_alacarte.html")
 # _______END MENU UPLOAD
