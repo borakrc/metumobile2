@@ -50,7 +50,7 @@ class AlacarteExcelImport:
             start_time = self.ws['D' + str(rowNumber)].value
             end_time = self.ws['E' + str(rowNumber)].value
 
-            meal['startTime'] = year + '-' + month + '-' + day + ' ' + str(start_time)
+            meal['startTime'] = str(year) + '-' + str(month) + '-' + str(day) + ' ' + str(start_time)
             meal['endTime'] = year + '-' + month + '-' + day + ' ' + str(end_time)
             meal['tr_type'] = self.ws['F'+str(rowNumber)].value
             meal['en_type'] = self.ws['G'+str(rowNumber)].value
