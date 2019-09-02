@@ -110,8 +110,8 @@ class AlacarteExcelImport:
             return True
 
     def _importAllMealsToDb(self):
-        from MysqlDatabase import MysqlDatabase
+        from AlacarteBridge import AlacarteBridge
 
         #MongoDatabase().setCafeteriaMenu(self.allMealsInFile)
 
-        MysqlDatabase().setAlacarteMenu(self.allMealsInFile)
+        AlacarteBridge().setAlacarteMenu(self.allMealsInFile)
