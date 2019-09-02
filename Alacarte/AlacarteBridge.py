@@ -51,10 +51,10 @@ class AlacarteBridge:
         AlacarteBridge.lastImportedAlacarteMenu = allMealsInFile
         for eachMeal in allMealsInFile:
             #assert isinstance(eachMeal, MealContainer)
-            
-            cursor.execute('INSERT INTO cafeteria.alacarte_menu (tr_type, en_type, start_date, end_date, tr_name, en_name, calorie, protein, food_type) values (?,?,?,?,?,?,?,?,?)', (eachMeal['tr_type'], eachMeal['en_type'], eachMeal['start_date'], eachMeal['end_date'], eachMeal['tr_name'], eachMeal['en_name'], eachMeal['calorie'], eachMeal['protein'], eachMeal['food_type']))
-            
-            self.connection.commit()
+            with self.connection.cursor() as cursor:
+                cursor.execute('INSERT INTO cafeteria.alacarte_menu (tr_type, en_type, start_date, end_date, tr_name, en_name, calorie, protein, food_type) values (?,?,?,?,?,?,?,?,?)', (eachMeal['tr_type'], eachMeal['en_type'], eachMeal['start_date'], eachMeal['end_date'], eachMeal['tr_name'], eachMeal['en_name'], eachMeal['calorie'], eachMeal['protein'], eachMeal['food_type']))
+
+                self.connection.commit()
     
 
 
