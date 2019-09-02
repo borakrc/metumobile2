@@ -48,6 +48,7 @@ class AlacarteBridge:
         return jsonableArray
     
     def setAlacarteMenu(self, allMealsInFile):
+        self._connect()
         AlacarteBridge.lastImportedAlacarteMenu = allMealsInFile
         for eachMeal in allMealsInFile:
             #assert isinstance(eachMeal, MealContainer)
