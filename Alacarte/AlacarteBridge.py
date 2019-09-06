@@ -91,7 +91,7 @@ class AlacarteBridge:
                         lunches['sider3']['en_name']=each_lunch['en_name']
                         lunches['sider3']['calorie']=each_lunch['calorie']
                         lunches['sider3']['protein']=each_lunch['protein']
-                    elif each_lunch['food_type'] == 'extras':
+                    elif each_lunch['food_type'] == 'extra':
                         lunches['extra']['tr_name']=each_lunch['tr_name']
                         lunches['extra']['en_name']=each_lunch['en_name']
                         lunches['extra']['calorie']=each_lunch['calorie']
