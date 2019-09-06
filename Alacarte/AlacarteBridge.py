@@ -98,7 +98,7 @@ class AlacarteBridge:
                         lunches['extra']['protein']=each_lunch['protein']
                         
                     
-                    jsonableArray.append(lunches)
+                jsonableArray.append(lunches)
             return jsonableArray
     
     def setAlacarteMenu(self, allMealsInFile):
