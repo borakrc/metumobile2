@@ -38,16 +38,15 @@ class AlacarteBridge:
                 self.connection.commit()
                 all_lunch = cursor.fetchall()
                 lunches={}
+                lunches['soup']={}
+                lunches['main1']={}
+                lunches['main2']={}
+                lunches['vegeterian']={}
+                lunches['sider1']={}
+                lunches['sider2']={}
+                lunches['sider3']={}
+                lunches['extra']={}
                 for each_lunch in all_lunch:
-                    
-                    lunches['soup']={}
-                    lunches['main1']={}
-                    lunches['main2']={}
-                    lunches['vegeterian']={}
-                    lunches['sider1']={}
-                    lunches['sider2']={}
-                    lunches['sider3']={}
-                    lunches['extra']={}
                     
                     text_file = open("console.txt", "w")
                     text_file.write("food_type: %s\n" % each_lunch['food_type'])
