@@ -32,7 +32,7 @@ class AlacarteBridge:
             for each_date in all_dates:
 
                 sql = "select * from alacarte_menu where end_date = '" + each_date['end_date'] + "' and en_type='Lunch' order by end_date asc"
-
+                
                 cursor.execute(sql)
 
                 self.connection.commit()
@@ -48,6 +48,14 @@ class AlacarteBridge:
                     lunches['sider2']={}
                     lunches['sider3']={}
                     lunches['extra']={}
+                    
+                    text_file = open("console.txt", "w")
+                    text_file.write("food_type: %s\n" % each_lunch['food_type'])
+                    text_file.write("tr_name: %s\n" % each_lunch['tr_name'])
+                    text_file.write("en_name: %s\n" % each_lunch['en_name'])
+                    text_file.write("calorie: %s\n" % each_lunch['calorie'])
+                    text_file.write("protein: %s\n" % each_lunch['protein'])
+                    text_file.close()
                     
                     if each_lunch['food_type'] == 'soup':
                         lunches['soup']['tr_name']=each_lunch['tr_name']
@@ -91,21 +99,7 @@ class AlacarteBridge:
                         lunches['extra']['protein']=each_lunch['protein']
                         
                     
-                    jsonableArray.append(lunches)  
-                   
-            #meal = {}
-            #meal['id'] = str(each['id'])
-            #meal['tr_type'] = each['tr_type']
-            #meal['en_type'] = each['en_type']
-            #meal['start_date'] = each['start_date']
-            #meal['end_date'] = each['end_date']
-            #meal['tr_name'] = each['tr_name']
-            #meal['en_name'] = each['en_name']
-            #meal['calorie'] = each['calorie']
-            #meal['protein'] = each['protein']
-            #meal['food_type'] = each['food_type']
-            #jsonableArray.append(meal)
-
+                    jsonableArray.append(lunches)
             return jsonableArray
     
     def setAlacarteMenu(self, allMealsInFile):
