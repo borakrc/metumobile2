@@ -51,9 +51,7 @@ class AlacarteBridge:
                     lunches['sider2']={}
                     lunches['sider3']={}
                     lunches['extras']={}
-                    
-                    print(each_lunch['food_type'])
-                    
+                   
                     if each_lunch['food_type'] == 'soup':
                         lunches['soup']['tr_name']=each_lunch['tr_name']
                         lunches['soup']['en_name']=each_lunch['en_name']
@@ -74,7 +72,7 @@ class AlacarteBridge:
                         lunches['vegeterian']['en_name']=each_lunch['en_name']
                         lunches['vegeterian']['calorie']=each_lunch['calorie']
                         lunches['vegeterian']['protein']=each_lunch['protein']
-                    elif each_lunch['food_type'] == 'sider1':
+                   elif each_lunch['food_type'] == 'sider1':
                         lunches['sider1']['tr_name']=each_lunch['tr_name']
                         lunches['sider1']['en_name']=each_lunch['en_name']
                         lunches['sider1']['calorie']=each_lunch['calorie']
@@ -96,7 +94,7 @@ class AlacarteBridge:
                         lunches['extra']['protein']=each_lunch['protein']
                         
                     
-                jsonableArray.append(lunches)  
+            jsonableArray.append(lunches)  
                     
                 
             
