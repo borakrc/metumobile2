@@ -40,6 +40,14 @@ class AlacarteBridge:
                 
                 for each_lunch in all_lunch:
                     lunches={}
+                    lunches['soup']={}
+                    lunches['main1']={}
+                    lunches['main2']={}
+                    lunches['vegeterian']={}
+                    lunches['sider1']={}
+                    lunches['sider2']={}
+                    lunches['sider3']={}
+                    lunches['extra']={}
                     
                     if each_lunch['food_type'] == 'soup':
                         lunches['soup']['tr_name']=each_lunch['tr_name']
