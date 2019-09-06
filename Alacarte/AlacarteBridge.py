@@ -36,7 +36,7 @@ class AlacarteBridge:
                 dates = {}
                 dates['end_date'] = each_date['end_date']
 
-                sql = "select * from alacarte_menu where end_date =" + each_date['end_date'] + " and en_type='Lunch' order by end_date asc"
+                sql = "select * from alacarte_menu where end_date = '" + each_date['end_date'] + "' and en_type='Lunch' order by end_date asc"
 
                 cursor.execute(sql)
 
