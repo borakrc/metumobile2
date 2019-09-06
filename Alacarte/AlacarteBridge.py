@@ -39,10 +39,10 @@ class AlacarteBridge:
 
                 self.connection.commit()
                 all_lunch = cursor.fetchall()
-
+                lunches={}
                 for each_lunch in all_lunch:
 
-                    lunches={}
+                    
                     lunches['soup']={}
                     lunches['main1']={}
                     lunches['main2']={}
