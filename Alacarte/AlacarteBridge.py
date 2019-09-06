@@ -33,9 +33,6 @@ class AlacarteBridge:
             jsonableArray = []
             for each_date in all_dates:
 
-                dates = {}
-                dates['end_date'] = each_date['end_date']
-
                 sql = "select * from alacarte_menu where end_date = '" + each_date['end_date'] + "' and en_type='Lunch' order by end_date asc"
 
                 cursor.execute(sql)
@@ -54,6 +51,8 @@ class AlacarteBridge:
                     lunches['sider2']={}
                     lunches['sider3']={}
                     lunches['extras']={}
+                    
+                    print(each_lunch['food_type'])
                     
                     if each_lunch['food_type'] == 'soup':
                         lunches['soup']['tr_name']=each_lunch['tr_name']
