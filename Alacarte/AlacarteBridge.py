@@ -91,7 +91,7 @@ class AlacarteBridge:
                         lunches['extra']['protein']=each_lunch['protein']
                         
                     
-                jsonableArray.append(lunches)  
+                    jsonableArray.append(lunches)  
                    
             #meal = {}
             #meal['id'] = str(each['id'])
