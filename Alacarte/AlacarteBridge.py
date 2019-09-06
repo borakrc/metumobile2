@@ -43,9 +43,9 @@ class AlacarteBridge:
             self.connection.commit()
             all_lunch = cursor.fetchall()
             
-            for each_lunch in all_lunch
-                lunches={}
+            for each_lunch in all_lunch:
                 
+                lunches={}
                 if(each_lunch['food_type'] == 'soup') 
                     lunches['soup']['tr_name']=each_lunch['tr_name']
                     lunches['soup']['en_name']=each_lunch['en_name']
