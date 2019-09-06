@@ -27,9 +27,7 @@ class AlacarteBridge:
             
             self.connection.commit()
             all_dates = cursor.fetchall()
-        
-        #self.cursor.execute("select * from alacarte_menu where end_date > NOW()")
-
+            
             jsonableArray = []
             for each_date in all_dates:
 
@@ -42,16 +40,6 @@ class AlacarteBridge:
                 lunches={}
                 for each_lunch in all_lunch:
 
-                    
-                    lunches['soup']={}
-                    lunches['main1']={}
-                    lunches['main2']={}
-                    lunches['vegeterian']={}
-                    lunches['sider1']={}
-                    lunches['sider2']={}
-                    lunches['sider3']={}
-                    lunches['extras']={}
-                   
                     if each_lunch['food_type'] == 'soup':
                         lunches['soup']['tr_name']=each_lunch['tr_name']
                         lunches['soup']['en_name']=each_lunch['en_name']
