@@ -60,37 +60,37 @@ class AlacarteBridge:
                         lunches['soup']['en_name']=each_lunch['en_name']
                         lunches['soup']['calorie']=each_lunch['calorie']
                         lunches['soup']['protein']=each_lunch['protein']
-                    if each_lunch['food_type'] == 'main1': 
+                    elif each_lunch['food_type'] == 'main1': 
                         lunches['main1']['tr_name']=each_lunch['tr_name']
                         lunches['main1']['en_name']=each_lunch['en_name']
                         lunches['main1']['calorie']=each_lunch['calorie']
                         lunches['main1']['protein']=each_lunch['protein']
-                    if each_lunch['food_type'] == 'main2':
+                    elif each_lunch['food_type'] == 'main2':
                         lunches['main2']['tr_name']=each_lunch['tr_name']
                         lunches['main2']['en_name']=each_lunch['en_name']
                         lunches['main2']['calorie']=each_lunch['calorie']
                         lunches['main2']['protein']=each_lunch['protein'] 
-                    if each_lunch['food_type'] == 'vegeterian':
+                    elif each_lunch['food_type'] == 'vegeterian':
                         lunches['vegeterian']['tr_name']=each_lunch['tr_name']
                         lunches['vegeterian']['en_name']=each_lunch['en_name']
                         lunches['vegeterian']['calorie']=each_lunch['calorie']
                         lunches['vegeterian']['protein']=each_lunch['protein']
-                    if each_lunch['food_type'] == 'sider1':
+                    elif each_lunch['food_type'] == 'sider1':
                         lunches['sider1']['tr_name']=each_lunch['tr_name']
                         lunches['sider1']['en_name']=each_lunch['en_name']
                         lunches['sider1']['calorie']=each_lunch['calorie']
                         lunches['sider1']['protein']=each_lunch['protein']
-                    if each_lunch['food_type'] == 'sider2':
+                    elif each_lunch['food_type'] == 'sider2':
                         lunches['sider2']['tr_name']=each_lunch['tr_name']
                         lunches['sider2']['en_name']=each_lunch['en_name']
                         lunches['sider2']['calorie']=each_lunch['calorie']
                         lunches['sider2']['protein']=each_lunch['protein']
-                    if each_lunch['food_type'] == 'sider3':
+                    elif each_lunch['food_type'] == 'sider3':
                         lunches['sider3']['tr_name']=each_lunch['tr_name']
                         lunches['sider3']['en_name']=each_lunch['en_name']
                         lunches['sider3']['calorie']=each_lunch['calorie']
                         lunches['sider3']['protein']=each_lunch['protein']
-                    if each_lunch['food_type'] == 'extras':
+                    elif each_lunch['food_type'] == 'extras':
                         lunches['extra']['tr_name']=each_lunch['tr_name']
                         lunches['extra']['en_name']=each_lunch['en_name']
                         lunches['extra']['calorie']=each_lunch['calorie']
