@@ -109,7 +109,7 @@ class AlacarteBridge:
             #meal['food_type'] = each['food_type']
             #jsonableArray.append(meal)
 
-        return jsonableArray
+            return jsonableArray
     
     def setAlacarteMenu(self, allMealsInFile):
         self._connect()
