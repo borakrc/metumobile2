@@ -46,17 +46,17 @@ class AlacarteBridge:
                 for each_lunch in all_lunch:
 
                     lunches={}
-                    if(each_lunch['food_type'] == 'soup') 
+                    if each_lunch['food_type'] == 'soup':
                         lunches['soup']['tr_name']=each_lunch['tr_name']
                         lunches['soup']['en_name']=each_lunch['en_name']
                         lunches['soup']['calorie']=each_lunch['calorie']
                         lunches['soup']['protein']=each_lunch['protein']
-                    if(each_lunch['food_type'] == 'main1') 
+                    if each_lunch['food_type'] == 'main1': 
                         lunches['main1']['tr_name']=each_lunch['tr_name']
                         lunches['main1']['en_name']=each_lunch['en_name']
                         lunches['main1']['calorie']=each_lunch['calorie']
                         lunches['main1']['protein']=each_lunch['protein']
-                    if(each_lunch['food_type'] == 'main2') 
+                    if each_lunch['food_type'] == 'main2':
                         lunches['main2']['tr_name']=each_lunch['tr_name']
                         lunches['main2']['en_name']=each_lunch['en_name']
                         lunches['main2']['calorie']=each_lunch['calorie']
