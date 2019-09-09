@@ -38,16 +38,18 @@ class AlacarteBridge:
                 self.connection.commit()
                 all_lunch = cursor.fetchall()
                 
+                lunches={}
+                lunches['soup']={}
+                lunches['main1']={}
+                lunches['main2']={}
+                lunches['vegeterian']={}
+                lunches['sider1']={}
+                lunches['sider2']={}
+                lunches['sider3']={}
+                lunches['extra']={}
+                
                 for each_lunch in all_lunch:
-                    lunches={}
-                    lunches['soup']={}
-                    lunches['main1']={}
-                    lunches['main2']={}
-                    lunches['vegeterian']={}
-                    lunches['sider1']={}
-                    lunches['sider2']={}
-                    lunches['sider3']={}
-                    lunches['extra']={}
+                    
                     text_file = open("console.txt", "w")
                     text_file.write("food_type: %s\n" % each_lunch['food_type'])
                     text_file.write("tr_name: %s\n" % each_lunch['tr_name'].encode('utf-8'))
@@ -97,7 +99,75 @@ class AlacarteBridge:
                         lunches['extra']['calorie']=each_lunch['calorie']
                         lunches['extra']['protein']=each_lunch['protein']
                         
+                sql = "select * from alacarte_menu where end_date = '" + each_date['end_date'] + "' and en_type='Dinner' order by id asc"
+                
+                cursor.execute(sql)
+
+                self.connection.commit()
+                all_lunch = cursor.fetchall()
+                
+                dinners={}
+                dinners['soup']={}
+                dinners['main1']={}
+                dinners['main2']={}
+                dinners['vegeterian']={}
+                dinners['sider1']={}
+                dinners['sider2']={}
+                dinners['sider3']={}
+                dinners['extra']={}
+                
+                for each_dinner in all_dinner:
                     
+                    text_file = open("console.txt", "w")
+                    text_file.write("food_type: %s\n" % each_dinner['food_type'])
+                    text_file.write("tr_name: %s\n" % each_dinner['tr_name'].encode('utf-8'))
+                    text_file.write("en_name: %s\n" % each_dinner['en_name'])
+                    text_file.write("calorie: %s\n" % each_dinner['calorie'])
+                    text_file.write("protein: %s\n" % each_dinner['protein'])
+                    text_file.close()
+                    
+                    if each_dinner['food_type'] == 'soup':
+                        lunches['soup']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        lunches['soup']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        lunches['soup']['calorie']=each_dinner['calorie']
+                        lunches['soup']['protein']=each_dinner['protein']
+                    elif each_dinner['food_type'] == 'main1': 
+                        lunches['main1']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        lunches['main1']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        lunches['main1']['calorie']=each_dinner['calorie']
+                        lunches['main1']['protein']=each_dinner['protein']
+                    elif each_dinner['food_type'] == 'main2':
+                        lunches['main2']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        lunches['main2']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        lunches['main2']['calorie']=each_dinner['calorie']
+                        lunches['main2']['protein']=each_dinner['protein'] 
+                    elif each_dinner['food_type'] == 'vegeterian':
+                        lunches['vegeterian']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        lunches['vegeterian']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        lunches['vegeterian']['calorie']=each_dinner['calorie']
+                        lunches['vegeterian']['protein']=each_dinner['protein']
+                    elif each_dinner['food_type'] == 'sider1':
+                        lunches['sider1']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        lunches['sider1']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        lunches['sider1']['calorie']=each_dinner['calorie']
+                        lunches['sider1']['protein']=each_dinner['protein']
+                    elif each_dinner['food_type'] == 'sider2':
+                        lunches['sider2']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        lunches['sider2']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        lunches['sider2']['calorie']=each_dinner['calorie']
+                        lunches['sider2']['protein']=each_dinner['protein']
+                    elif each_dinner['food_type'] == 'sider3':
+                        lunches['sider3']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        lunches['sider3']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        lunches['sider3']['calorie']=each_dinner['calorie']
+                        lunches['sider3']['protein']=each_dinner['protein']
+                    elif each_dinner['food_type'] == 'extra':
+                        lunches['extra']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        lunches['extra']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        lunches['extra']['calorie']=each_dinner['calorie']
+                        lunches['extra']['protein']=each_dinner['protein']
+                        
+                jsonableArray.append(dinners)
                 jsonableArray.append(lunches)
             return jsonableArray
     
