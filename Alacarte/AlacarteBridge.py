@@ -31,7 +31,7 @@ class AlacarteBridge:
             jsonableArray = []
             for each_date in all_dates:
 
-                sql = "select * from alacarte_menu where end_date = '" + each_date['end_date'] + "' and en_type='" + each_date['en_type']+ "' order by id asc"
+                sql = "select * from alacarte_menu where end_date = '" + each_date['end_date'].isoformat() + "' and en_type='" + each_date['en_type']+ "' order by id asc"
                 
                 cursor.execute(sql)
 
