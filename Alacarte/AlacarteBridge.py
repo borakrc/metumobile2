@@ -38,15 +38,7 @@ class AlacarteBridge:
                 self.connection.commit()
                 all_lunch = cursor.fetchall()
                 
-                
-                
-                
-               
-                
-                lunches={}
                 for each_lunch in all_lunch:
-                    
-                    
                     text_file = open("console.txt", "w")
                     text_file.write("food_type: %s\n" % each_lunch['food_type'])
                     text_file.write("tr_name: %s\n" % each_lunch['tr_name'].encode('utf-8'))
