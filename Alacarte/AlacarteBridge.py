@@ -96,7 +96,7 @@ class AlacarteBridge:
                         lunches['lunch']['extra']['en_name']=(each_lunch['en_name']).encode('utf-8')
                         lunches['lunch']['extra']['calorie']=each_lunch['calorie']
                         lunches['lunch']['extra']['protein']=each_lunch['protein']
-                jsonableArray.append(lunches)
+                jsonableArray.append(lunches['lunch'])
                         
                 sql = "select * from alacarte_menu where end_date = '" + each_date['end_date'] + "' and en_type='Dinner' order by id asc"
                 
@@ -167,7 +167,7 @@ class AlacarteBridge:
                         dinners['dinner']['extra']['calorie']=each_dinner['calorie']
                         dinners['dinner']['extra']['protein']=each_dinner['protein']
                         
-                jsonableArray.append(dinners)
+                jsonableArray.append(dinners['dinner'])
                 
             return jsonableArray
     
