@@ -50,7 +50,7 @@ class AlacarteBridge:
                     
                     text_file = open("console.txt", "w")
                     text_file.write("food_type: %s\n" % each_lunch['food_type'])
-                    text_file.write("tr_name: %s\n" % each_lunch['tr_name'])
+                    text_file.write("tr_name: %s\n" % each_lunch['tr_name'].encode('utf-8'))
                     text_file.write("en_name: %s\n" % each_lunch['en_name'])
                     text_file.write("calorie: %s\n" % each_lunch['calorie'])
                     text_file.write("protein: %s\n" % each_lunch['protein'])
