@@ -21,7 +21,7 @@ class AlacarteBridge:
     def getUpcomingAlacarteMenu(self, version):
         self._connect()
         with self.connection.cursor() as cursor:
-            sql = "select distinct end_date from alacarte_menu where end_date >= NOW() order by id asc"
+            sql = "select distinct end_date, en_type from alacarte_menu where end_date >= NOW() order by id asc"
            
             cursor.execute(sql)
             
@@ -31,7 +31,7 @@ class AlacarteBridge:
             jsonableArray = []
             for each_date in all_dates:
 
-                sql = "select * from alacarte_menu where end_date = '" + each_date['end_date'] + "' and en_type='Lunch' order by id asc"
+                sql = "select * from alacarte_menu where end_date = '" + each_date['end_date'] + "' and en_type='" + each_date['en_type']+ "' order by id asc"
                 
                 cursor.execute(sql)
 
