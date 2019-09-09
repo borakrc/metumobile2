@@ -77,7 +77,7 @@ class AlacarteBridge:
                         lunches['vegeterian']['calorie']=each_lunch['calorie']
                         lunches['vegeterian']['protein']=each_lunch['protein']
                     elif each_lunch['food_type'] == 'sider1':
-                        lunches['sider1']['tr_name']=(each_lunch['tr_name']).encode('utf-8''utf-8')
+                        lunches['sider1']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
                         lunches['sider1']['en_name']=(each_lunch['en_name']).encode('utf-8')
                         lunches['sider1']['calorie']=each_lunch['calorie']
                         lunches['sider1']['protein']=each_lunch['protein']
