@@ -39,7 +39,7 @@ class AlacarteBridge:
                 all_lunch = cursor.fetchall()
                 
                 lunches={}
-                lunches['details']={}
+                lunches['lunch']={}
                 for each_lunch in all_lunch:
                     text_file = open("console.txt", "w")
                     text_file.write("food_type: %s\n" % each_lunch['food_type'])
@@ -49,53 +49,53 @@ class AlacarteBridge:
                     text_file.write("protein: %s\n" % each_lunch['protein'])
                     text_file.close()       
                     if each_lunch['food_type'] == 'soup':
-                        lunches['details']['soup']={}
-                        lunches['details']['soup']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
-                        lunches['details']['soup']['en_name']=(each_lunch['en_name']).encode('utf-8')
-                        lunches['details']['soup']['calorie']=each_lunch['calorie']
-                        lunches['details']['soup']['protein']=each_lunch['protein']
+                        lunches['lunch']['soup']={}
+                        lunches['lunch']['soup']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
+                        lunches['lunch']['soup']['en_name']=(each_lunch['en_name']).encode('utf-8')
+                        lunches['lunch']['soup']['calorie']=each_lunch['calorie']
+                        lunches['lunch']['soup']['protein']=each_lunch['protein']
                     elif each_lunch['food_type'] == 'main1': 
-                        lunches['details']['main1']={}
-                        lunches['details']['main1']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
-                        lunches['details']['main1']['en_name']=(each_lunch['en_name']).encode('utf-8')
-                        lunches['details']['main1']['calorie']=each_lunch['calorie']
-                        lunches['details']['main1']['protein']=each_lunch['protein']
+                        lunches['lunch']['main1']={}
+                        lunches['lunch']['main1']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
+                        lunches['lunch']['main1']['en_name']=(each_lunch['en_name']).encode('utf-8')
+                        lunches['lunch']['main1']['calorie']=each_lunch['calorie']
+                        lunches['lunch']['main1']['protein']=each_lunch['protein']
                     elif each_lunch['food_type'] == 'main2':
-                        lunches['details']['main2']={}
-                        lunches['details']['main2']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
-                        lunches['details']['main2']['en_name']=(each_lunch['en_name']).encode('utf-8')
-                        lunches['details']['main2']['calorie']=each_lunch['calorie']
-                        lunches['details']['main2']['protein']=each_lunch['protein'] 
+                        lunches['lunch']['main2']={}
+                        lunches['lunch']['main2']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
+                        lunches['lunch']['main2']['en_name']=(each_lunch['en_name']).encode('utf-8')
+                        lunches['lunch']['main2']['calorie']=each_lunch['calorie']
+                        lunches['lunch']['main2']['protein']=each_lunch['protein'] 
                     elif each_lunch['food_type'] == 'vegeterian':
-                        lunches['details']['vegeterian']={}
-                        lunches['details']['vegeterian']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
-                        lunches['details']['vegeterian']['en_name']=(each_lunch['en_name']).encode('utf-8')
-                        lunches['details']['vegeterian']['calorie']=each_lunch['calorie']
-                        lunches['details']['vegeterian']['protein']=each_lunch['protein']
+                        lunches['lunch']['vegeterian']={}
+                        lunches['lunch']['vegeterian']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
+                        lunches['lunch']['vegeterian']['en_name']=(each_lunch['en_name']).encode('utf-8')
+                        lunches['lunch']['vegeterian']['calorie']=each_lunch['calorie']
+                        lunches['lunch']['vegeterian']['protein']=each_lunch['protein']
                     elif each_lunch['food_type'] == 'sider1':                        
-                        lunches['details']['sider1']={}
-                        lunches['details']['sider1']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
-                        lunches['details']['sider1']['en_name']=(each_lunch['en_name']).encode('utf-8')
-                        lunches['details']['sider1']['calorie']=each_lunch['calorie']
-                        lunches['details']['sider1']['protein']=each_lunch['protein']
+                        lunches['lunch']['sider1']={}
+                        lunches['lunch']['sider1']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
+                        lunches['lunch']['sider1']['en_name']=(each_lunch['en_name']).encode('utf-8')
+                        lunches['lunch']['sider1']['calorie']=each_lunch['calorie']
+                        lunches['lunch']['sider1']['protein']=each_lunch['protein']
                     elif each_lunch['food_type'] == 'sider2':                        
-                        lunches['details']['sider2']={}
-                        lunches['details']['sider2']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
-                        lunches['details']['sider2']['en_name']=(each_lunch['en_name']).encode('utf-8')
-                        lunches['details']['sider2']['calorie']=each_lunch['calorie']
-                        lunches['details']['sider2']['protein']=each_lunch['protein']
+                        lunches['lunch']['sider2']={}
+                        lunches['lunch']['sider2']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
+                        lunches['lunch']['sider2']['en_name']=(each_lunch['en_name']).encode('utf-8')
+                        lunches['lunch']['sider2']['calorie']=each_lunch['calorie']
+                        lunches['lunch']['sider2']['protein']=each_lunch['protein']
                     elif each_lunch['food_type'] == 'sider3':                        
-                        lunches['details']['sider3']={}
-                        lunches['details']['sider3']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
-                        lunches['details']['sider3']['en_name']=(each_lunch['en_name']).encode('utf-8')
-                        lunches['details']['sider3']['calorie']=each_lunch['calorie']
-                        lunches['details']['sider3']['protein']=each_lunch['protein']
+                        lunches['lunch']['sider3']={}
+                        lunches['lunch']['sider3']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
+                        lunches['lunch']['sider3']['en_name']=(each_lunch['en_name']).encode('utf-8')
+                        lunches['lunch']['sider3']['calorie']=each_lunch['calorie']
+                        lunches['lunch']['sider3']['protein']=each_lunch['protein']
                     elif each_lunch['food_type'] == 'extra':                        
-                        lunches['details']['extra']={}
-                        lunches['details']['extra']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
-                        lunches['details']['extra']['en_name']=(each_lunch['en_name']).encode('utf-8')
-                        lunches['details']['extra']['calorie']=each_lunch['calorie']
-                        lunches['details']['extra']['protein']=each_lunch['protein']
+                        lunches['lunch']['extra']={}
+                        lunches['lunch']['extra']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
+                        lunches['lunch']['extra']['en_name']=(each_lunch['en_name']).encode('utf-8')
+                        lunches['lunch']['extra']['calorie']=each_lunch['calorie']
+                        lunches['lunch']['extra']['protein']=each_lunch['protein']
                 jsonableArray.append(lunches)
                         
                 sql = "select * from alacarte_menu where end_date = '" + each_date['end_date'] + "' and en_type='Dinner' order by id asc"
@@ -106,6 +106,7 @@ class AlacarteBridge:
                 all_dinner = cursor.fetchall()
                 
                 dinners={}
+                dinners['dinner']={}
                 for each_dinner in all_dinner:
                     
                     text_file = open("console.txt", "w")
@@ -116,55 +117,55 @@ class AlacarteBridge:
                     text_file.write("protein: %s\n" % each_dinner['protein'])
                     text_file.close()
                     
-                    dinners['details']={}
+                   
                     if each_dinner['food_type'] == 'soup':
-                        dinners['details']['soup']={}              
-                        dinners['details']['soup']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
-                        dinners['details']['soup']['en_name']=(each_dinner['en_name']).encode('utf-8')
-                        dinners['details']['soup']['calorie']=each_dinner['calorie']
-                        dinners['details']['soup']['protein']=each_dinner['protein']
+                        dinners['dinner']['soup']={}              
+                        dinners['dinner']['soup']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        dinners['dinner']['soup']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        dinners['dinner']['soup']['calorie']=each_dinner['calorie']
+                        dinners['dinner']['soup']['protein']=each_dinner['protein']
                     elif each_dinner['food_type'] == 'main1': 
-                        dinners['details']['main1']={}
-                        dinners['details']['main1']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
-                        dinners['details']['main1']['en_name']=(each_dinner['en_name']).encode('utf-8')
-                        dinners['details']['main1']['calorie']=each_dinner['calorie']
-                        dinners['details']['main1']['protein']=each_dinner['protein']
+                        dinners['dinner']['main1']={}
+                        dinners['dinner']['main1']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        dinners['dinner']['main1']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        dinners['dinner']['main1']['calorie']=each_dinner['calorie']
+                        dinners['dinner']['main1']['protein']=each_dinner['protein']
                     elif each_dinner['food_type'] == 'main2':
-                        dinners['details']['main2']={}
-                        dinners['details']['main2']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
-                        dinners['details']['main2']['en_name']=(each_dinner['en_name']).encode('utf-8')
-                        dinners['details']['main2']['calorie']=each_dinner['calorie']
-                        dinners['details']['main2']['protein']=each_dinner['protein'] 
+                        dinners['dinner']['main2']={}
+                        dinners['dinner']['main2']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        dinners['dinner']['main2']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        dinners['dinner']['main2']['calorie']=each_dinner['calorie']
+                        dinners['dinner']['main2']['protein']=each_dinner['protein'] 
                     elif each_dinner['food_type'] == 'vegeterian':
-                        dinners['details']['vegeterian']={}
-                        dinners['details']['vegeterian']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
-                        dinners['details']['vegeterian']['en_name']=(each_dinner['en_name']).encode('utf-8')
-                        dinners['details']['vegeterian']['calorie']=each_dinner['calorie']
-                        dinners['details']['vegeterian']['protein']=each_dinner['protein']
+                        dinners['dinner']['vegeterian']={}
+                        dinners['dinner']['vegeterian']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        dinners['dinner']['vegeterian']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        dinners['dinner']['vegeterian']['calorie']=each_dinner['calorie']
+                        dinners['dinner']['vegeterian']['protein']=each_dinner['protein']
                     elif each_dinner['food_type'] == 'sider1':                        
-                        dinners['details']['sider1']={}
-                        dinners['details']['sider1']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
-                        dinners['details']['sider1']['en_name']=(each_dinner['en_name']).encode('utf-8')
-                        dinners['details']['sider1']['calorie']=each_dinner['calorie']
-                        dinners['details']['sider1']['protein']=each_dinner['protein']
+                        dinners['dinner']['sider1']={}
+                        dinners['dinner']['sider1']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        dinners['dinner']['sider1']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        dinners['dinner']['sider1']['calorie']=each_dinner['calorie']
+                        dinners['dinner']['sider1']['protein']=each_dinner['protein']
                     elif each_dinner['food_type'] == 'sider2':                        
-                        dinners['details']['sider2']={}
-                        dinners['details']['sider2']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
-                        dinners['details']['sider2']['en_name']=(each_dinner['en_name']).encode('utf-8')
-                        dinners['details']['sider2']['calorie']=each_dinner['calorie']
-                        dinners['details']['sider2']['protein']=each_dinner['protein']
+                        dinners['dinner']['sider2']={}
+                        dinners['dinner']['sider2']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        dinners['dinner']['sider2']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        dinners['dinner']['sider2']['calorie']=each_dinner['calorie']
+                        dinners['dinner']['sider2']['protein']=each_dinner['protein']
                     elif each_dinner['food_type'] == 'sider3':
-                        dinners['details']['sider3']={}
-                        dinners['details']['sider3']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
-                        dinners['details']['sider3']['en_name']=(each_dinner['en_name']).encode('utf-8')
-                        dinners['details']['sider3']['calorie']=each_dinner['calorie']
-                        dinners['details']['sider3']['protein']=each_dinner['protein']
+                        dinners['dinner']['sider3']={}
+                        dinners['dinner']['sider3']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        dinners['dinner']['sider3']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        dinners['dinner']['sider3']['calorie']=each_dinner['calorie']
+                        dinners['dinner']['sider3']['protein']=each_dinner['protein']
                     elif each_dinner['food_type'] == 'extra':                        
-                        dinners['details']['extra']={}
-                        dinners['details']['extra']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
-                        dinners['details']['extra']['en_name']=(each_dinner['en_name']).encode('utf-8')
-                        dinners['details']['extra']['calorie']=each_dinner['calorie']
-                        dinners['details']['extra']['protein']=each_dinner['protein']
+                        dinners['dinner']['extra']={}
+                        dinners['dinner']['extra']['tr_name']=(each_dinner['tr_name']).encode('utf-8')
+                        dinners['dinner']['extra']['en_name']=(each_dinner['en_name']).encode('utf-8')
+                        dinners['dinner']['extra']['calorie']=each_dinner['calorie']
+                        dinners['dinner']['extra']['protein']=each_dinner['protein']
                         
                 jsonableArray.append(dinners)
                 
