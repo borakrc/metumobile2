@@ -42,11 +42,11 @@ class AlacarteBridge:
                 meal[each_date['en_type']]={}
                 for each_meal in all_meal:
                     text_file = open("console.txt", "w")
-                    text_file.write("food_type: %s\n" % each_lunch['food_type'])
-                    text_file.write("tr_name: %s\n" % each_lunch['tr_name'].encode('utf-8'))
-                    text_file.write("en_name: %s\n" % each_lunch['en_name'])
-                    text_file.write("calorie: %s\n" % each_lunch['calorie'])
-                    text_file.write("protein: %s\n" % each_lunch['protein'])
+                    text_file.write("food_type: %s\n" % each_meal['food_type'])
+                    text_file.write("tr_name: %s\n" % each_meal['tr_name'].encode('utf-8'))
+                    text_file.write("en_name: %s\n" % each_meal['en_name'])
+                    text_file.write("calorie: %s\n" % each_meal['calorie'])
+                    text_file.write("protein: %s\n" % each_meal['protein'])
                     text_file.close()       
                     if each_meal['food_type'] == 'soup':
                         meal[each_date['en_type']]['soup']={}
