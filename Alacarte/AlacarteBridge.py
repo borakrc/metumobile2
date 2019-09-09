@@ -65,7 +65,7 @@ class AlacarteBridge:
                         meal[each_date['en_type']]['main2']['tr_name']=(each_meal['tr_name']).encode('utf-8')
                         meal[each_date['en_type']]['main2']['en_name']=(each_meal['en_name']).encode('utf-8')
                         meal[each_date['en_type']]['main2']['calorie']=each_meal['calorie']
-                        meal['lunch']['main2']['protein']=each_meal['protein'] 
+                        meal[each_date['en_type']]['main2']['protein']=each_meal['protein'] 
                     elif each_meal['food_type'] == 'vegeterian':
                         meal[each_date['en_type']]['vegeterian']={}
                         meal[each_date['en_type']]['vegeterian']['tr_name']=(each_meal['tr_name']).encode('utf-8')
