@@ -38,6 +38,8 @@ class AlacarteBridge:
                 self.connection.commit()
                 all_lunch = cursor.fetchall()
                 
+                lunches={}
+                
                 for each_lunch in all_lunch:
                     text_file = open("console.txt", "w")
                     text_file.write("food_type: %s\n" % each_lunch['food_type'])
@@ -47,6 +49,7 @@ class AlacarteBridge:
                     text_file.write("protein: %s\n" % each_lunch['protein'])
                     text_file.close()
                     
+                  
                     if each_lunch['food_type'] == 'soup':
                         lunches['soup']={}
                         lunches['soup']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
