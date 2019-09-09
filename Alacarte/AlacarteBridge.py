@@ -49,8 +49,10 @@ class AlacarteBridge:
                     text_file.write("calorie: %s\n" % each_meal['calorie'])
                     text_file.write("protein: %s\n" % each_meal['protein'])
                     text_file.close()
-                    meal['start'] = (each_meal['start_date'])
-                    meal['end'] = (each_meal['end_date'])
+                    
+                    meal['start_date'] = (each_meal['start_date'])
+                    meal['end_date'] = (each_meal['end_date'])
+                    
                     if each_meal['food_type'] == 'soup':
                         meal[each_date['en_type']]['soup']={}
                         meal[each_date['en_type']]['soup']['tr_name']=(each_meal['tr_name']).encode('utf-8')
