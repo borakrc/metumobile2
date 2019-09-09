@@ -104,7 +104,7 @@ class AlacarteBridge:
                 cursor.execute(sql)
 
                 self.connection.commit()
-                all_lunch = cursor.fetchall()
+                all_dinner = cursor.fetchall()
                 
                 dinners={}
                 dinners['soup']={}
