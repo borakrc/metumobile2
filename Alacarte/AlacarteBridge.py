@@ -39,7 +39,7 @@ class AlacarteBridge:
                 all_lunch = cursor.fetchall()
                 
                 lunches={}
-                
+                lunches['details']={}
                 for each_lunch in all_lunch:
                     text_file = open("console.txt", "w")
                     text_file.write("food_type: %s\n" % each_lunch['food_type'])
@@ -47,9 +47,7 @@ class AlacarteBridge:
                     text_file.write("en_name: %s\n" % each_lunch['en_name'])
                     text_file.write("calorie: %s\n" % each_lunch['calorie'])
                     text_file.write("protein: %s\n" % each_lunch['protein'])
-                    text_file.close()
-                    
-                    lunches['details']={}
+                    text_file.close()       
                     if each_lunch['food_type'] == 'soup':
                         lunches['details']['soup']={}
                         lunches['details']['soup']['tr_name']=(each_lunch['tr_name']).encode('utf-8')
