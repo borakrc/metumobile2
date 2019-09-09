@@ -31,23 +31,23 @@ class AlacarteBridge:
             jsonableArray = []
             for each_date in all_dates:
 
-                sql = "select * from alacarte_menu where end_date = '" + each_date['end_date'] + "' and en_type='Lunch' order by end_date asc"
+                sql = "select * from alacarte_menu where end_date = '" + each_date['end_date'] + "' and en_type='Lunch' order by id asc"
                 
                 cursor.execute(sql)
 
                 self.connection.commit()
                 all_lunch = cursor.fetchall()
-                lunches={}
-                lunches['soup']={}
-                lunches['main1']={}
-                lunches['main2']={}
-                lunches['vegeterian']={}
-                lunches['sider1']={}
-                lunches['sider2']={}
-                lunches['sider3']={}
-                lunches['extra']={}
+                
                 for each_lunch in all_lunch:
-                    
+                    lunches={}
+                    lunches['soup']={}
+                    lunches['main1']={}
+                    lunches['main2']={}
+                    lunches['vegeterian']={}
+                    lunches['sider1']={}
+                    lunches['sider2']={}
+                    lunches['sider3']={}
+                    lunches['extra']={}
                     text_file = open("console.txt", "w")
                     text_file.write("food_type: %s\n" % each_lunch['food_type'])
                     text_file.write("tr_name: %s\n" % each_lunch['tr_name'].encode('utf-8'))
