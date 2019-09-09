@@ -21,7 +21,7 @@ class AlacarteBridge:
     def getUpcomingAlacarteMenu(self, version):
         self._connect()
         with self.connection.cursor() as cursor:
-            sql = "select distinct end_date from alacarte_menu where end_date >= NOW() order by end_date asc"
+            sql = "select distinct end_date from alacarte_menu where end_date >= NOW() order by id asc"
            
             cursor.execute(sql)
             
