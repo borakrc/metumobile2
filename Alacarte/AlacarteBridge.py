@@ -50,8 +50,8 @@ class AlacarteBridge:
                     text_file.write("protein: %s\n" % each_meal['protein'])
                     text_file.close()
                     
-                    meal['start_date'] = (each_meal['start_date'])
-                    meal['end_date'] = (each_meal['end_date'])
+                    meal['start_date'] = (each_meal['start_date']).isoformat()
+                    meal['end_date'] = (each_meal['end_date']).isoformat()
                     
                     if each_meal['food_type'] == 'soup':
                         meal[each_date['en_type']]['soup']={}
