@@ -43,9 +43,9 @@ class AlacarteBridge:
                 
                
                 
-                
+                lunches={}
                 for each_lunch in all_lunch:
-                    lunches={}
+                    
                     
                     text_file = open("console.txt", "w")
                     text_file.write("food_type: %s\n" % each_lunch['food_type'])
@@ -103,7 +103,7 @@ class AlacarteBridge:
                         lunches['extra']['en_name']=(each_lunch['en_name']).encode('utf-8')
                         lunches['extra']['calorie']=each_lunch['calorie']
                         lunches['extra']['protein']=each_lunch['protein']
-                    jsonableArray.append(lunches)
+                jsonableArray.append(lunches)
                         
                 sql = "select * from alacarte_menu where end_date = '" + each_date['end_date'] + "' and en_type='Dinner' order by id asc"
                 
@@ -112,9 +112,9 @@ class AlacarteBridge:
                 self.connection.commit()
                 all_dinner = cursor.fetchall()
                 
-                
+                dinners={}
                 for each_dinner in all_dinner:
-                    dinners={}
+                    
                     text_file = open("console.txt", "w")
                     text_file.write("food_type: %s\n" % each_dinner['food_type'])
                     text_file.write("tr_name: %s\n" % each_dinner['tr_name'].encode('utf-8'))
@@ -172,7 +172,7 @@ class AlacarteBridge:
                         dinners['extra']['calorie']=each_dinner['calorie']
                         dinners['extra']['protein']=each_dinner['protein']
                         
-                    jsonableArray.append(dinners)
+                jsonableArray.append(dinners)
                 
             return jsonableArray
     
