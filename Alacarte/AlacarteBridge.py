@@ -53,6 +53,8 @@ class AlacarteBridge:
                     meal['id'] = str(each_meal['id'])
                     meal['start_date'] = (each_meal['start_date']).isoformat()
                     meal['end_date'] = (each_meal['end_date']).isoformat()
+                    meal['type_en'] = (each_meal['en_type'])
+                    meal['type_tr'] = (each_meal['tr_type'])
                     
                     if each_meal['food_type'] == 'soup':
                         meal['details']['soup']={}
