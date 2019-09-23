@@ -42,13 +42,6 @@ class AlacarteBridge:
                 
                 meal['details']={}
                 for each_meal in all_meal:
-                    text_file = open("console.txt", "w")
-                    text_file.write("food_type: %s\n" % each_meal['food_type'])
-                    text_file.write("tr_name: %s\n" % each_meal['tr_name'].encode('utf-8'))
-                    text_file.write("en_name: %s\n" % each_meal['en_name'])
-                    text_file.write("calorie: %s\n" % each_meal['calorie'])
-                    text_file.write("protein: %s\n" % each_meal['protein'])
-                    text_file.close()
                     
                     meal['id'] = str(each_meal['id'])
                     meal['start_date'] = (each_meal['start_date']).isoformat()
