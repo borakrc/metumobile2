@@ -29,8 +29,6 @@ class SiteMap:
 <li>clickable: <a href=\"/\">/</a></li>
 <li>clickable: <a href=\"/announcements/category/0\">/announcements/category</a></li>
 <li>clickable: <a href=\"/cafeteria/rating/\">POST: /cafeteria/rating/</a></li>
-<li>clickable: <a href=\"/services/cafeteria/excelupload\">Excel Tabledot Menu Upload</a></li>
-<li>clickable: <a href=\"/services/alacarte/excelupload\">Excel Alacarte Menu Upload</a></li>
 
 """
 
