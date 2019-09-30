@@ -108,7 +108,7 @@ class AlacarteBridge:
         for eachMeal in allMealsInFile:
             #assert isinstance(eachMeal, MealContainer)
             with self.connection.cursor() as cursor:
-                cursor.execute('INSERT INTO cafeteria.alacarte_menu_tester (tr_type, en_type, start_date, end_date, tr_name, en_name, calorie, protein, food_type) values (%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE tr_name = %s, en_name=%s, calorie=%s, protein=%s',(eachMeal['tr_type'], eachMeal['en_type'], eachMeal['startTime'], eachMeal['endTime'], eachMeal['tr_name'], eachMeal['en_name'], eachMeal['calorie'], eachMeal['protein'], eachMeal['food_type'], eachMeal['tr_name'], eachMeal['en_name'], eachMeal['calorie'], eachMeal['protein']))
+                cursor.execute('INSERT INTO cafeteria.alacarte_menu (tr_type, en_type, start_date, end_date, tr_name, en_name, calorie, protein, food_type) values (%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE tr_name = %s, en_name=%s, calorie=%s, protein=%s',(eachMeal['tr_type'], eachMeal['en_type'], eachMeal['startTime'], eachMeal['endTime'], eachMeal['tr_name'], eachMeal['en_name'], eachMeal['calorie'], eachMeal['protein'], eachMeal['food_type'], eachMeal['tr_name'], eachMeal['en_name'], eachMeal['calorie'], eachMeal['protein']))
 
                 self.connection.commit()
     
