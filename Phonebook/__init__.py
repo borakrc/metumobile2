@@ -33,6 +33,23 @@ class Phonebook:
                         recordDict['email'] = None
                 else:
                     recordDict['email'] = None
+                    
+                if eachRecord['resno']:
+                    try:
+                        recordDict['resno'] = str(eachRecord['resno'])
+                    except:
+                        recordDict['resno'] = None
+                else:
+                    recordDict['resno'] = None
+                    
+                if eachRecord['restel']:
+                    try:
+                        recordDict['restel'] = str(eachRecord['restel'])
+                    except:
+                        recordDict['restel'] = None
+                else:
+                    recordDict['restel'] = None
+                    
                 activePhonebookRecords.append(recordDict)
 
         return activePhonebookRecords
