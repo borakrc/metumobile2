@@ -27,7 +27,7 @@ class Brochures:
     def _getBrochureData(self):
         return [
     #["Yüksek Lisans Oryantasyon Programı", "https://ncc.metu.edu.tr/sites/default/files/oryantaston_yukseklisans.pdf", "Orientation Program for Graduate Students", "https://ncc.metu.edu.tr/sites/default/files/oryantaston_yukseklisans.pdf"],
-    ["Uluslararası ve A Level Öğrencileri İçin Oryantasyon Programı", "https://ncc.metu.edu.tr/sites/default/files/orientation_february.pdf", "Orientation Program for Int. and A Level Stds.", "https://ncc.metu.edu.tr/sites/default/files/orientation_february.pdf"],
+    ["Uluslararası ve A Level Öğrencileri İçin Oryantasyon Programı", "https://ncc.metu.edu.tr/sites/default/files/2020-2021-Summer-Orientation.pdf", "Orientation Program for Int. and A Level Stds.", "https://ncc.metu.edu.tr/sites/default/files/2020-2021-Summer-Orientation.pdf"],
     #["YKS Öğrencileri İçin Oryantasyon Programı", "https://ncc.metu.edu.tr/sites/default/files/oryantaston_trv4.pdf", "Orientation Program for YKS Students", "https://ncc.metu.edu.tr/sites/default/files/oryantaston_trv4.pdf"],
     ["Uluslararası ve A Level Öğrencileri İçin Yapılacaklar Listesi", "https://ncc.metu.edu.tr/sites/default/files/Checklist-Spring2020.pdf", "Check List International and A Level Students", "https://ncc.metu.edu.tr/sites/default/files/Checklist-Spring2020.pdf"],
     #["YKS Öğrencileri İçin Yapılacaklar Listesi", "https://ncc.metu.edu.tr/sites/default/files/Check-List-v4.pdf", "Check List for YKS Students", "https://ncc.metu.edu.tr/sites/default/files/Check-List-v4.pdf"],
